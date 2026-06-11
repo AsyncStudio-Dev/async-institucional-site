@@ -1,0 +1,18 @@
+# Documentação Privada
+docs
+
+# Dependencias
+node_modules
+
+# Ambiente
+.env
+.env.*
+!.env.example
+
+# Arquivos Temporarios
+dist
+build
+.next
+.tmp
+tsconfig.tsbuildinfo
+*.log
