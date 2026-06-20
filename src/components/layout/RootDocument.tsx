@@ -1,5 +1,6 @@
 import type { PropsWithChildren } from "react";
 import { Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import { siteConfig } from "../../config/site";
 
 const inter = Inter({
@@ -23,7 +24,10 @@ export const rootMetadata = {
 export function RootDocument({ lang, children }: RootDocumentProps) {
   return (
     <html lang={lang}>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
