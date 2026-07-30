@@ -36,6 +36,15 @@ export const en: SiteContent = {
       description:
         "Contact Async Studio through WhatsApp, email or Instagram to start a conversation and schedule a business meeting.",
     },
+    privacy: {
+      title: "Privacy Policy - Async Studio",
+      description:
+        "How Async Studio and its products, including Async Hub, handle personal data in compliance with Brazil's LGPD.",
+    },
+    terms: {
+      title: "Terms of Service - Async Studio",
+      description: "Terms of use for Async Studio's services and products, including Async Hub.",
+    },
   },
   hero: {
     eyebrow: "Software development without friction",
@@ -311,6 +320,124 @@ export const en: SiteContent = {
     primaryLabel: "Talk to us on WhatsApp",
     secondary: "You can also reach us by email or Instagram.",
   },
+  legal: {
+    privacy: {
+      title: "Privacy Policy",
+      lastUpdated: "July 30, 2026",
+      intro:
+        "This policy explains how Async Studio (CAETANO APOLLO DA SILVEIRA, CNPJ 68.009.930/0001-40) handles personal data on its institutional website and in its products, including Async Hub — our service desk that unifies WhatsApp and Instagram for small businesses.",
+      sections: [
+        {
+          heading: "What Async Hub does",
+          paragraphs: [
+            "Async Hub connects a business's WhatsApp and/or Instagram business account (our client, \"the store\") to our service desk tools, letting the store's team reply to their own customers from a single screen instead of switching between the WhatsApp and Instagram apps.",
+            "We do not sell access to this data, do not use it for targeted advertising, and do not use it for any purpose beyond providing the service desk the store contracted.",
+          ],
+        },
+        {
+          heading: "What data we process",
+          paragraphs: [
+            "To provide this service, Async Hub receives and stores, on behalf of the contracting store: the store's customer data (name, when available, WhatsApp phone number or Instagram profile identifier), the content of messages exchanged between the customer and the store, and conversation metadata (channel used, message timestamps, service stage).",
+            "This data reaches Async Hub through Meta's official APIs (WhatsApp Cloud API and Instagram Messaging API), via webhooks configured with the store's own authorization.",
+          ],
+        },
+        {
+          heading: "Legal basis and purpose",
+          paragraphs: [
+            "Processing this data serves the sole purpose of enabling the service requested by the store's own customer when they start a conversation via WhatsApp or Instagram — under Brazil's LGPD (Law 13,709/2018), the legal basis is contract performance requested by the data subject and the store's legitimate interest in serving someone who already reached out to it.",
+          ],
+        },
+        {
+          heading: "Data sharing",
+          paragraphs: [
+            "We do not share, sell or rent this data to third parties. We use cloud infrastructure providers (such as Supabase) as data processors under our responsibility, with technical isolation between each client store's data.",
+          ],
+        },
+        {
+          heading: "Security",
+          paragraphs: [
+            "Access tokens for Meta's APIs are stored with additional encryption, independent of database-level encryption. Each client store only has access to its own data, enforced at the database level. Internal access is role-based (admin/agent) within each client store.",
+          ],
+        },
+        {
+          heading: "Retention and deletion",
+          paragraphs: [
+            "Data is kept for as long as the store keeps Async Hub contracted. At any time, the data subject (the store's customer) or the store itself may request deletion or anonymization of a specific contact's data by writing to asyncstudio@outlook.com.",
+          ],
+        },
+        {
+          heading: "Your rights (LGPD)",
+          paragraphs: [
+            "Anyone whose data is processed through Async Hub may request, by contacting asyncstudio@outlook.com: confirmation of processing and access to the data; correction of incomplete, inaccurate or outdated data; anonymization, blocking or deletion of unnecessary data; portability to another provider; and deletion of data processed under consent, where applicable.",
+          ],
+        },
+        {
+          heading: "Changes to this policy",
+          paragraphs: [
+            "This policy may be updated to reflect changes in the service or in applicable law. The last update date is always shown at the top of this page.",
+          ],
+        },
+        {
+          heading: "Contact",
+          paragraphs: ["Questions about this policy or how your data is handled: asyncstudio@outlook.com."],
+        },
+      ],
+    },
+    terms: {
+      title: "Terms of Service",
+      lastUpdated: "July 30, 2026",
+      intro:
+        "These terms govern the use of Async Studio's institutional website and its products, including Async Hub, a service desk that unifies WhatsApp and Instagram conversations for small businesses.",
+      sections: [
+        {
+          heading: "Who provides the service",
+          paragraphs: [
+            "Async Hub is provided by Async Studio (CAETANO APOLLO DA SILVEIRA, CNPJ 68.009.930/0001-40). By using Async Hub, the contracting business (\"the store\") agrees to these terms.",
+          ],
+        },
+        {
+          heading: "Contracting store responsibilities",
+          paragraphs: [
+            "The store is responsible for connecting its own official WhatsApp Business and/or professional Instagram accounts to Async Hub, with valid authorization from Meta.",
+            "The store is responsible for using Async Hub to handle only conversations started by its own customers, respecting Meta's platform policies.",
+            "The store is responsible for obtaining and maintaining any authorizations and consents required from its own customers under applicable law (LGPD).",
+          ],
+        },
+        {
+          heading: "Use in compliance with Meta's platforms",
+          paragraphs: [
+            "Async Hub operates integrated with Meta's official APIs (WhatsApp Cloud API and Instagram Messaging API) and is subject to Meta's platform policies, including messaging limits set by Meta itself. Async Studio is not responsible for suspensions, blocks or restrictions Meta applies to accounts that violate Meta's own policies.",
+          ],
+        },
+        {
+          heading: "Availability",
+          paragraphs: [
+            "Async Hub is currently in a validation (pilot) phase, without a formal continuous-availability guarantee (SLA). Reasonable efforts are made to keep the service operational and to communicate relevant interruptions to the contracting store.",
+          ],
+        },
+        {
+          heading: "Data and privacy",
+          paragraphs: ["Personal data processing in Async Hub follows our Privacy Policy, which is part of these terms."],
+        },
+        {
+          heading: "Changes to the service and these terms",
+          paragraphs: [
+            "Being in a validation phase, Async Hub may have features added, changed or discontinued without extensive prior notice. Relevant changes to these terms will be communicated to the contracting store with reasonable notice when possible.",
+          ],
+        },
+        {
+          heading: "Termination",
+          paragraphs: [
+            "The contracting store may request to stop using Async Hub and delete its data at any time by writing to asyncstudio@outlook.com.",
+          ],
+        },
+        {
+          heading: "Contact",
+          paragraphs: ["Questions about these terms: asyncstudio@outlook.com."],
+        },
+      ],
+    },
+  },
   whatsappMessage:
     "Hello, Async Studio! I came from the website and would like to talk about a project for my company.",
   whatsappMessages: {
@@ -326,6 +453,8 @@ export const en: SiteContent = {
       rights: "© Async Studio. All rights reserved.",
       description: "Websites, systems and digital solutions for companies ready to grow without friction.",
       remote: "Remote projects with clear communication, defined stages and close follow-up.",
+      privacy: "Privacy Policy",
+      terms: "Terms of Service",
     },
     serviceCard: {
       audience: "For",

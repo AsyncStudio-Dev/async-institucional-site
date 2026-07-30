@@ -7,6 +7,8 @@ export const localizedPaths: Record<Locale, Record<PageKey, string>> = {
     projects: "/projetos",
     about: "/sobre",
     contact: "/contato",
+    privacy: "/privacidade",
+    terms: "/termos",
   },
   en: {
     home: "/en",
@@ -14,6 +16,8 @@ export const localizedPaths: Record<Locale, Record<PageKey, string>> = {
     projects: "/en/projects",
     about: "/en/about",
     contact: "/en/contact",
+    privacy: "/en/privacy",
+    terms: "/en/terms",
   },
 };
 

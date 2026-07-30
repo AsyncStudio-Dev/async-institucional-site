@@ -1,6 +1,16 @@
 export type Locale = "pt" | "en";
 
-export type PageKey = "home" | "services" | "projects" | "about" | "contact";
+export type PageKey = "home" | "services" | "projects" | "about" | "contact" | "privacy" | "terms";
+
+export type LegalDocument = {
+  title: string;
+  lastUpdated: string;
+  intro: string;
+  sections: Array<{
+    heading: string;
+    paragraphs: string[];
+  }>;
+};
 
 export type SiteContent = {
   locale: Locale;
@@ -108,6 +118,10 @@ export type SiteContent = {
     primaryLabel: string;
     secondary: string;
   };
+  legal: {
+    privacy: LegalDocument;
+    terms: LegalDocument;
+  };
   whatsappMessage: string;
   whatsappMessages: {
     header: string;
@@ -122,6 +136,8 @@ export type SiteContent = {
       rights: string;
       description: string;
       remote: string;
+      privacy: string;
+      terms: string;
     };
     serviceCard: {
       audience: string;

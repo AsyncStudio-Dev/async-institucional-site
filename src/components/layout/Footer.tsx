@@ -113,9 +113,13 @@ export function Footer({ content }: FooterProps) {
           </div>
         </div>
       </div>
-      <div className="mx-auto flex max-w-7xl flex-wrap justify-between gap-4 border-t border-white/10 px-5 py-5 text-sm text-white/50">
+      <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 border-t border-white/10 px-5 py-5 text-sm text-white/50">
         <p>{labels.rights}</p>
-        <Link href={paths.projects} className="transition hover:text-white">BizManager</Link>
+        <nav className="flex flex-wrap gap-x-6 gap-y-2">
+          <Link href={paths.privacy} className="transition hover:text-white">{labels.privacy}</Link>
+          <Link href={paths.terms} className="transition hover:text-white">{labels.terms}</Link>
+          <Link href={paths.projects} className="transition hover:text-white">BizManager</Link>
+        </nav>
       </div>
     </footer>
   );

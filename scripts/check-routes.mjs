@@ -7,7 +7,7 @@ const match = source.match(/localizedPaths[^=]*=\s*({[\s\S]*?});/);
 assert.ok(match, "localizedPaths export was not found");
 
 const localizedPaths = Function(`"use strict"; return (${match[1]});`)();
-const pageKeys = ["home", "services", "projects", "about", "contact"];
+const pageKeys = ["home", "services", "projects", "about", "contact", "privacy", "terms"];
 
 assert.deepEqual(Object.keys(localizedPaths.pt).sort(), [...pageKeys].sort());
 assert.deepEqual(Object.keys(localizedPaths.en).sort(), [...pageKeys].sort());
@@ -17,6 +17,8 @@ assert.deepEqual(localizedPaths.pt, {
   projects: "/projetos",
   about: "/sobre",
   contact: "/contato",
+  privacy: "/privacidade",
+  terms: "/termos",
 });
 assert.deepEqual(localizedPaths.en, {
   home: "/en",
@@ -24,6 +26,8 @@ assert.deepEqual(localizedPaths.en, {
   projects: "/en/projects",
   about: "/en/about",
   contact: "/en/contact",
+  privacy: "/en/privacy",
+  terms: "/en/terms",
 });
 
 console.info("Route smoke checks passed");
