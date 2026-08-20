@@ -23,7 +23,7 @@ const contactConfig = {
     defaultMessage: "Olá, Async Studio! Vim pelo site e gostaria de conversar sobre um projeto para minha empresa.",
   },
   email: {
-    address: "asyncstudio@outlook.com",
+    address: "contato@asyncstudio.com.br",
   },
   instagram: {
     handle: "@asyncstudiodev",
@@ -31,10 +31,26 @@ const contactConfig = {
   },
 } as const;
 
+const companyConfig = {
+  legalName: "68.009.930 CAETANO APOLLO DA SILVEIRA",
+  tradeName: "Async Studio",
+  cnpj: "68.009.930/0001-40",
+  address: {
+    street: "Rua Bauru",
+    number: "364",
+    neighborhood: "Canudos",
+    city: "Novo Hamburgo",
+    state: "RS",
+    zip: "93540-180",
+    formatted: "Rua Bauru, 364 - Canudos, Novo Hamburgo - RS, CEP 93540-180",
+  },
+} as const;
+
 export const siteConfig = {
   name: "Async Studio",
   domain: normalizeSiteDomain(process.env.NEXT_PUBLIC_SITE_DOMAIN),
   contact: contactConfig,
+  company: companyConfig,
   // Backwards compatibility keys
   whatsappDisplay: contactConfig.whatsapp.display,
   whatsappNumber: contactConfig.whatsapp.number,

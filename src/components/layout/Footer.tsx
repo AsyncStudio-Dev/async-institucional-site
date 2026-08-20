@@ -113,7 +113,32 @@ export function Footer({ content }: FooterProps) {
           </div>
         </div>
       </div>
-      <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 border-t border-white/10 px-5 py-5 text-sm text-white/50">
+
+      <div className="mx-auto max-w-7xl border-t border-white/10 px-5 py-6 text-xs leading-relaxed text-white/55">
+        <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+          <div className="space-y-1">
+            <p className="font-medium text-white/80">
+              <span className="font-semibold text-white">{siteConfig.company.tradeName}</span> — {labels.legalName}: {siteConfig.company.legalName}
+            </p>
+            <p className="text-white/50">
+              <span>{labels.cnpj}: {siteConfig.company.cnpj}</span>
+              <span className="mx-2 hidden md:inline text-white/30">•</span>
+              <span className="block md:inline">{labels.address}: {siteConfig.company.address.formatted}</span>
+            </p>
+          </div>
+          <div className="text-white/50">
+            <span>{labels.email}: </span>
+            <a
+              href={`mailto:${contact.email.address}`}
+              className="text-white/70 underline underline-offset-2 transition hover:text-white"
+            >
+              {contact.email.address}
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 border-t border-white/5 px-5 py-5 text-sm text-white/45">
         <p>{labels.rights}</p>
         <nav className="flex flex-wrap gap-x-6 gap-y-2">
           <Link href={paths.privacy} className="transition hover:text-white">{labels.privacy}</Link>

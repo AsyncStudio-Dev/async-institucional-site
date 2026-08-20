@@ -326,7 +326,7 @@ export const pt: SiteContent = {
       title: "Política de Privacidade",
       lastUpdated: "30 de julho de 2026",
       intro:
-        "Esta política explica como a Async Studio (CAETANO APOLLO DA SILVEIRA, CNPJ 68.009.930/0001-40) trata dados pessoais em seu site institucional e em seus produtos, incluindo o Async Hub — nosso sistema de atendimento que integra WhatsApp e Instagram para pequenos negócios.",
+        "Esta política explica como a Async Studio (68.009.930 CAETANO APOLLO DA SILVEIRA, inscrita no CNPJ sob o nº 68.009.930/0001-40, com sede na Rua Bauru, 364 - Canudos, Novo Hamburgo - RS, CEP 93540-180) trata dados pessoais em seu site institucional e em seus produtos, incluindo o Async Hub — nosso sistema de atendimento que integra WhatsApp e Instagram para pequenos negócios.",
       sections: [
         {
           heading: "O que o Async Hub faz",
@@ -363,13 +363,13 @@ export const pt: SiteContent = {
         {
           heading: "Retenção e exclusão",
           paragraphs: [
-            "Os dados são mantidos enquanto a loja mantiver o Async Hub contratado. A qualquer momento, o titular dos dados (cliente da loja) ou a própria loja pode solicitar a exclusão ou anonimização dos dados de um contato específico, escrevendo para asyncstudio@outlook.com.",
+            "Os dados são mantidos enquanto a loja mantiver o Async Hub contratado. A qualquer momento, o titular dos dados (cliente da loja) ou a própria loja pode solicitar a exclusão ou anonimização dos dados de um contato específico, escrevendo para contato@asyncstudio.com.br.",
           ],
         },
         {
           heading: "Seus direitos (LGPD)",
           paragraphs: [
-            "Qualquer pessoa cujos dados sejam tratados através do Async Hub pode solicitar, mediante contato com asyncstudio@outlook.com: confirmação da existência de tratamento e acesso aos dados; correção de dados incompletos, inexatos ou desatualizados; anonimização, bloqueio ou eliminação de dados desnecessários; portabilidade a outro fornecedor; e eliminação dos dados tratados com consentimento, quando aplicável.",
+            "Qualquer pessoa cujos dados sejam tratados através do Async Hub pode solicitar, mediante contato com contato@asyncstudio.com.br: confirmação da existência de tratamento e acesso aos dados; correção de dados incompletos, inexatos ou desatualizados; anonimização, bloqueio ou eliminação de dados desnecessários; portabilidade a outro fornecedor; e eliminação dos dados tratados com consentimento, quando aplicável.",
           ],
         },
         {
@@ -380,7 +380,7 @@ export const pt: SiteContent = {
         },
         {
           heading: "Contato",
-          paragraphs: ["Dúvidas sobre esta política ou sobre o tratamento dos seus dados: asyncstudio@outlook.com."],
+          paragraphs: ["Dúvidas sobre esta política ou sobre o tratamento dos seus dados: contato@asyncstudio.com.br."],
         },
       ],
     },
@@ -393,7 +393,7 @@ export const pt: SiteContent = {
         {
           heading: "Quem oferece o serviço",
           paragraphs: [
-            "O Async Hub é oferecido pela Async Studio (CAETANO APOLLO DA SILVEIRA, CNPJ 68.009.930/0001-40). Ao usar o Async Hub, o negócio contratante (\"a loja\") concorda com estes termos.",
+            "O Async Hub é oferecido pela Async Studio (68.009.930 CAETANO APOLLO DA SILVEIRA, inscrita no CNPJ sob o nº 68.009.930/0001-40, com sede na Rua Bauru, 364 - Canudos, Novo Hamburgo - RS, CEP 93540-180). Ao usar o Async Hub, o negócio contratante (\"a loja\") concorda com estes termos.",
           ],
         },
         {
@@ -431,12 +431,12 @@ export const pt: SiteContent = {
         {
           heading: "Encerramento",
           paragraphs: [
-            "A loja contratante pode solicitar o encerramento do uso do Async Hub e a exclusão de seus dados a qualquer momento, escrevendo para asyncstudio@outlook.com.",
+            "A loja contratante pode solicitar o encerramento do uso do Async Hub e a exclusão de seus dados a qualquer momento, escrevendo para contato@asyncstudio.com.br.",
           ],
         },
         {
           heading: "Contato",
-          paragraphs: ["Dúvidas sobre estes termos: asyncstudio@outlook.com."],
+          paragraphs: ["Dúvidas sobre estes termos: contato@asyncstudio.com.br."],
         },
       ],
     },
@@ -453,11 +453,15 @@ export const pt: SiteContent = {
   ui: {
     footer: {
       featured: "Projeto em destaque",
-      rights: "© Async Studio. Todos os direitos reservados.",
+      rights: "© 2026 Async Studio. Todos os direitos reservados.",
       description: "Sites, sistemas e soluções digitais para empresas que querem crescer sem travar.",
       remote: "Projetos remotos com comunicação clara, etapas definidas e acompanhamento próximo.",
       privacy: "Política de Privacidade",
       terms: "Termos de Serviço",
+      legalName: "Razão Social",
+      cnpj: "CNPJ",
+      address: "Endereço",
+      email: "E-mail",
     },
     serviceCard: {
       audience: "Para quem",
@@ -481,6 +485,10 @@ export const pt: SiteContent = {
       whatsappHint: "Canal principal para iniciar a conversa com a Async Studio.",
       email: "E-mail comercial",
       instagram: "Instagram",
+      companyInfo: "Dados da Empresa",
+      legalName: "Razão Social",
+      cnpj: "CNPJ",
+      address: "Endereço comercial",
     },
     home: {
       problemsEyebrow: "Problemas que resolvemos",

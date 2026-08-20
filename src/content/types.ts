@@ -138,6 +138,10 @@ export type SiteContent = {
       remote: string;
       privacy: string;
       terms: string;
+      legalName: string;
+      cnpj: string;
+      address: string;
+      email: string;
     };
     serviceCard: {
       audience: string;
@@ -161,6 +165,10 @@ export type SiteContent = {
       whatsappHint: string;
       email: string;
       instagram: string;
+      companyInfo: string;
+      legalName: string;
+      cnpj: string;
+      address: string;
     };
     home: {
       problemsEyebrow: string;

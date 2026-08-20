@@ -73,6 +73,22 @@ export function Contact({ content }: ContactProps) {
         </GlassCard>
         <GlassCard className="p-6">
           <p className="text-sm font-semibold uppercase tracking-[0.12em] text-async-frost-dark">
+            {labels.companyInfo}
+          </p>
+          <div className="mt-3 space-y-2 text-sm text-async-graphite">
+            <p>
+              <span className="font-semibold text-async-ink">{labels.legalName}:</span> {siteConfig.company.legalName}
+            </p>
+            <p>
+              <span className="font-semibold text-async-ink">{labels.cnpj}:</span> {siteConfig.company.cnpj}
+            </p>
+            <p>
+              <span className="font-semibold text-async-ink">{labels.address}:</span> {siteConfig.company.address.formatted}
+            </p>
+          </div>
+        </GlassCard>
+        <GlassCard className="p-6">
+          <p className="text-sm font-semibold uppercase tracking-[0.12em] text-async-frost-dark">
             {content.remoteService.title}
           </p>
           <p className="mt-3 text-sm leading-6 text-async-graphite">{content.remoteService.description}</p>

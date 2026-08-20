@@ -325,7 +325,7 @@ export const en: SiteContent = {
       title: "Privacy Policy",
       lastUpdated: "July 30, 2026",
       intro:
-        "This policy explains how Async Studio (CAETANO APOLLO DA SILVEIRA, CNPJ 68.009.930/0001-40) handles personal data on its institutional website and in its products, including Async Hub — our service desk that unifies WhatsApp and Instagram for small businesses.",
+        "This policy explains how Async Studio (68.009.930 CAETANO APOLLO DA SILVEIRA, registered under CNPJ 68.009.930/0001-40, headquartered at Rua Bauru, 364 - Canudos, Novo Hamburgo - RS, Brazil, CEP 93540-180) handles personal data on its institutional website and in its products, including Async Hub — our service desk that unifies WhatsApp and Instagram for small businesses.",
       sections: [
         {
           heading: "What Async Hub does",
@@ -362,13 +362,13 @@ export const en: SiteContent = {
         {
           heading: "Retention and deletion",
           paragraphs: [
-            "Data is kept for as long as the store keeps Async Hub contracted. At any time, the data subject (the store's customer) or the store itself may request deletion or anonymization of a specific contact's data by writing to asyncstudio@outlook.com.",
+            "Data is kept for as long as the store keeps Async Hub contracted. At any time, the data subject (the store's customer) or the store itself may request deletion or anonymization of a specific contact's data by writing to contato@asyncstudio.com.br.",
           ],
         },
         {
           heading: "Your rights (LGPD)",
           paragraphs: [
-            "Anyone whose data is processed through Async Hub may request, by contacting asyncstudio@outlook.com: confirmation of processing and access to the data; correction of incomplete, inaccurate or outdated data; anonymization, blocking or deletion of unnecessary data; portability to another provider; and deletion of data processed under consent, where applicable.",
+            "Anyone whose data is processed through Async Hub may request, by contacting contato@asyncstudio.com.br: confirmation of processing and access to the data; correction of incomplete, inaccurate or outdated data; anonymization, blocking or deletion of unnecessary data; portability to another provider; and deletion of data processed under consent, where applicable.",
           ],
         },
         {
@@ -379,7 +379,7 @@ export const en: SiteContent = {
         },
         {
           heading: "Contact",
-          paragraphs: ["Questions about this policy or how your data is handled: asyncstudio@outlook.com."],
+          paragraphs: ["Questions about this policy or how your data is handled: contato@asyncstudio.com.br."],
         },
       ],
     },
@@ -392,7 +392,7 @@ export const en: SiteContent = {
         {
           heading: "Who provides the service",
           paragraphs: [
-            "Async Hub is provided by Async Studio (CAETANO APOLLO DA SILVEIRA, CNPJ 68.009.930/0001-40). By using Async Hub, the contracting business (\"the store\") agrees to these terms.",
+            "Async Hub is provided by Async Studio (68.009.930 CAETANO APOLLO DA SILVEIRA, registered under CNPJ 68.009.930/0001-40, headquartered at Rua Bauru, 364 - Canudos, Novo Hamburgo - RS, Brazil, CEP 93540-180). By using Async Hub, the contracting business (\"the store\") agrees to these terms.",
           ],
         },
         {
@@ -428,12 +428,12 @@ export const en: SiteContent = {
         {
           heading: "Termination",
           paragraphs: [
-            "The contracting store may request to stop using Async Hub and delete its data at any time by writing to asyncstudio@outlook.com.",
+            "The contracting store may request to stop using Async Hub and delete its data at any time by writing to contato@asyncstudio.com.br.",
           ],
         },
         {
           heading: "Contact",
-          paragraphs: ["Questions about these terms: asyncstudio@outlook.com."],
+          paragraphs: ["Questions about these terms: contato@asyncstudio.com.br."],
         },
       ],
     },
@@ -450,11 +450,15 @@ export const en: SiteContent = {
   ui: {
     footer: {
       featured: "Featured project",
-      rights: "© Async Studio. All rights reserved.",
+      rights: "© 2026 Async Studio. All rights reserved.",
       description: "Websites, systems and digital solutions for companies ready to grow without friction.",
       remote: "Remote projects with clear communication, defined stages and close follow-up.",
       privacy: "Privacy Policy",
       terms: "Terms of Service",
+      legalName: "Legal Name",
+      cnpj: "CNPJ",
+      address: "Address",
+      email: "Email",
     },
     serviceCard: {
       audience: "For",
@@ -478,6 +482,10 @@ export const en: SiteContent = {
       whatsappHint: "Main channel to start the conversation with Async Studio.",
       email: "Business email",
       instagram: "Instagram",
+      companyInfo: "Company Information",
+      legalName: "Legal Name",
+      cnpj: "CNPJ",
+      address: "Registered address",
     },
     home: {
       problemsEyebrow: "Problems we solve",
