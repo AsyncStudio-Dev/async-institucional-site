@@ -1,5 +1,6 @@
 import type { SiteContent } from "../content/types";
 import { Card } from "../components/ui/Card";
+import { CTAWhatsApp } from "../components/ui/CTAWhatsApp";
 import { FounderCard } from "../components/ui/FounderCard";
 import { ProcessTimeline } from "../components/ui/ProcessTimeline";
 import { Reveal } from "../components/ui/Reveal";
@@ -79,6 +80,16 @@ export function About({ content }: AboutProps) {
           />
         </Reveal>
         <ProcessTimeline steps={content.process} />
+      </div>
+
+      <div className="mt-20 md:mt-28">
+        <Card className="px-6 py-10 text-center md:px-10 md:py-14">
+          <h2 className="font-display mx-auto max-w-3xl text-3xl font-semibold leading-tight text-text-primary md:text-4xl">
+            {content.sections.finalCta}
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-text-secondary">{content.sections.finalCtaDescription}</p>
+          <CTAWhatsApp content={content} label={content.contact.primaryLabel} message={content.whatsappMessages.contactCta} className="mt-7" size="large" />
+        </Card>
       </div>
     </section>
   );

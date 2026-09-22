@@ -83,7 +83,7 @@ export function Home({ content }: HomeProps) {
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <CTAWhatsApp content={content} label={content.bizManager.cta} message={content.whatsappMessages.bizManager} size="large" />
-              <Button variant="secondary" tone="dark" href={paths.projects}>
+              <Button variant="secondary" tone="dark" size="large" href={paths.projects}>
                 {labels.bizProjectsCta}
               </Button>
             </div>

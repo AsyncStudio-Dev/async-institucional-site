@@ -1,11 +1,9 @@
 import Image from "next/image";
 import { bizManagerTransparent } from "../assets";
 import type { SiteContent } from "../content/types";
-import { Button } from "../components/ui/Button";
 import { Card } from "../components/ui/Card";
 import { CTAWhatsApp } from "../components/ui/CTAWhatsApp";
 import { ProjectPreview } from "../components/ui/ProjectPreview";
-import { Reveal } from "../components/ui/Reveal";
 import { BizManagerShowcase, type BizManagerShowcaseSlide } from "../components/ui/BizManagerShowcase";
 
 type ProjectsProps = {
@@ -22,7 +20,6 @@ export function Projects({ content }: ProjectsProps) {
         { src: "/images/projects/bizmanager/clients-management.webp", title: "Organizacao de clientes", description: "Carteira de clientes com busca, status, historico e acoes importantes sempre acessiveis.", alt: "Tela de clientes do BizManager com indicadores e tabela de clientes cadastrados." },
         { src: "/images/projects/bizmanager/inventory-control.webp", title: "Gestao de estoque", description: "Controle de produtos, niveis de reposicao e distribuicao por categoria em um painel claro.", alt: "Tela de estoque do BizManager com valor em estoque, total de itens, alertas e distribuicao por categoria." },
         { src: "/images/projects/bizmanager/agenda-week.webp", title: "Agenda operacional", description: "Visualizacao semanal para organizar atendimentos, compromissos e rotina do negocio.", alt: "Tela de agenda do BizManager com calendario semanal e compromissos posicionados por horario." },
-        { src: "/images/projects/bizmanager/settings-profile.webp", title: "Configuracoes", description: "Area de conta e preferencias para apoiar a evolucao do produto sem dispersar a experiencia.", alt: "Tela de configuracoes do BizManager com informacoes pessoais e preferencias de conta." },
       ]
     : [
         { src: "/images/projects/bizmanager/dashboard-overview.webp", title: "Main dashboard", description: "Overview of indicators, cash flow and schedule in one centralized interface.", alt: "BizManager main dashboard with financial indicators, cash-flow chart and today's schedule." },
@@ -30,7 +27,43 @@ export function Projects({ content }: ProjectsProps) {
         { src: "/images/projects/bizmanager/clients-management.webp", title: "Client organization", description: "Client portfolio with search, status, history and key actions always accessible.", alt: "BizManager clients screen with indicators and a client management table." },
         { src: "/images/projects/bizmanager/inventory-control.webp", title: "Inventory management", description: "Product control, replenishment levels and category distribution in a clear panel.", alt: "BizManager inventory screen with stock value, total items, alerts and category distribution." },
         { src: "/images/projects/bizmanager/agenda-week.webp", title: "Operational schedule", description: "Weekly view to organize appointments, services and the business routine.", alt: "BizManager schedule screen with a weekly calendar and appointments positioned by time." },
-        { src: "/images/projects/bizmanager/settings-profile.webp", title: "Settings", description: "Account and preference area that supports product evolution without dispersing the experience.", alt: "BizManager settings screen with personal information and account preferences." },
+      ];
+  const otherProjects = isPortuguese
+    ? [
+        {
+          slug: "asynchub",
+          src: "/images/projects/asynchub/dashboard.webp",
+          alt: "Dashboard do Async Hub CRM com metricas de conversas no Instagram, funil de atendimento e status dos canais.",
+          title: "Async Hub CRM",
+          status: "Em validacao",
+          description: "CRM multi-tenant para centralizar conversas do Instagram e WhatsApp, com dashboard de desempenho e funil de vendas em tempo real.",
+        },
+        {
+          slug: "encaixe",
+          src: "/images/projects/encaixe/vitrine-calendario.webp",
+          alt: "Vitrine publica de agendamento do Encaixe com calendario, preferencia de profissional e horarios disponiveis.",
+          title: "Encaixe",
+          status: "Em desenvolvimento",
+          description: "Sistema de agendamentos com vitrine publica de reserva, grade de horarios flexivel e painel para multiplos profissionais.",
+        },
+      ]
+    : [
+        {
+          slug: "asynchub",
+          src: "/images/projects/asynchub/dashboard.webp",
+          alt: "Async Hub CRM dashboard with Instagram conversation metrics, service funnel and channel status.",
+          title: "Async Hub CRM",
+          status: "In validation",
+          description: "Multi-tenant CRM to centralize Instagram and WhatsApp conversations, with a performance dashboard and real-time sales funnel.",
+        },
+        {
+          slug: "encaixe",
+          src: "/images/projects/encaixe/vitrine-calendario.webp",
+          alt: "Encaixe public booking storefront with calendar, professional preference and available time slots.",
+          title: "Encaixe",
+          status: "In development",
+          description: "Appointment scheduling system with a public booking storefront, flexible time-slot grid and a panel for multiple professionals.",
+        },
       ];
   const bizManagerIdentityHighlights = isPortuguese
     ? ["Módulos de gestão conectados em uma base única.", "Interface pensada para leitura rápida de dados e rotinas.", "Arquitetura full-stack preparada para evolução do produto."]
@@ -46,79 +79,14 @@ export function Projects({ content }: ProjectsProps) {
           <p className="eyebrow text-async-green">{labels.heroEyebrow}</p>
           <h1 className="font-display mt-4 max-w-4xl text-4xl font-semibold leading-tight text-text-primary md:text-6xl">{labels.heroTitle}</h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-text-secondary">{labels.heroDescription}</p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-8">
             <CTAWhatsApp content={content} label={labels.heroPrimaryCta} message={content.whatsappMessages.hero} size="large" />
-            <Button href="#projeto-destaque" variant="secondary" size="large">
-              {labels.heroSecondaryCta}
-            </Button>
           </div>
         </div>
         <ProjectPreview content={content} eyebrow={labels.featured} title="BizManager" />
       </div>
 
-      <div id="projeto-destaque" className="mt-20 scroll-mt-28 md:mt-28">
-        <Reveal>
-          <div className="mb-6 max-w-3xl">
-            <p className="eyebrow text-async-green">{labels.featured}</p>
-            <h2 className="font-display mt-3 text-3xl font-semibold text-text-primary md:text-4xl">BizManager</h2>
-            <p className="mt-4 text-lg leading-8 text-text-secondary">{content.bizManager.summary}</p>
-          </div>
-        </Reveal>
-
-        <div className="grid gap-5 lg:grid-cols-[1fr_0.95fr]">
-          <Reveal>
-            <Card className="flex h-full flex-col gap-5 sm:flex-row sm:items-start">
-              <Image src={bizManagerTransparent} alt="" className="h-16 w-16 object-contain" />
-              <div>
-                <p className="eyebrow text-async-green">{content.bizManager.status}</p>
-                <h3 className="font-display mt-3 text-2xl font-semibold text-text-primary">{labels.objective}</h3>
-                <p className="mt-4 text-base leading-7 text-text-secondary">{content.bizManager.objective}</p>
-              </div>
-            </Card>
-          </Reveal>
-          <Reveal delayMs={100}>
-            <Card className="h-full bg-surface-soft">
-              <p className="eyebrow text-async-green">{content.bizManager.audience}</p>
-              <h3 className="font-display mt-3 text-2xl font-semibold text-text-primary">{labels.whyExists}</h3>
-              <p className="mt-4 text-base leading-7 text-text-secondary">{content.bizManager.proof}</p>
-            </Card>
-          </Reveal>
-        </div>
-      </div>
-
-      <div className="mt-16 md:mt-20">
-        <Reveal>
-          <h2 className="font-display text-3xl font-semibold text-text-primary">{labels.demonstrates}</h2>
-        </Reveal>
-        <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-          {content.bizManager.demonstrates.map((item, index) => (
-            <Reveal key={item.title} delayMs={index * 60}>
-              <Card className="flex h-full flex-col">
-                <span className="font-mono-brand text-sm text-async-green">{String(index + 1).padStart(2, "0")}</span>
-                <h3 className="font-display mt-3 text-lg font-semibold text-text-primary">{item.title}</h3>
-                <p className="mt-3 flex-1 text-sm leading-relaxed text-text-secondary">{item.description}</p>
-              </Card>
-            </Reveal>
-          ))}
-        </div>
-      </div>
-
-      <div className="mt-14 md:mt-16">
-        <div className="mb-5">
-          <h2 className="font-display text-xl font-semibold text-text-primary md:text-2xl">{labels.modules}</h2>
-          <p className="mt-2 max-w-2xl text-sm leading-relaxed text-text-secondary">{labels.modulesDescription}</p>
-        </div>
-        <div className="grid grid-cols-1 gap-3.5 sm:grid-cols-2 lg:grid-cols-5">
-          {content.bizManager.modules.map((module) => (
-            <Card key={module.title} className="!p-4">
-              <h3 className="text-base font-semibold text-text-primary">{module.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-text-secondary">{module.description}</p>
-            </Card>
-          ))}
-        </div>
-      </div>
-
-      <div id="previews-produto" className="mt-16 scroll-mt-28 md:mt-20">
+      <div id="previews-produto" className="mt-20 scroll-mt-28 md:mt-28">
         <h2 className="font-display text-3xl font-semibold text-text-primary">{labels.gallery}</h2>
         <p className="mt-3 max-w-2xl text-base leading-7 text-text-secondary">{labels.galleryDescription}</p>
         <div className="mt-6 grid grid-cols-1 gap-5 lg:grid-cols-10 lg:gap-6">
@@ -147,7 +115,7 @@ export function Projects({ content }: ProjectsProps) {
             </div>
 
             <div>
-              <p className="eyebrow text-async-green">{isPortuguese ? "O que o projeto demonstra" : "What the project demonstrates"}</p>
+              <p className="text-sm font-semibold text-text-primary">{isPortuguese ? "O que o projeto demonstra" : "What the project demonstrates"}</p>
               <ul className="mt-3 space-y-2.5">
                 {bizManagerIdentityHighlights.map((item) => (
                   <li key={item} className="flex gap-2 text-xs leading-relaxed text-text-secondary">
@@ -159,7 +127,7 @@ export function Projects({ content }: ProjectsProps) {
             </div>
 
             <div>
-              <p className="eyebrow text-async-green">{isPortuguese ? "Módulos contemplados" : "Covered modules"}</p>
+              <p className="text-sm font-semibold text-text-primary">{isPortuguese ? "Módulos contemplados" : "Covered modules"}</p>
               <div className="mt-3 flex flex-wrap gap-2">
                 {bizManagerModuleChips.map((module) => (
                   <span key={module} className="rounded-full border border-border bg-surface px-2.5 py-1 text-[11px] font-semibold text-text-secondary">
@@ -178,16 +146,24 @@ export function Projects({ content }: ProjectsProps) {
         </div>
       </div>
 
-      <div className="mt-20 md:mt-24">
-        <div className="max-w-3xl">
-          <h2 className="font-display text-3xl font-semibold text-text-primary md:text-4xl">{labels.buildForCompany}</h2>
-          <p className="mt-4 text-base leading-8 text-text-secondary">{labels.buildForCompanyDescription}</p>
-        </div>
-        <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {content.bizManager.buildOptions.map((item) => (
-            <Card key={item.title} className="flex h-full flex-col">
-              <h3 className="text-base font-semibold text-text-primary sm:text-lg">{item.title}</h3>
-              <p className="mt-3 flex-1 text-[13px] leading-relaxed text-text-secondary sm:text-sm">{item.description}</p>
+      <div className="mt-20 md:mt-28">
+        <h2 className="font-display text-3xl font-semibold text-text-primary">{isPortuguese ? "Outros projetos" : "Other projects"}</h2>
+        <p className="mt-3 max-w-2xl text-base leading-7 text-text-secondary">
+          {isPortuguese
+            ? "Produtos autorais em desenvolvimento, usados como laboratorio para testar arquitetura, interface e integracao antes de levar essa base para projetos de clientes."
+            : "In-development proprietary products, used as a lab to test architecture, interface and integrations before bringing that base into client projects."}
+        </p>
+        <div className="mt-6 grid gap-5 sm:grid-cols-2">
+          {otherProjects.map((project) => (
+            <Card key={project.slug} className="flex h-full flex-col !p-0 overflow-hidden">
+              <div className="relative aspect-[1440/900] w-full border-b border-border">
+                <Image src={project.src} alt={project.alt} fill className="object-cover object-top" sizes="(min-width: 640px) 50vw, 100vw" />
+              </div>
+              <div className="flex flex-1 flex-col p-5">
+                <span className="eyebrow w-fit rounded-full border border-border bg-surface px-3 py-1 text-async-green">{project.status}</span>
+                <h3 className="font-display mt-3 text-xl font-semibold text-text-primary">{project.title}</h3>
+                <p className="mt-2 flex-1 text-sm leading-6 text-text-secondary">{project.description}</p>
+              </div>
             </Card>
           ))}
         </div>

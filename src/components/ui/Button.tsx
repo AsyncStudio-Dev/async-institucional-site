@@ -24,12 +24,17 @@ export function Button({
   ...props
 }: ButtonProps) {
   const base =
-    "font-display inline-flex items-center justify-center gap-2 font-medium transition duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-async-green focus-visible:ring-offset-2 focus-visible:ring-offset-transparent";
+    "font-display inline-flex items-center justify-center gap-2 font-medium transition-[transform,background-color,border-color,color] duration-200 ease-out active:scale-[0.97] focus:outline-none focus-visible:ring-2 focus-visible:ring-async-green focus-visible:ring-offset-2 focus-visible:ring-offset-transparent";
+
+  const textSizes = {
+    default: "text-[15px]",
+    large: "text-base",
+  };
 
   if (variant === "tertiary") {
     const tertiaryColor = tone === "dark" ? "text-async-green hover:text-light-mint" : "text-async-green hover:text-async-green/80";
     return (
-      <a className={`${base} rounded-sm text-[15px] ${tertiaryColor} ${className}`} {...props}>
+      <a className={`${base} rounded-sm ${textSizes[size]} ${tertiaryColor} ${className}`} {...props}>
         {children}
         {withArrow ? <span aria-hidden="true">→</span> : null}
       </a>
@@ -37,12 +42,12 @@ export function Button({
   }
 
   const sizes = {
-    default: "min-h-11 px-5 py-3 text-[15px]",
-    large: "min-h-12 px-6 py-3.5 text-base",
+    default: `h-11 px-6 ${textSizes.default}`,
+    large: `h-12 px-7 ${textSizes.large}`,
   };
 
   const variants = {
-    primary: "bg-async-green text-deep-forest hover:brightness-105 active:brightness-95",
+    primary: "bg-async-green text-deep-forest hover:bg-light-mint",
     secondary:
       tone === "dark"
         ? "border border-mint-white/25 text-mint-white hover:border-mint-white/50 hover:bg-mint-white/5"

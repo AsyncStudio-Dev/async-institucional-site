@@ -48,35 +48,37 @@ export function Contact({ content }: ContactProps) {
             </span>
           </a>
         ) : null}
-        <Card>
-          <p className="eyebrow text-async-green">{labels.email}</p>
-          <a className="mt-3 block break-words text-xl font-semibold text-text-primary transition duration-200 hover:text-deep-forest" href={`mailto:${contact.email.address}`}>
-            {contact.email.address}
-          </a>
-        </Card>
-        <Card>
-          <p className="eyebrow text-async-green">{labels.instagram}</p>
-          <a
-            className="mt-3 block break-words text-xl font-semibold text-text-primary transition duration-200 hover:text-deep-forest"
-            href={contact.instagram.url}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {contact.instagram.handle}
-          </a>
-        </Card>
-        <Card>
-          <p className="eyebrow text-async-green">{labels.companyInfo}</p>
-          <div className="mt-3 space-y-2 text-sm text-text-secondary">
-            <p>
-              <span className="font-semibold text-text-primary">{labels.legalName}:</span> {siteConfig.company.legalName}
-            </p>
-            <p>
-              <span className="font-semibold text-text-primary">{labels.cnpj}:</span> {siteConfig.company.cnpj}
-            </p>
-            <p>
-              <span className="font-semibold text-text-primary">{labels.address}:</span> {siteConfig.company.address.formatted}
-            </p>
+        <Card className="!p-0 divide-y divide-border">
+          <div className="p-6">
+            <p className="eyebrow text-async-green">{labels.email}</p>
+            <a className="mt-3 block break-words text-xl font-semibold text-text-primary transition duration-200 hover:text-deep-forest" href={`mailto:${contact.email.address}`}>
+              {contact.email.address}
+            </a>
+          </div>
+          <div className="p-6">
+            <p className="eyebrow text-async-green">{labels.instagram}</p>
+            <a
+              className="mt-3 block break-words text-xl font-semibold text-text-primary transition duration-200 hover:text-deep-forest"
+              href={contact.instagram.url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {contact.instagram.handle}
+            </a>
+          </div>
+          <div className="p-6">
+            <p className="eyebrow text-async-green">{labels.companyInfo}</p>
+            <div className="mt-3 space-y-2 text-sm text-text-secondary">
+              <p>
+                <span className="font-semibold text-text-primary">{labels.legalName}:</span> {siteConfig.company.legalName}
+              </p>
+              <p>
+                <span className="font-semibold text-text-primary">{labels.cnpj}:</span> {siteConfig.company.cnpj}
+              </p>
+              <p>
+                <span className="font-semibold text-text-primary">{labels.address}:</span> {siteConfig.company.address.formatted}
+              </p>
+            </div>
           </div>
         </Card>
         <Card className="bg-surface-soft">

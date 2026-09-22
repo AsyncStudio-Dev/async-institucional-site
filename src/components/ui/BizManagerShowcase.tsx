@@ -62,10 +62,7 @@ export function BizManagerShowcase({ slides }: BizManagerShowcaseProps) {
       <div className="p-4 sm:p-5 md:p-6">
         <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
-            <span className="eyebrow text-async-green">
-              {String(activeIndex + 1).padStart(2, "0")} / {String(slides.length).padStart(2, "0")}
-            </span>
-            <h3 className="font-display mt-2 text-xl font-semibold text-text-primary md:text-2xl">{activeSlide.title}</h3>
+            <h3 className="font-display text-xl font-semibold text-text-primary md:text-2xl">{activeSlide.title}</h3>
             <p className="mt-2 max-w-2xl text-sm leading-relaxed text-text-secondary md:text-base">{activeSlide.description}</p>
           </div>
 
