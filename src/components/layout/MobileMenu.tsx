@@ -29,30 +29,29 @@ export function MobileMenu({ content, page }: MobileMenuProps) {
     <div className="md:hidden">
       <button
         type="button"
-        className="inline-flex h-11 w-11 items-center justify-center rounded-async border border-ice-mist bg-white/80 text-async-ink shadow-sm transition hover:border-async-frost hover:bg-white"
+        className="inline-flex h-11 w-11 items-center justify-center rounded-sm border border-border text-text-primary transition duration-200 hover:border-async-green"
         onClick={() => setOpen((value) => !value)}
         aria-expanded={open}
         aria-controls={menuId}
         aria-label={menuLabel}
       >
         <span className="grid gap-1.5" aria-hidden="true">
-          <span className={`block h-0.5 w-5 rounded-full bg-current transition ${open ? "translate-y-2 rotate-45" : ""}`} />
-          <span className={`block h-0.5 w-5 rounded-full bg-current transition ${open ? "opacity-0" : ""}`} />
-          <span className={`block h-0.5 w-5 rounded-full bg-current transition ${open ? "-translate-y-2 -rotate-45" : ""}`} />
+          <span className={`block h-0.5 w-5 rounded-full bg-current transition duration-200 ${open ? "translate-y-2 rotate-45" : ""}`} />
+          <span className={`block h-0.5 w-5 rounded-full bg-current transition duration-200 ${open ? "opacity-0" : ""}`} />
+          <span className={`block h-0.5 w-5 rounded-full bg-current transition duration-200 ${open ? "-translate-y-2 -rotate-45" : ""}`} />
         </span>
       </button>
       {open ? (
-        <div
-          id={menuId}
-          className="liquid-glass absolute left-5 right-5 top-20 rounded-2xl p-5"
-        >
-          <nav className="grid gap-4 text-sm font-medium text-async-graphite">
+        <div id={menuId} className="absolute left-5 right-5 top-20 rounded-md border border-border bg-white p-5 shadow-card">
+          <nav className="grid gap-1 text-sm font-medium text-text-secondary">
             {navItems.map((item) => (
               <Link
                 key={item.key}
                 onClick={() => setOpen(false)}
                 href={item.href}
-                className={`rounded-async px-3 py-2 ${page === item.key ? "bg-ice-blue/55 text-async-ink" : ""}`}
+                className={`rounded-sm px-3 py-2.5 transition duration-200 hover:text-text-primary ${
+                  page === item.key ? "bg-surface-soft text-text-primary" : ""
+                }`}
                 aria-current={page === item.key ? "page" : undefined}
               >
                 {item.label}

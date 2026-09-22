@@ -1,6 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
-import { asyncIconTransparent } from "../../assets";
+import { Mark } from "../brand/Mark";
 
 type BrandLogoProps = {
   to: string;
@@ -9,13 +8,11 @@ type BrandLogoProps = {
 
 export function BrandLogo({ to, inverted = false }: BrandLogoProps) {
   return (
-    <Link href={to} className="inline-flex items-center gap-3" aria-label="Async Studio">
-      <Image
-        src={asyncIconTransparent}
-        alt=""
-        className="h-10 w-10 rounded-async object-contain"
-      />
-      <span className={`text-base font-bold ${inverted ? "text-white" : "text-async-ink"}`}>Async Studio</span>
+    <Link href={to} className="inline-flex items-center gap-2.5" aria-label="Async Studio">
+      <Mark className="h-8 w-8 text-async-green" />
+      <span className={`font-display text-base font-semibold ${inverted ? "text-mint-white" : "text-text-primary"}`}>
+        Async<span className="font-normal opacity-70"> Studio</span>
+      </span>
     </Link>
   );
 }

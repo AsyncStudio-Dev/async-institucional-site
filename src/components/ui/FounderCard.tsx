@@ -1,3 +1,5 @@
+import { Card } from "./Card";
+
 type FounderCardProps = {
   name: string;
   role: string;
@@ -6,12 +8,10 @@ type FounderCardProps = {
 
 export function FounderCard({ name, role, description }: FounderCardProps) {
   return (
-    <div className="liquid-glass rounded-2xl p-5 text-left h-full flex flex-col">
-      <p className="text-lg font-semibold text-async-ink">{name}</p>
-      <p className="mt-0.5 text-xs font-semibold text-async-frost-dark">{role}</p>
-      {description ? (
-        <p className="mt-3 text-sm leading-relaxed text-async-graphite flex-1">{description}</p>
-      ) : null}
-    </div>
+    <Card className="flex h-full flex-col text-left">
+      <p className="font-display text-lg font-semibold text-text-primary">{name}</p>
+      <p className="eyebrow mt-1 text-async-green">{role}</p>
+      {description ? <p className="mt-3 flex-1 text-sm leading-relaxed text-text-secondary">{description}</p> : null}
+    </Card>
   );
 }

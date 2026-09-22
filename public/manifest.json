@@ -4,8 +4,8 @@
   "description": "Sites, sistemas e soluções digitais para empresas que querem crescer sem travar.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#F7F9FC",
-  "theme_color": "#8A6CFF",
+  "background_color": "#0B0F0B",
+  "theme_color": "#0B0F0B",
   "icons": [
     {
       "src": "/icon-192.png",

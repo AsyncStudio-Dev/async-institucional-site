@@ -28,42 +28,31 @@ export function Footer({ content }: FooterProps) {
   const whatsappHref = createWhatsAppLink(content.whatsappMessages.footer);
 
   return (
-    <footer className="border-t border-white/10 bg-async-ink text-white">
+    <footer className="border-t border-border-dark bg-deep-forest text-mint-white">
       <div className="mx-auto grid max-w-7xl gap-10 px-5 py-12 md:grid-cols-2 lg:grid-cols-[1.25fr_0.8fr_1.1fr_1fr]">
         <div className="flex flex-col items-start">
           <BrandLogo to={paths.home} inverted />
-          <p className="mt-4 max-w-md text-base font-medium leading-7 text-white/90">
-            {labels.description}
-          </p>
-          <p className="mt-3 max-w-md text-sm leading-6 text-white/50">
-            {labels.remote}
-          </p>
-          <Button
-            href={whatsappHref}
-            variant="dark-glass"
-            className="mt-6"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span aria-hidden="true" className="h-2 w-2 rounded-full bg-async-cyan shadow-[0_0_0_3px_rgba(156,237,231,0.16)]" />
+          <p className="mt-4 max-w-md text-base font-medium leading-7 text-mint-white/90">{labels.description}</p>
+          <p className="mt-3 max-w-md text-sm leading-6 text-mint-white/50">{labels.remote}</p>
+          <Button href={whatsappHref} variant="secondary" tone="dark" className="mt-6" target="_blank" rel="noopener noreferrer">
             {content.nav.cta}
           </Button>
         </div>
 
         <div>
-          <p className="text-sm font-semibold uppercase tracking-[0.12em] text-async-cyan">{content.nav.home}</p>
-          <nav className="mt-4 flex flex-col gap-3 text-sm text-white/60">
-            <Link className="transition hover:text-white" href={paths.home}>{content.nav.home}</Link>
-            <Link className="transition hover:text-white" href={paths.services}>{content.nav.services}</Link>
-            <Link className="transition hover:text-white" href={paths.projects}>{content.nav.projects}</Link>
-            <Link className="transition hover:text-white" href={paths.about}>{content.nav.about}</Link>
-            <Link className="transition hover:text-white" href={paths.contact}>{content.nav.contact}</Link>
+          <p className="eyebrow text-light-mint/80">{content.nav.home}</p>
+          <nav className="mt-4 flex flex-col gap-3 text-sm text-mint-white/60">
+            <Link className="transition duration-200 hover:text-mint-white" href={paths.home}>{content.nav.home}</Link>
+            <Link className="transition duration-200 hover:text-mint-white" href={paths.services}>{content.nav.services}</Link>
+            <Link className="transition duration-200 hover:text-mint-white" href={paths.projects}>{content.nav.projects}</Link>
+            <Link className="transition duration-200 hover:text-mint-white" href={paths.about}>{content.nav.about}</Link>
+            <Link className="transition duration-200 hover:text-mint-white" href={paths.contact}>{content.nav.contact}</Link>
           </nav>
         </div>
 
         <div>
-          <p className="text-sm font-semibold uppercase tracking-[0.12em] text-async-cyan">{content.nav.services}</p>
-          <ul className="mt-4 flex flex-col gap-3 text-sm text-white/60">
+          <p className="eyebrow text-light-mint/80">{content.nav.services}</p>
+          <ul className="mt-4 flex flex-col gap-3 text-sm text-mint-white/60">
             {content.services.map((service) => {
               const displayTitle =
                 service.title === "SaaS / MVP para startups" || service.title === "SaaS / MVP for startups"
@@ -71,10 +60,7 @@ export function Footer({ content }: FooterProps) {
                   : service.title;
               return (
                 <li key={service.title}>
-                  <Link
-                    href={`${paths.services}#${getServiceAnchorId(service.title)}`}
-                    className="transition hover:text-white"
-                  >
+                  <Link href={`${paths.services}#${getServiceAnchorId(service.title)}`} className="transition duration-200 hover:text-mint-white">
                     {displayTitle}
                   </Link>
                 </li>
@@ -84,29 +70,21 @@ export function Footer({ content }: FooterProps) {
         </div>
 
         <div>
-          <p className="text-sm font-semibold uppercase tracking-[0.12em] text-async-cyan">{labels.featured}</p>
-          <Link
-            href={paths.projects}
-            className="mt-4 block rounded-async border border-white/5 bg-white/[0.02] p-4 transition hover:border-white/10 hover:bg-white/[0.05]"
-          >
-            <span className="text-sm font-semibold text-white">BizManager</span>
-            <span className="mt-1 block text-xs text-white/50">{content.bizManager.status}</span>
+          <p className="eyebrow text-light-mint/80">{labels.featured}</p>
+          <Link href={paths.projects} className="mt-4 block rounded-sm border border-border-dark p-4 transition duration-200 hover:border-light-mint/30">
+            <span className="text-sm font-semibold text-mint-white">BizManager</span>
+            <span className="mt-1 block text-xs text-mint-white/50">{content.bizManager.status}</span>
           </Link>
-          <p className="mt-6 text-sm font-semibold uppercase tracking-[0.12em] text-async-cyan">{content.nav.contact}</p>
-          <div className="mt-4 flex flex-col gap-2.5 text-sm text-white/60">
-            <a className="block break-words transition hover:text-white" href={`mailto:${contact.email.address}`}>
+          <p className="eyebrow mt-6 text-light-mint/80">{content.nav.contact}</p>
+          <div className="mt-4 flex flex-col gap-2.5 text-sm text-mint-white/60">
+            <a className="block break-words transition duration-200 hover:text-mint-white" href={`mailto:${contact.email.address}`}>
               {contact.email.address}
             </a>
-            <a className="block break-words transition hover:text-white" href={contact.instagram.url} target="_blank" rel="noopener noreferrer">
+            <a className="block break-words transition duration-200 hover:text-mint-white" href={contact.instagram.url} target="_blank" rel="noopener noreferrer">
               {contact.instagram.handle}
             </a>
             {contact.whatsapp.number && (
-              <a
-                className="block break-words transition hover:text-white"
-                href={whatsappHref}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a className="block break-words transition duration-200 hover:text-mint-white" href={whatsappHref} target="_blank" rel="noopener noreferrer">
                 WhatsApp: {contact.whatsapp.display}
               </a>
             )}
@@ -114,36 +92,33 @@ export function Footer({ content }: FooterProps) {
         </div>
       </div>
 
-      <div className="mx-auto max-w-7xl border-t border-white/10 px-5 py-6 text-xs leading-relaxed text-white/55">
+      <div className="mx-auto max-w-7xl border-t border-border-dark px-5 py-6 text-xs leading-relaxed text-mint-white/55">
         <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
           <div className="space-y-1">
-            <p className="font-medium text-white/80">
-              <span className="font-semibold text-white">{siteConfig.company.tradeName}</span> — {labels.legalName}: {siteConfig.company.legalName}
+            <p className="font-medium text-mint-white/80">
+              <span className="font-semibold text-mint-white">{siteConfig.company.tradeName}</span> — {labels.legalName}: {siteConfig.company.legalName}
             </p>
-            <p className="text-white/50">
+            <p className="text-mint-white/50">
               <span>{labels.cnpj}: {siteConfig.company.cnpj}</span>
-              <span className="mx-2 hidden md:inline text-white/30">•</span>
+              <span className="mx-2 hidden md:inline text-mint-white/30">•</span>
               <span className="block md:inline">{labels.address}: {siteConfig.company.address.formatted}</span>
             </p>
           </div>
-          <div className="text-white/50">
+          <div className="text-mint-white/50">
             <span>{labels.email}: </span>
-            <a
-              href={`mailto:${contact.email.address}`}
-              className="text-white/70 underline underline-offset-2 transition hover:text-white"
-            >
+            <a href={`mailto:${contact.email.address}`} className="text-mint-white/70 underline underline-offset-2 transition duration-200 hover:text-mint-white">
               {contact.email.address}
             </a>
           </div>
         </div>
       </div>
 
-      <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 border-t border-white/5 px-5 py-5 text-sm text-white/45">
+      <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 border-t border-border-dark px-5 py-5 text-sm text-mint-white/45">
         <p>{labels.rights}</p>
         <nav className="flex flex-wrap gap-x-6 gap-y-2">
-          <Link href={paths.privacy} className="transition hover:text-white">{labels.privacy}</Link>
-          <Link href={paths.terms} className="transition hover:text-white">{labels.terms}</Link>
-          <Link href={paths.projects} className="transition hover:text-white">BizManager</Link>
+          <Link href={paths.privacy} className="transition duration-200 hover:text-mint-white">{labels.privacy}</Link>
+          <Link href={paths.terms} className="transition duration-200 hover:text-mint-white">{labels.terms}</Link>
+          <Link href={paths.projects} className="transition duration-200 hover:text-mint-white">BizManager</Link>
         </nav>
       </div>
     </footer>

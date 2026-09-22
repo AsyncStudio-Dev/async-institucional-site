@@ -4,33 +4,54 @@ const tailwindConfig = {
   theme: {
     extend: {
       colors: {
-        ice: {
-          white: "#F7F9FC",
-          gray: "#E9EEF5",
-          mist: "#DCE4EE",
-          blue: "#CFE7FF",
-          crystal: "#A9D4FF",
-          glacier: "#7FBBFF",
-        },
-        async: {
-          ink: "#0A0D12",
-          graphite: "#5F6875",
-          lavender: "#BBA7FF",
-          frost: "#8A6CFF",
-          "frost-dark": "#6C4DFF",
-          cyan: "#9CEDE7",
-        },
+        "deep-forest": "#0B0F0B",
+        "mint-white": "#E9F7EC",
+        "sage-gray": "#47594D",
+        "async-green": "#22C55E",
+        "light-mint": "#A7F3D0",
+        background: "#FFFFFF",
+        surface: "#F8FCF9",
+        "surface-soft": "#E9F7EC",
+        "text-primary": "#0B0F0B",
+        "text-secondary": "#47594D",
+        "text-on-dark": "#E9F7EC",
+        border: "rgba(71, 89, 77, 0.15)",
+        "border-dark": "rgba(167, 243, 208, 0.12)",
+        "state-success": "#22C55E",
+        "state-info": "#3B82F6",
+        "state-warning": "#F59E0B",
+        "state-error": "#EF4444",
       },
-      boxShadow: {
-        glass: "0 24px 80px rgba(10, 13, 18, 0.08)",
-        frost: "0 18px 60px rgba(138, 108, 255, 0.22)",
+      fontFamily: {
+        display: ["var(--font-geist)", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "sans-serif"],
+        body: ["var(--font-inter)", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "sans-serif"],
+        mono: ["var(--font-jetbrains-mono)", "ui-monospace", "SFMono-Regular", "Menlo", "monospace"],
       },
       borderRadius: {
-        async: "8px",
+        sm: "10px",
+        DEFAULT: "14px",
+        md: "14px",
+        lg: "20px",
       },
-      backgroundImage: {
-        "frost-flow":
-          "radial-gradient(circle at 18% 18%, rgba(156, 237, 231, 0.46), transparent 28rem), radial-gradient(circle at 86% 12%, rgba(187, 167, 255, 0.44), transparent 26rem), linear-gradient(180deg, #F7F9FC 0%, #FFFFFF 48%, #E9EEF5 100%)",
+      boxShadow: {
+        card: "0 12px 32px rgba(11, 15, 11, 0.08)",
+      },
+      transitionDuration: {
+        250: "250ms",
+      },
+      keyframes: {
+        "fade-up": {
+          "0%": { opacity: "0", transform: "translateY(14px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        "fade-in": {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
+      },
+      animation: {
+        "fade-up": "fade-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+        "fade-in": "fade-in 0.5s ease-out forwards",
       },
     },
   },

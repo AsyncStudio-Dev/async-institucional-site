@@ -2,13 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Inter } from "next/font/google";
 import "../styles/globals.css";
-
-const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-});
 
 export default function GlobalNotFound() {
   const [isEnglish, setIsEnglish] = useState(false);
@@ -37,15 +31,15 @@ export default function GlobalNotFound() {
 
   return (
     <html lang={content.lang}>
-      <body className={inter.className}>
+      <body className="font-sans">
         <main className="flex min-h-screen items-center justify-center px-5 text-center">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.12em] text-async-frost">404</p>
-            <h1 className="mt-3 text-4xl font-semibold text-async-ink">{content.title}</h1>
-            <p className="mt-4 text-async-graphite">{content.description}</p>
+            <p className="eyebrow text-async-green">404</p>
+            <h1 className="mt-3 text-4xl font-semibold text-text-primary">{content.title}</h1>
+            <p className="mt-4 text-text-secondary">{content.description}</p>
             <Link
               href={content.homePath}
-              className="mt-8 inline-flex rounded-async bg-async-frost px-5 py-3 text-sm font-semibold text-white shadow-frost"
+              className="mt-8 inline-flex rounded-sm bg-async-green px-5 py-3 text-sm font-semibold text-deep-forest"
             >
               {content.button}
             </Link>

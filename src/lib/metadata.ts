@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { metaAssets } from "../assets";
 import { siteConfig } from "../config/site";
 import { getContent } from "../content";
 import type { Locale, PageKey } from "../content/types";
@@ -35,7 +34,6 @@ export function createPageMetadata(locale: Locale, page: PageKey): Metadata {
       description: seo.description,
       url: path,
       siteName: siteConfig.name,
-      images: [metaAssets.ogImagePublicPath],
       type: "website",
       locale: htmlLang[locale],
     },
@@ -43,7 +41,6 @@ export function createPageMetadata(locale: Locale, page: PageKey): Metadata {
       card: "summary_large_image",
       title: seo.title,
       description: seo.description,
-      images: [metaAssets.ogImagePublicPath],
     },
   };
 }

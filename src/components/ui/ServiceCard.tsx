@@ -1,7 +1,7 @@
 import type { SiteContent } from "../../content/types";
 import { createWhatsAppLink } from "../../utils/whatsapp";
 import { Button } from "./Button";
-import { GlassCard } from "./GlassCard";
+import { Card } from "./Card";
 
 type Service = SiteContent["services"][number];
 
@@ -16,31 +16,25 @@ export function ServiceCard({ service, compact = false, content }: ServiceCardPr
   const message = messageTemplate.replace("{serviceTitle}", service.title);
 
   return (
-    <GlassCard className="h-full">
-      <h3 className="text-xl font-semibold text-async-ink">{service.title}</h3>
-      <p className="mt-3 text-sm leading-6 text-async-graphite">{service.summary}</p>
+    <Card className="flex h-full flex-col">
+      <h3 className="font-display text-xl font-semibold text-text-primary">{service.title}</h3>
+      <p className="mt-3 text-sm leading-6 text-text-secondary">{service.summary}</p>
       {!compact ? (
-        <div className="mt-5 grid gap-3 text-sm leading-6 text-async-graphite">
+        <div className="mt-5 grid flex-1 gap-3 text-sm leading-6 text-text-secondary">
           <p>
-            <strong className="text-async-ink">{audience}:</strong> {service.audience}
+            <strong className="text-text-primary">{audience}:</strong> {service.audience}
           </p>
           <p>
-            <strong className="text-async-ink">{problem}:</strong> {service.problem}
+            <strong className="text-text-primary">{problem}:</strong> {service.problem}
           </p>
           <p>
-            <strong className="text-async-ink">{delivery}:</strong> {service.delivery}
+            <strong className="text-text-primary">{delivery}:</strong> {service.delivery}
           </p>
         </div>
       ) : null}
-      <Button
-        className="mt-6 w-full sm:w-auto"
-        href={createWhatsAppLink(message)}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      <Button className="mt-6 w-full sm:w-auto" href={createWhatsAppLink(message)} target="_blank" rel="noopener noreferrer">
         {service.cta}
       </Button>
-    </GlassCard>
+    </Card>
   );
 }
-

@@ -22,16 +22,16 @@ export function Header({ content, page }: HeaderProps) {
   ];
 
   return (
-    <header className="sticky top-0 z-20 border-b border-ice-mist/80 bg-ice-white/80 backdrop-blur-md shadow-sm">
+    <header className="sticky top-0 z-20 border-b border-border bg-white/90 backdrop-blur-sm">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-4">
         <BrandLogo to={paths.home} />
-        <nav className="hidden items-center gap-1 text-sm font-medium text-async-graphite md:flex">
+        <nav className="hidden items-center gap-1 text-sm font-medium text-text-secondary md:flex">
           {navItems.map((item) => (
             <Link
               key={item.key}
               href={item.href}
-              className={`rounded-async px-3 py-2 transition hover:bg-ice-blue/45 hover:text-async-ink ${
-                page === item.key ? "bg-ice-blue/55 text-async-ink shadow-sm ring-1 ring-ice-mist" : ""
+              className={`rounded-sm px-3 py-2 transition duration-200 hover:text-text-primary ${
+                page === item.key ? "text-text-primary" : ""
               }`}
               aria-current={page === item.key ? "page" : undefined}
             >

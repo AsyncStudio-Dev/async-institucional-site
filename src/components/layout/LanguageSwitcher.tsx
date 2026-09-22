@@ -12,7 +12,7 @@ export function LanguageSwitcher({ locale, page }: LanguageSwitcherProps) {
 
   return (
     <Link
-      className="rounded-md border border-ice-mist bg-white/70 px-3 py-2 text-sm font-semibold text-async-ink hover:border-async-frost"
+      className="rounded-sm border border-border px-3 py-2 text-sm font-semibold text-text-primary transition duration-200 hover:border-async-green"
       href={getAlternatePath(locale, page)}
       aria-label={`Switch language to ${targetLocale}`}
     >
