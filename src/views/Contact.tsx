@@ -2,7 +2,9 @@ import { siteConfig } from "../config/site";
 import type { SiteContent } from "../content/types";
 import { Card } from "../components/ui/Card";
 import { CTAWhatsApp } from "../components/ui/CTAWhatsApp";
+import { AsyncFlow } from "../components/brand/AsyncFlow";
 import { Mark } from "../components/brand/Mark";
+import { Section } from "../components/ui/Section";
 import { SectionTitle } from "../components/ui/SectionTitle";
 import { createWhatsAppLink } from "../utils/whatsapp";
 
@@ -18,17 +20,18 @@ export function Contact({ content }: ContactProps) {
   const labels = content.ui.contact;
 
   return (
-    <section className="mx-auto grid max-w-7xl items-center gap-8 px-5 py-16 lg:grid-cols-[1.05fr_0.95fr] lg:py-20">
+    <Section spacing="page-top" containerClassName="grid items-center gap-8 lg:grid-cols-[1.05fr_0.95fr]">
       <div>
         <SectionTitle eyebrow={content.nav.contact} title={content.contact.title} description={content.contact.description} titleAs="h1" />
-        <div className="mx-auto max-w-3xl rounded-md bg-deep-forest px-6 py-10 text-center text-mint-white md:px-10">
-          <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-md border border-border-dark bg-white/[0.03]">
+        <div className="relative mx-auto max-w-3xl overflow-hidden rounded-md bg-deep-forest px-6 py-10 text-center text-mint-white md:px-10">
+          <AsyncFlow variant="mono" className="pointer-events-none absolute inset-0 h-full w-full" />
+          <div className="relative mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-md border border-border-dark bg-white/[0.03]">
             <Mark className="h-9 w-9 text-async-green" />
           </div>
-          <h2 className="font-display text-3xl font-semibold md:text-4xl">{content.sections.finalCta}</h2>
-          <p className="mx-auto mt-4 max-w-xl text-base leading-7 text-mint-white/75">{content.whatsappMessage}</p>
-          <p className="mx-auto mt-3 max-w-xl text-sm font-semibold text-async-green">{labels.meeting}</p>
-          <CTAWhatsApp content={content} label={content.contact.primaryLabel} message={content.whatsappMessages.contactCta} className="mt-8" />
+          <h2 className="relative font-display text-3xl font-semibold md:text-4xl">{content.sections.finalCta}</h2>
+          <p className="relative mx-auto mt-4 max-w-xl text-base leading-7 text-mint-white/75">{content.whatsappMessage}</p>
+          <p className="relative mx-auto mt-3 max-w-xl text-sm font-semibold text-async-green">{labels.meeting}</p>
+          <CTAWhatsApp content={content} label={content.contact.primaryLabel} message={content.whatsappMessages.contactCta} className="relative mt-8" />
         </div>
       </div>
 
@@ -86,6 +89,6 @@ export function Contact({ content }: ContactProps) {
           <p className="mt-3 text-sm leading-6 text-text-secondary">{content.remoteService.description}</p>
         </Card>
       </div>
-    </section>
+    </Section>
   );
 }

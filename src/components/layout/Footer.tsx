@@ -10,17 +10,6 @@ type FooterProps = {
   content: SiteContent;
 };
 
-function getServiceAnchorId(serviceTitle: string) {
-  const title = serviceTitle.toLowerCase();
-  if (title.includes("site") || title.includes("website")) return "sites-institucionais";
-  if (title.includes("landing")) return "landing-pages";
-  if (title.includes("sistema sob") || title.includes("custom system")) return "sistemas-sob-medida";
-  if (title.includes("web app")) return "web-apps";
-  if (title.includes("automa") || title.includes("automation")) return "automacoes-internas";
-  if (title.includes("saas") || title.includes("mvp")) return "saas-mvp";
-  return "modernizacao-sistemas";
-}
-
 export function Footer({ content }: FooterProps) {
   const paths = localizedPaths[content.locale];
   const labels = content.ui.footer;
@@ -60,7 +49,7 @@ export function Footer({ content }: FooterProps) {
                   : service.title;
               return (
                 <li key={service.title}>
-                  <Link href={`${paths.services}#${getServiceAnchorId(service.title)}`} className="transition duration-200 hover:text-mint-white">
+                  <Link href={`${paths.services}#${service.slug}`} className="transition duration-200 hover:text-mint-white">
                     {displayTitle}
                   </Link>
                 </li>

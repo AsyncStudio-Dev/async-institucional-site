@@ -111,6 +111,7 @@ export const pt: SiteContent = {
   ],
   services: [
     {
+      slug: "sites-institucionais",
       title: "Sites institucionais",
       summary: "Um site claro, responsivo e confiável para apresentar sua empresa e gerar mais conversas comerciais.",
       audience: "Empresas que precisam de presença profissional na web.",
@@ -119,6 +120,7 @@ export const pt: SiteContent = {
       cta: "Quero criar meu site",
     },
     {
+      slug: "landing-pages",
       title: "Landing pages",
       summary: "Páginas objetivas para campanhas, ofertas e captação de contatos com foco em conversão.",
       audience: "Negócios com campanhas, serviços específicos ou ofertas.",
@@ -127,6 +129,7 @@ export const pt: SiteContent = {
       cta: "Quero uma landing page",
     },
     {
+      slug: "sistemas-sob-medida",
       title: "Sistemas sob medida",
       summary: "Soluções que organizam processos, reduzem improvisos e acompanham a rotina real da operação.",
       audience: "Empresas com processos próprios, manuais ou difíceis de adaptar.",
@@ -135,6 +138,7 @@ export const pt: SiteContent = {
       cta: "Quero um sistema sob medida",
     },
     {
+      slug: "web-apps",
       title: "Web apps",
       summary: "Aplicações online para centralizar dados, funcionalidades e fluxos que precisam evoluir com o negócio.",
       audience: "Empresas que precisam centralizar dados e funcionalidades online.",
@@ -143,6 +147,7 @@ export const pt: SiteContent = {
       cta: "Quero desenvolver um web app",
     },
     {
+      slug: "saas-mvp",
       title: "SaaS / MVP para startups",
       summary: "Produtos digitais para validação, lançamento e crescimento.",
       audience: "Startups ou empresas com ideia de produto digital.",
@@ -151,6 +156,7 @@ export const pt: SiteContent = {
       cta: "Quero tirar minha ideia do papel",
     },
     {
+      slug: "automacoes-internas",
       title: "Automações internas",
       summary: "Redução de tarefas manuais e repetitivas.",
       audience: "Empresas com tarefas repetitivas consumindo tempo.",
@@ -159,6 +165,7 @@ export const pt: SiteContent = {
       cta: "Quero automatizar minha operação",
     },
     {
+      slug: "modernizacao-sistemas",
       title: "Modernização de sistemas antigos",
       summary: "Evolução ou reconstrução de sistemas ultrapassados.",
       audience: "Empresas com sistemas lentos, antigos ou limitados.",

@@ -1,9 +1,10 @@
 import type { SiteContent } from "../content/types";
 import { Card } from "../components/ui/Card";
-import { CTAWhatsApp } from "../components/ui/CTAWhatsApp";
+import { FinalCTA } from "../components/ui/FinalCTA";
 import { FounderCard } from "../components/ui/FounderCard";
 import { ProcessTimeline } from "../components/ui/ProcessTimeline";
 import { Reveal } from "../components/ui/Reveal";
+import { Section } from "../components/ui/Section";
 import { SectionTitle } from "../components/ui/SectionTitle";
 
 type AboutProps = {
@@ -14,45 +15,47 @@ export function About({ content }: AboutProps) {
   const labels = content.ui.about;
 
   return (
-    <section className="mx-auto max-w-7xl px-5 py-16 md:py-20">
-      <SectionTitle
-        eyebrow={content.nav.about}
-        title={content.about.heroTitle}
-        description={content.about.heroSubtitle}
-        titleAs="h1"
-        className="mb-12"
-      />
+    <>
+      <Section spacing="page-top">
+        <SectionTitle
+          eyebrow={content.nav.about}
+          title={content.about.heroTitle}
+          description={content.about.heroSubtitle}
+          titleAs="h1"
+          className="mb-12"
+        />
 
-      <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
-        <Reveal>
-          <Card className="h-full">
-            <h2 className="font-display text-xl font-semibold text-text-primary">{content.about.storyTitle}</h2>
-            <div className="mt-5 space-y-5 text-lg leading-8 text-text-secondary">
-              {content.about.fullStory.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
-              ))}
-            </div>
-          </Card>
-        </Reveal>
+        <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
+          <Reveal>
+            <Card className="h-full">
+              <h2 className="font-display text-xl font-semibold text-text-primary">{content.about.storyTitle}</h2>
+              <div className="mt-5 space-y-5 text-lg leading-8 text-text-secondary">
+                {content.about.fullStory.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
+              </div>
+            </Card>
+          </Reveal>
 
-        <Reveal delayMs={100} className="grid gap-6">
-          <Card>
-            <h2 className="font-display text-xl font-semibold text-text-primary">{labels.founders}</h2>
-            <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
-              {content.about.founders.map((founder) => (
-                <FounderCard key={founder.name} name={founder.name} role={founder.role} description={founder.description} />
-              ))}
-            </div>
-          </Card>
+          <Reveal delayMs={100} className="grid gap-6">
+            <Card>
+              <h2 className="font-display text-xl font-semibold text-text-primary">{labels.founders}</h2>
+              <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
+                {content.about.founders.map((founder) => (
+                  <FounderCard key={founder.name} name={founder.name} role={founder.role} description={founder.description} />
+                ))}
+              </div>
+            </Card>
 
-          <Card className="bg-surface-soft">
-            <h2 className="font-display text-xl font-semibold text-text-primary">{content.remoteService.title}</h2>
-            <p className="mt-3 text-sm leading-6 text-text-secondary">{content.remoteService.description}</p>
-          </Card>
-        </Reveal>
-      </div>
+            <Card className="bg-surface-soft">
+              <h2 className="font-display text-xl font-semibold text-text-primary">{content.remoteService.title}</h2>
+              <p className="mt-3 text-sm leading-6 text-text-secondary">{content.remoteService.description}</p>
+            </Card>
+          </Reveal>
+        </div>
+      </Section>
 
-      <div className="mt-20 md:mt-28">
+      <Section tone="surface">
         <Reveal>
           <SectionTitle title={content.about.valuePropsTitle} description={content.about.valuePropsSubtitle} className="mb-10 md:mb-14" />
         </Reveal>
@@ -68,9 +71,9 @@ export function About({ content }: AboutProps) {
             </Reveal>
           ))}
         </div>
-      </div>
+      </Section>
 
-      <div className="mt-20 scroll-mt-24 md:mt-28">
+      <Section>
         <Reveal>
           <SectionTitle
             eyebrow={labels.processEyebrow}
@@ -80,17 +83,15 @@ export function About({ content }: AboutProps) {
           />
         </Reveal>
         <ProcessTimeline steps={content.process} />
-      </div>
+      </Section>
 
-      <div className="mt-20 md:mt-28">
-        <Card className="px-6 py-10 text-center md:px-10 md:py-14">
-          <h2 className="font-display mx-auto max-w-3xl text-3xl font-semibold leading-tight text-text-primary md:text-4xl">
-            {content.sections.finalCta}
-          </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-text-secondary">{content.sections.finalCtaDescription}</p>
-          <CTAWhatsApp content={content} label={content.contact.primaryLabel} message={content.whatsappMessages.contactCta} className="mt-7" size="large" />
-        </Card>
-      </div>
-    </section>
+      <FinalCTA
+        content={content}
+        title={content.sections.finalCta}
+        description={content.sections.finalCtaDescription}
+        ctaLabel={content.contact.primaryLabel}
+        message={content.whatsappMessages.contactCta}
+      />
+    </>
   );
 }

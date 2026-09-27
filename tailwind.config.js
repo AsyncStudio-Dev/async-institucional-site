@@ -35,6 +35,7 @@ const tailwindConfig = {
       },
       boxShadow: {
         card: "0 12px 32px rgba(11, 15, 11, 0.08)",
+        "card-hover": "0 18px 40px rgba(11, 15, 11, 0.12)",
       },
       transitionDuration: {
         250: "250ms",

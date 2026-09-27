@@ -3,7 +3,9 @@ import { bizManagerTransparent } from "../assets";
 import type { SiteContent } from "../content/types";
 import { Card } from "../components/ui/Card";
 import { CTAWhatsApp } from "../components/ui/CTAWhatsApp";
+import { FinalCTA } from "../components/ui/FinalCTA";
 import { ProjectPreview } from "../components/ui/ProjectPreview";
+import { Section } from "../components/ui/Section";
 import { BizManagerShowcase, type BizManagerShowcaseSlide } from "../components/ui/BizManagerShowcase";
 
 type ProjectsProps = {
@@ -15,11 +17,11 @@ export function Projects({ content }: ProjectsProps) {
   const isPortuguese = labels.gallery === "Previews do produto";
   const bizManagerShowcaseSlides: BizManagerShowcaseSlide[] = isPortuguese
     ? [
-        { src: "/images/projects/bizmanager/dashboard-overview.webp", title: "Dashboard principal", description: "Visao geral de indicadores, fluxo de caixa e agenda em uma interface centralizada.", alt: "Dashboard principal do BizManager com indicadores financeiros, grafico de fluxo de caixa e agenda do dia." },
-        { src: "/images/projects/bizmanager/financial-overview.webp", title: "Controle financeiro", description: "Acompanhamento de saldo, receitas, despesas e categorias para leitura rapida da operacao.", alt: "Tela financeira do BizManager com cards de saldo, receitas, despesas e graficos de evolucao mensal." },
-        { src: "/images/projects/bizmanager/clients-management.webp", title: "Organizacao de clientes", description: "Carteira de clientes com busca, status, historico e acoes importantes sempre acessiveis.", alt: "Tela de clientes do BizManager com indicadores e tabela de clientes cadastrados." },
-        { src: "/images/projects/bizmanager/inventory-control.webp", title: "Gestao de estoque", description: "Controle de produtos, niveis de reposicao e distribuicao por categoria em um painel claro.", alt: "Tela de estoque do BizManager com valor em estoque, total de itens, alertas e distribuicao por categoria." },
-        { src: "/images/projects/bizmanager/agenda-week.webp", title: "Agenda operacional", description: "Visualizacao semanal para organizar atendimentos, compromissos e rotina do negocio.", alt: "Tela de agenda do BizManager com calendario semanal e compromissos posicionados por horario." },
+        { src: "/images/projects/bizmanager/dashboard-overview.webp", title: "Dashboard principal", description: "Visão geral de indicadores, fluxo de caixa e agenda em uma interface centralizada.", alt: "Dashboard principal do BizManager com indicadores financeiros, gráfico de fluxo de caixa e agenda do dia." },
+        { src: "/images/projects/bizmanager/financial-overview.webp", title: "Controle financeiro", description: "Acompanhamento de saldo, receitas, despesas e categorias para leitura rápida da operação.", alt: "Tela financeira do BizManager com cards de saldo, receitas, despesas e gráficos de evolução mensal." },
+        { src: "/images/projects/bizmanager/clients-management.webp", title: "Organização de clientes", description: "Carteira de clientes com busca, status, histórico e ações importantes sempre acessíveis.", alt: "Tela de clientes do BizManager com indicadores e tabela de clientes cadastrados." },
+        { src: "/images/projects/bizmanager/inventory-control.webp", title: "Gestão de estoque", description: "Controle de produtos, níveis de reposição e distribuição por categoria em um painel claro.", alt: "Tela de estoque do BizManager com valor em estoque, total de itens, alertas e distribuição por categoria." },
+        { src: "/images/projects/bizmanager/agenda-week.webp", title: "Agenda operacional", description: "Visualização semanal para organizar atendimentos, compromissos e rotina do negócio.", alt: "Tela de agenda do BizManager com calendário semanal e compromissos posicionados por horario." },
       ]
     : [
         { src: "/images/projects/bizmanager/dashboard-overview.webp", title: "Main dashboard", description: "Overview of indicators, cash flow and schedule in one centralized interface.", alt: "BizManager main dashboard with financial indicators, cash-flow chart and today's schedule." },
@@ -33,18 +35,18 @@ export function Projects({ content }: ProjectsProps) {
         {
           slug: "asynchub",
           src: "/images/projects/asynchub/dashboard.webp",
-          alt: "Dashboard do Async Hub CRM com metricas de conversas no Instagram, funil de atendimento e status dos canais.",
+          alt: "Dashboard do Async Hub CRM com métricas de conversas no Instagram, funil de atendimento e status dos canais.",
           title: "Async Hub CRM",
-          status: "Em validacao",
+          status: "Em validação",
           description: "CRM multi-tenant para centralizar conversas do Instagram e WhatsApp, com dashboard de desempenho e funil de vendas em tempo real.",
         },
         {
           slug: "encaixe",
           src: "/images/projects/encaixe/vitrine-calendario.webp",
-          alt: "Vitrine publica de agendamento do Encaixe com calendario, preferencia de profissional e horarios disponiveis.",
+          alt: "Vitrine pública de agendamento do Encaixe com calendário, preferência de profissional e horários disponíveis.",
           title: "Encaixe",
           status: "Em desenvolvimento",
-          description: "Sistema de agendamentos com vitrine publica de reserva, grade de horarios flexivel e painel para multiplos profissionais.",
+          description: "Sistema de agendamentos com vitrine pública de reserva, grade de horários flexível e painel para múltiplos profissionais.",
         },
       ]
     : [
@@ -73,116 +75,112 @@ export function Projects({ content }: ProjectsProps) {
     : ["Dashboard", "Finances", "Clients", "Inventory", "Schedule", "Settings"];
 
   return (
-    <section className="mx-auto max-w-7xl px-5 py-12 md:py-16">
-      <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
-        <div>
-          <p className="eyebrow text-async-green">{labels.heroEyebrow}</p>
-          <h1 className="font-display mt-4 max-w-4xl text-4xl font-semibold leading-tight text-text-primary md:text-6xl">{labels.heroTitle}</h1>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-text-secondary">{labels.heroDescription}</p>
-          <div className="mt-8">
-            <CTAWhatsApp content={content} label={labels.heroPrimaryCta} message={content.whatsappMessages.hero} size="large" />
+    <>
+      <Section spacing="page-top">
+        <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+          <div>
+            <p className="eyebrow text-async-green">{labels.heroEyebrow}</p>
+            <h1 className="font-display mt-4 max-w-4xl text-4xl font-bold leading-tight text-text-primary md:text-6xl">{labels.heroTitle}</h1>
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-text-secondary">{labels.heroDescription}</p>
+            <div className="mt-8">
+              <CTAWhatsApp content={content} label={labels.heroPrimaryCta} message={content.whatsappMessages.hero} size="large" />
+            </div>
           </div>
+          <ProjectPreview content={content} eyebrow={labels.featured} title="BizManager" />
         </div>
-        <ProjectPreview content={content} eyebrow={labels.featured} title="BizManager" />
-      </div>
 
-      <div id="previews-produto" className="mt-20 scroll-mt-28 md:mt-28">
-        <h2 className="font-display text-3xl font-semibold text-text-primary">{labels.gallery}</h2>
-        <p className="mt-3 max-w-2xl text-base leading-7 text-text-secondary">{labels.galleryDescription}</p>
-        <div className="mt-6 grid grid-cols-1 gap-5 lg:grid-cols-10 lg:gap-6">
-          <BizManagerShowcase slides={bizManagerShowcaseSlides} />
+        <div id="previews-produto" className="mt-20 scroll-mt-28 md:mt-28">
+          <h2 className="font-display text-3xl font-semibold text-text-primary">{labels.gallery}</h2>
+          <p className="mt-3 max-w-2xl text-base leading-7 text-text-secondary">{labels.galleryDescription}</p>
+          <div className="mt-6 grid grid-cols-1 gap-5 lg:grid-cols-10 lg:gap-6">
+            <BizManagerShowcase slides={bizManagerShowcaseSlides} />
 
-          <Card className="flex flex-col gap-5 lg:col-span-3 lg:self-stretch">
-            <span className="eyebrow w-fit rounded-full border border-border bg-surface px-3 py-1 text-async-green">
-              {content.bizManager.status}
-            </span>
+            <Card className="flex flex-col gap-5 lg:col-span-3 lg:self-stretch">
+              <span className="eyebrow w-fit rounded-full border border-border bg-surface px-3 py-1 text-async-green">
+                {content.bizManager.status}
+              </span>
 
-            <div className="flex items-center gap-4">
-              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-md border border-border bg-surface">
-                <Image src={bizManagerTransparent} alt="BizManager" className="h-9 w-9 object-contain" />
+              <div className="flex items-center gap-4">
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-md border border-border bg-surface">
+                  <Image src={bizManagerTransparent} alt="BizManager" className="h-9 w-9 object-contain" />
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-text-primary">BizManager</p>
+                  <p className="mt-1 text-xs leading-relaxed text-text-secondary">
+                    {isPortuguese ? "Produto autoral em desenvolvimento" : "In-development proprietary product"}
+                  </p>
+                </div>
               </div>
+
               <div>
-                <p className="text-sm font-semibold text-text-primary">BizManager</p>
-                <p className="mt-1 text-xs leading-relaxed text-text-secondary">
-                  {isPortuguese ? "Produto autoral em desenvolvimento" : "In-development proprietary product"}
-                </p>
+                <span className="eyebrow text-async-green">{labels.identityLabel}</span>
+                <p className="mt-2 text-sm leading-relaxed text-text-secondary">{labels.identityDescription}</p>
               </div>
-            </div>
 
-            <div>
-              <span className="eyebrow text-async-green">{labels.identityLabel}</span>
-              <p className="mt-2 text-sm leading-relaxed text-text-secondary">{labels.identityDescription}</p>
-            </div>
-
-            <div>
-              <p className="text-sm font-semibold text-text-primary">{isPortuguese ? "O que o projeto demonstra" : "What the project demonstrates"}</p>
-              <ul className="mt-3 space-y-2.5">
-                {bizManagerIdentityHighlights.map((item) => (
-                  <li key={item} className="flex gap-2 text-xs leading-relaxed text-text-secondary">
-                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-async-green" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <p className="text-sm font-semibold text-text-primary">{isPortuguese ? "Módulos contemplados" : "Covered modules"}</p>
-              <div className="mt-3 flex flex-wrap gap-2">
-                {bizManagerModuleChips.map((module) => (
-                  <span key={module} className="rounded-full border border-border bg-surface px-2.5 py-1 text-[11px] font-semibold text-text-secondary">
-                    {module}
-                  </span>
-                ))}
+              <div>
+                <p className="text-sm font-semibold text-text-primary">{isPortuguese ? "O que o projeto demonstra" : "What the project demonstrates"}</p>
+                <ul className="mt-3 space-y-2.5">
+                  {bizManagerIdentityHighlights.map((item) => (
+                    <li key={item} className="flex gap-2 text-xs leading-relaxed text-text-secondary">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-async-green" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-            </div>
 
-            <p className="border-t border-border pt-4 text-xs leading-relaxed text-text-secondary">
-              {isPortuguese
-                ? "Base autoral para demonstrar estrategia, interface e arquitetura em um produto real em evolucao."
-                : "A proprietary base to demonstrate strategy, interface and architecture in a real evolving product."}
-            </p>
-          </Card>
-        </div>
-      </div>
+              <div>
+                <p className="text-sm font-semibold text-text-primary">{isPortuguese ? "Módulos contemplados" : "Covered modules"}</p>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {bizManagerModuleChips.map((module) => (
+                    <span key={module} className="rounded-full border border-border bg-surface px-2.5 py-1 text-[11px] font-semibold text-text-secondary">
+                      {module}
+                    </span>
+                  ))}
+                </div>
+              </div>
 
-      <div className="mt-20 md:mt-28">
-        <h2 className="font-display text-3xl font-semibold text-text-primary">{isPortuguese ? "Outros projetos" : "Other projects"}</h2>
-        <p className="mt-3 max-w-2xl text-base leading-7 text-text-secondary">
-          {isPortuguese
-            ? "Produtos autorais em desenvolvimento, usados como laboratorio para testar arquitetura, interface e integracao antes de levar essa base para projetos de clientes."
-            : "In-development proprietary products, used as a lab to test architecture, interface and integrations before bringing that base into client projects."}
-        </p>
-        <div className="mt-6 grid gap-5 sm:grid-cols-2">
-          {otherProjects.map((project) => (
-            <Card key={project.slug} className="flex h-full flex-col !p-0 overflow-hidden">
-              <div className="relative aspect-[1440/900] w-full border-b border-border">
-                <Image src={project.src} alt={project.alt} fill className="object-cover object-top" sizes="(min-width: 640px) 50vw, 100vw" />
-              </div>
-              <div className="flex flex-1 flex-col p-5">
-                <span className="eyebrow w-fit rounded-full border border-border bg-surface px-3 py-1 text-async-green">{project.status}</span>
-                <h3 className="font-display mt-3 text-xl font-semibold text-text-primary">{project.title}</h3>
-                <p className="mt-2 flex-1 text-sm leading-6 text-text-secondary">{project.description}</p>
-              </div>
+              <p className="border-t border-border pt-4 text-xs leading-relaxed text-text-secondary">
+                {isPortuguese
+                  ? "Base autoral para demonstrar estratégia, interface e arquitetura em um produto real em evolução."
+                  : "A proprietary base to demonstrate strategy, interface and architecture in a real evolving product."}
+              </p>
             </Card>
-          ))}
+          </div>
         </div>
-      </div>
 
-      <div className="mt-16 rounded-md bg-deep-forest p-8 md:mt-20 md:p-12">
-        <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between lg:gap-12">
-          <div className="max-w-3xl">
-            <p className="eyebrow text-async-green">{labels.similar}</p>
-            <h2 className="font-display mt-3 text-3xl font-semibold tracking-tight text-mint-white md:text-4xl md:leading-tight">
-              {labels.finalCtaTitle}
-            </h2>
-            <p className="mt-4 text-base leading-relaxed text-mint-white/70">{labels.finalCtaDescription}</p>
-          </div>
-          <div className="flex shrink-0 items-center justify-start lg:justify-end">
-            <CTAWhatsApp content={content} label={content.bizManager.cta} message={content.whatsappMessages.bizManager} size="large" className="w-full sm:w-auto" />
+        <div className="mt-20 md:mt-28">
+          <h2 className="font-display text-3xl font-semibold text-text-primary">{isPortuguese ? "Outros projetos" : "Other projects"}</h2>
+          <p className="mt-3 max-w-2xl text-base leading-7 text-text-secondary">
+            {isPortuguese
+              ? "Produtos autorais em desenvolvimento, usados como laboratório para testar arquitetura, interface e integração antes de levar essa base para projetos de clientes."
+              : "In-development proprietary products, used as a lab to test architecture, interface and integrations before bringing that base into client projects."}
+          </p>
+          <div className="mt-6 grid gap-5 sm:grid-cols-2">
+            {otherProjects.map((project) => (
+              <Card key={project.slug} className="flex h-full flex-col !p-0 overflow-hidden">
+                <div className="relative aspect-[1440/900] w-full border-b border-border">
+                  <Image src={project.src} alt={project.alt} fill className="object-cover object-top" sizes="(min-width: 640px) 50vw, 100vw" />
+                </div>
+                <div className="flex flex-1 flex-col p-5">
+                  <span className="eyebrow w-fit rounded-full border border-border bg-surface px-3 py-1 text-async-green">{project.status}</span>
+                  <h3 className="font-display mt-3 text-xl font-semibold text-text-primary">{project.title}</h3>
+                  <p className="mt-2 flex-1 text-sm leading-6 text-text-secondary">{project.description}</p>
+                </div>
+              </Card>
+            ))}
           </div>
         </div>
-      </div>
-    </section>
+      </Section>
+
+      <FinalCTA
+        content={content}
+        eyebrow={labels.similar}
+        title={labels.finalCtaTitle}
+        description={labels.finalCtaDescription}
+        ctaLabel={content.bizManager.cta}
+        message={content.whatsappMessages.bizManager}
+      />
+    </>
   );
 }

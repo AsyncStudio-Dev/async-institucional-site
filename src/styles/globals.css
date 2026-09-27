@@ -100,7 +100,6 @@ html[data-intro-pending="true"] #page-root {
 .async-flow-pulse {
   stroke-dasharray: 8 200;
   stroke-dashoffset: 8;
-  opacity: 0.55;
   animation: async-flow-pulse linear infinite both;
 }
 
@@ -111,5 +110,41 @@ html[data-intro-pending="true"] #page-root {
   65%,
   100% {
     stroke-dashoffset: -100;
+  }
+}
+
+/* Hero — título entra palavra a palavra e o resto do conteúdo logo depois;
+   tudo espera a introdução (splash) terminar */
+.hero-word {
+  display: inline-block;
+}
+
+.hero-word,
+.hero-enter {
+  animation: hero-word 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+html[data-intro-pending="true"] .hero-word,
+html[data-intro-pending="true"] .hero-enter {
+  animation-play-state: paused;
+}
+
+@keyframes hero-word {
+  0% {
+    opacity: 0;
+    transform: translateY(0.35em);
+    filter: blur(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-word,
+  .hero-enter {
+    animation: none;
   }
 }

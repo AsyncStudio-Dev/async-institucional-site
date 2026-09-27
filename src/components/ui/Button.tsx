@@ -24,7 +24,7 @@ export function Button({
   ...props
 }: ButtonProps) {
   const base =
-    "font-display inline-flex items-center justify-center gap-2 font-medium transition-[transform,background-color,border-color,color] duration-200 ease-out active:scale-[0.97] focus:outline-none focus-visible:ring-2 focus-visible:ring-async-green focus-visible:ring-offset-2 focus-visible:ring-offset-transparent";
+    "group/button font-display inline-flex items-center justify-center gap-2 text-center font-medium leading-snug transition-[transform,background-color,border-color,color] duration-200 ease-out active:scale-[0.97] focus:outline-none focus-visible:ring-2 focus-visible:ring-async-green focus-visible:ring-offset-2 focus-visible:ring-offset-transparent";
 
   const textSizes = {
     default: "text-[15px]",
@@ -36,14 +36,14 @@ export function Button({
     return (
       <a className={`${base} rounded-sm ${textSizes[size]} ${tertiaryColor} ${className}`} {...props}>
         {children}
-        {withArrow ? <span aria-hidden="true">→</span> : null}
+        {withArrow ? <ButtonArrow /> : null}
       </a>
     );
   }
 
   const sizes = {
-    default: `h-11 px-6 ${textSizes.default}`,
-    large: `h-12 px-7 ${textSizes.large}`,
+    default: `min-h-11 px-6 py-2.5 sm:whitespace-nowrap ${textSizes.default}`,
+    large: `min-h-12 px-7 py-3 sm:whitespace-nowrap ${textSizes.large}`,
   };
 
   const variants = {
@@ -57,7 +57,15 @@ export function Button({
   return (
     <a className={`${base} rounded-sm ${sizes[size]} ${variants[variant]} ${className}`} {...props}>
       {children}
-      {withArrow ? <span aria-hidden="true">→</span> : null}
+      {withArrow ? <ButtonArrow /> : null}
     </a>
+  );
+}
+
+function ButtonArrow() {
+  return (
+    <span aria-hidden="true" className="transition-transform duration-200 ease-out group-hover/button:translate-x-1">
+      →
+    </span>
   );
 }

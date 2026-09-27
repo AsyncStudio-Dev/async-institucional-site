@@ -55,6 +55,8 @@ export type SiteContent = {
     response: string;
   }>;
   services: Array<{
+    /** Âncora estável em /servicos (não muda com o idioma). */
+    slug: string;
     title: string;
     summary: string;
     audience: string;

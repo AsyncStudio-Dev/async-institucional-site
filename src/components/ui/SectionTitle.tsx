@@ -19,13 +19,14 @@ export function SectionTitle({
 }: SectionTitleProps) {
   const TitleTag = titleAs;
   const alignClass = align === "center" ? "mx-auto text-center" : "text-left";
+  const titleWeight = titleAs === "h1" ? "font-bold" : "font-semibold";
   const titleColor = tone === "dark" ? "text-mint-white" : "text-text-primary";
   const descriptionColor = tone === "dark" ? "text-mint-white/70" : "text-text-secondary";
 
   return (
     <div className={`max-w-3xl ${alignClass} ${className}`}>
       {eyebrow ? <p className="eyebrow mb-3 text-async-green">{eyebrow}</p> : null}
-      <TitleTag className={`font-display text-3xl font-semibold leading-[1.15] md:text-4xl ${titleColor}`}>
+      <TitleTag className={`font-display text-3xl leading-[1.15] md:text-4xl ${titleWeight} ${titleColor}`}>
         {title}
       </TitleTag>
       {description ? <p className={`mt-4 text-base leading-7 ${descriptionColor}`}>{description}</p> : null}

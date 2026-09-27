@@ -110,6 +110,7 @@ export const en: SiteContent = {
   ],
   services: [
     {
+      slug: "sites-institucionais",
       title: "Business websites",
       summary: "A clear, responsive and credible website to present your company and generate more business conversations.",
       audience: "Companies that need a credible online presence.",
@@ -118,6 +119,7 @@ export const en: SiteContent = {
       cta: "I need a website",
     },
     {
+      slug: "landing-pages",
       title: "Landing pages",
       summary: "Focused pages for campaigns, offers and lead capture, designed around conversion.",
       audience: "Businesses promoting campaigns, offers or specific services.",
@@ -126,6 +128,7 @@ export const en: SiteContent = {
       cta: "I need a landing page",
     },
     {
+      slug: "sistemas-sob-medida",
       title: "Custom systems",
       summary: "Solutions that organize workflows, reduce improvisation and match how the operation actually works.",
       audience: "Companies with unique, manual or hard-to-adapt operations.",
@@ -134,6 +137,7 @@ export const en: SiteContent = {
       cta: "I need a custom system",
     },
     {
+      slug: "web-apps",
       title: "Web apps",
       summary: "Online applications that centralize data, features and flows that need to evolve with the business.",
       audience: "Companies that need online access to data and functionality.",
@@ -142,6 +146,7 @@ export const en: SiteContent = {
       cta: "I need a web app",
     },
     {
+      slug: "saas-mvp",
       title: "SaaS / MVP for startups",
       summary: "Digital products for validation, launch and growth.",
       audience: "Startups or companies with a digital product idea.",
@@ -150,6 +155,7 @@ export const en: SiteContent = {
       cta: "I want to build an MVP",
     },
     {
+      slug: "automacoes-internas",
       title: "Internal automations",
       summary: "Less manual work and fewer repetitive tasks.",
       audience: "Companies losing time to repetitive tasks.",
@@ -158,6 +164,7 @@ export const en: SiteContent = {
       cta: "I want to automate operations",
     },
     {
+      slug: "modernizacao-sistemas",
       title: "Legacy system modernization",
       summary: "Evolution or rebuilds for outdated systems.",
       audience: "Companies with slow, outdated or limited systems.",
