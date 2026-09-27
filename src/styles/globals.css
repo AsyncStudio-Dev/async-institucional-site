@@ -94,3 +94,22 @@ html[data-intro-pending="true"] #page-root {
     transition: none;
   }
 }
+
+/* Async Flow — brilho curto que percorre a faixa (pathLength=100) e depois
+   descansa até o próximo ciclo */
+.async-flow-pulse {
+  stroke-dasharray: 8 200;
+  stroke-dashoffset: 8;
+  opacity: 0.55;
+  animation: async-flow-pulse linear infinite both;
+}
+
+@keyframes async-flow-pulse {
+  0% {
+    stroke-dashoffset: 8;
+  }
+  65%,
+  100% {
+    stroke-dashoffset: -100;
+  }
+}
