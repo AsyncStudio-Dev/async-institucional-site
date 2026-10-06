@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { bizManagerDashboard, bizManagerTransparent } from "../../assets";
+import { BizManagerMark } from "../brand/BizManagerMark";
 import type { SiteContent } from "../../content/types";
 
 type ProjectPreviewProps = {
@@ -29,18 +29,19 @@ export function ProjectPreview({ content, tone = "light", eyebrow = "BizManager"
               {content.sections.bizManagerDescription}
             </p>
           </div>
-          <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-sm border border-border bg-surface md:h-14 md:w-14">
-            <Image src={bizManagerTransparent} alt="" className="h-8 w-8 object-contain md:h-9 md:w-9" />
+          <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-sm bg-deep-forest md:h-14 md:w-14">
+            <BizManagerMark className="h-8 w-8 text-async-green md:h-9 md:w-9" />
           </div>
         </div>
 
         <div className="mt-4 overflow-hidden rounded-sm border border-border">
           <Image
-            src={bizManagerDashboard}
-            alt={`${content.sections.bizManager} dashboard preview`}
-            className="aspect-[16/8.25] w-full object-cover object-top"
-            loading="lazy"
-            sizes="(min-width: 1024px) 42vw, 100vw"
+            src={content.bizManager.heroImage.src}
+            alt={content.bizManager.heroImage.alt}
+            width={content.bizManager.heroImage.width}
+            height={content.bizManager.heroImage.height}
+            className="aspect-[16/9] w-full object-cover object-top"
+            sizes="(min-width: 1024px) 32rem, 100vw"
           />
         </div>
 

@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import type { PageKey, SiteContent } from "../../content/types";
-import type { NavItem } from "../../routes/navigation";
+import { getActiveNavKey, type NavItem } from "../../routes/navigation";
 import { CTAWhatsApp } from "../ui/CTAWhatsApp";
 
 type MobileMenuProps = {
@@ -17,6 +17,7 @@ export function MobileMenu({ content, page, navItems }: MobileMenuProps) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const menuId = "mobile-navigation";
   const menuLabel = open ? content.ui.mobileMenu.close : content.ui.mobileMenu.open;
+  const activeNavKey = getActiveNavKey(navItems, page);
 
   useEffect(() => {
     if (!open) return;
@@ -63,20 +64,52 @@ export function MobileMenu({ content, page, navItems }: MobileMenuProps) {
         }`}
       >
         <nav className="grid gap-1 text-sm font-medium text-text-secondary">
-          {navItems.map((item) => (
-            <Link
-              key={item.key}
-              onClick={() => setOpen(false)}
-              href={item.href}
-              className={`flex items-center justify-between rounded-sm px-3 py-2.5 transition duration-200 hover:bg-surface hover:text-text-primary ${
-                page === item.key ? "bg-surface-soft text-text-primary" : ""
-              }`}
-              aria-current={page === item.key ? "page" : undefined}
-            >
-              {item.label}
-              {page === item.key ? <span className="h-1.5 w-1.5 rounded-full bg-async-green" aria-hidden="true" /> : null}
-            </Link>
-          ))}
+          {navItems.map((item) => {
+            // Com subpáginas, o item vira um título de grupo e as subpáginas (incluindo a visão geral) aparecem recuadas
+            if (item.children?.length) {
+              return (
+                <div key={item.key} className="py-1">
+                  <p className={`px-3 py-2 ${activeNavKey === item.key ? "text-text-primary" : ""}`}>{item.label}</p>
+                  <div className="ml-3 grid gap-1 border-l border-border pl-2">
+                    {item.children.map((child) => (
+                      <Link
+                        key={child.key}
+                        onClick={() => setOpen(false)}
+                        href={child.href}
+                        className={`flex items-center justify-between gap-3 rounded-sm px-3 py-2 transition duration-200 hover:bg-surface hover:text-text-primary ${
+                          page === child.key ? "bg-surface-soft text-text-primary" : ""
+                        }`}
+                        aria-current={page === child.key ? "page" : undefined}
+                      >
+                        {child.label}
+                        {child.badge ? (
+                          <span className="inline-flex items-center gap-1.5 text-[11px] font-medium text-text-secondary">
+                            <span className="h-1.5 w-1.5 rounded-full bg-async-green" aria-hidden="true" />
+                            {child.badge}
+                          </span>
+                        ) : null}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              );
+            }
+
+            return (
+              <Link
+                key={item.key}
+                onClick={() => setOpen(false)}
+                href={item.href}
+                className={`flex items-center justify-between rounded-sm px-3 py-2.5 transition duration-200 hover:bg-surface hover:text-text-primary ${
+                  page === item.key ? "bg-surface-soft text-text-primary" : ""
+                }`}
+                aria-current={page === item.key ? "page" : undefined}
+              >
+                {item.label}
+                {page === item.key ? <span className="h-1.5 w-1.5 rounded-full bg-async-green" aria-hidden="true" /> : null}
+              </Link>
+            );
+          })}
         </nav>
         <CTAWhatsApp content={content} label={content.nav.cta} message={content.whatsappMessages.header} className="mt-5 w-full" />
       </div>

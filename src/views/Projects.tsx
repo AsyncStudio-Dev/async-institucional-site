@@ -1,12 +1,17 @@
 import Image from "next/image";
-import { bizManagerTransparent } from "../assets";
+import { bizManagerConfig } from "../config/bizmanager";
 import type { SiteContent } from "../content/types";
+import { fillTemplate, formatBizManagerPrice, getBizManagerStartingPrice } from "../lib/bizmanager";
+import { localizedPaths } from "../routes/paths";
+import { BizManagerMark } from "../components/brand/BizManagerMark";
+import { BizManagerShowcase, type BizManagerShowcaseSlide } from "../components/ui/BizManagerShowcase";
+import { BizManagerStatusBadge } from "../components/ui/BizManagerStatusBadge";
+import { Button } from "../components/ui/Button";
 import { Card } from "../components/ui/Card";
 import { CTAWhatsApp } from "../components/ui/CTAWhatsApp";
 import { FinalCTA } from "../components/ui/FinalCTA";
 import { ProjectPreview } from "../components/ui/ProjectPreview";
 import { Section } from "../components/ui/Section";
-import { BizManagerShowcase, type BizManagerShowcaseSlide } from "../components/ui/BizManagerShowcase";
 
 type ProjectsProps = {
   content: SiteContent;
@@ -14,65 +19,13 @@ type ProjectsProps = {
 
 export function Projects({ content }: ProjectsProps) {
   const labels = content.ui.projects;
-  const isPortuguese = labels.gallery === "Previews do produto";
-  const bizManagerShowcaseSlides: BizManagerShowcaseSlide[] = isPortuguese
-    ? [
-        { src: "/images/projects/bizmanager/dashboard-overview.webp", title: "Dashboard principal", description: "Visão geral de indicadores, fluxo de caixa e agenda em uma interface centralizada.", alt: "Dashboard principal do BizManager com indicadores financeiros, gráfico de fluxo de caixa e agenda do dia." },
-        { src: "/images/projects/bizmanager/financial-overview.webp", title: "Controle financeiro", description: "Acompanhamento de saldo, receitas, despesas e categorias para leitura rápida da operação.", alt: "Tela financeira do BizManager com cards de saldo, receitas, despesas e gráficos de evolução mensal." },
-        { src: "/images/projects/bizmanager/clients-management.webp", title: "Organização de clientes", description: "Carteira de clientes com busca, status, histórico e ações importantes sempre acessíveis.", alt: "Tela de clientes do BizManager com indicadores e tabela de clientes cadastrados." },
-        { src: "/images/projects/bizmanager/inventory-control.webp", title: "Gestão de estoque", description: "Controle de produtos, níveis de reposição e distribuição por categoria em um painel claro.", alt: "Tela de estoque do BizManager com valor em estoque, total de itens, alertas e distribuição por categoria." },
-        { src: "/images/projects/bizmanager/agenda-week.webp", title: "Agenda operacional", description: "Visualização semanal para organizar atendimentos, compromissos e rotina do negócio.", alt: "Tela de agenda do BizManager com calendário semanal e compromissos posicionados por horario." },
-      ]
-    : [
-        { src: "/images/projects/bizmanager/dashboard-overview.webp", title: "Main dashboard", description: "Overview of indicators, cash flow and schedule in one centralized interface.", alt: "BizManager main dashboard with financial indicators, cash-flow chart and today's schedule." },
-        { src: "/images/projects/bizmanager/financial-overview.webp", title: "Financial control", description: "Balance, revenue, expenses and categories organized for a quick operational read.", alt: "BizManager financial screen with balance, revenue, expense cards and monthly evolution charts." },
-        { src: "/images/projects/bizmanager/clients-management.webp", title: "Client organization", description: "Client portfolio with search, status, history and key actions always accessible.", alt: "BizManager clients screen with indicators and a client management table." },
-        { src: "/images/projects/bizmanager/inventory-control.webp", title: "Inventory management", description: "Product control, replenishment levels and category distribution in a clear panel.", alt: "BizManager inventory screen with stock value, total items, alerts and category distribution." },
-        { src: "/images/projects/bizmanager/agenda-week.webp", title: "Operational schedule", description: "Weekly view to organize appointments, services and the business routine.", alt: "BizManager schedule screen with a weekly calendar and appointments positioned by time." },
-      ];
-  const otherProjects = isPortuguese
-    ? [
-        {
-          slug: "asynchub",
-          src: "/images/projects/asynchub/dashboard.webp",
-          alt: "Dashboard do Async Hub CRM com métricas de conversas no Instagram, funil de atendimento e status dos canais.",
-          title: "Async Hub CRM",
-          status: "Em validação",
-          description: "CRM multi-tenant para centralizar conversas do Instagram e WhatsApp, com dashboard de desempenho e funil de vendas em tempo real.",
-        },
-        {
-          slug: "encaixe",
-          src: "/images/projects/encaixe/vitrine-calendario.webp",
-          alt: "Vitrine pública de agendamento do Encaixe com calendário, preferência de profissional e horários disponíveis.",
-          title: "Encaixe",
-          status: "Em desenvolvimento",
-          description: "Sistema de agendamentos com vitrine pública de reserva, grade de horários flexível e painel para múltiplos profissionais.",
-        },
-      ]
-    : [
-        {
-          slug: "asynchub",
-          src: "/images/projects/asynchub/dashboard.webp",
-          alt: "Async Hub CRM dashboard with Instagram conversation metrics, service funnel and channel status.",
-          title: "Async Hub CRM",
-          status: "In validation",
-          description: "Multi-tenant CRM to centralize Instagram and WhatsApp conversations, with a performance dashboard and real-time sales funnel.",
-        },
-        {
-          slug: "encaixe",
-          src: "/images/projects/encaixe/vitrine-calendario.webp",
-          alt: "Encaixe public booking storefront with calendar, professional preference and available time slots.",
-          title: "Encaixe",
-          status: "In development",
-          description: "Appointment scheduling system with a public booking storefront, flexible time-slot grid and a panel for multiple professionals.",
-        },
-      ];
-  const bizManagerIdentityHighlights = isPortuguese
-    ? ["Módulos de gestão conectados em uma base única.", "Interface pensada para leitura rápida de dados e rotinas.", "Arquitetura full-stack preparada para evolução do produto."]
-    : ["Management modules connected in a single base.", "Interface designed for quick reading of data and routines.", "Full-stack architecture prepared for product evolution."];
-  const bizManagerModuleChips = isPortuguese
-    ? ["Dashboard", "Financeiro", "Clientes", "Estoque", "Agenda", "Configurações"]
-    : ["Dashboard", "Finances", "Clients", "Inventory", "Schedule", "Settings"];
+  const biz = content.bizManager;
+  const paths = localizedPaths[content.locale];
+  const showcaseSlides: BizManagerShowcaseSlide[] = [
+    { src: biz.heroImage.src, alt: biz.heroImage.alt, title: content.sections.bizManager, description: biz.summary },
+    ...biz.features.map((feature) => ({ src: feature.image.src, alt: feature.image.alt, title: feature.eyebrow, description: feature.description })),
+  ];
+  const startingPrice = formatBizManagerPrice(content.locale, getBizManagerStartingPrice());
 
   return (
     <>
@@ -86,29 +39,28 @@ export function Projects({ content }: ProjectsProps) {
               <CTAWhatsApp content={content} label={labels.heroPrimaryCta} message={content.whatsappMessages.hero} size="large" />
             </div>
           </div>
-          <ProjectPreview content={content} eyebrow={labels.featured} title="BizManager" />
+          <ProjectPreview content={content} eyebrow={labels.featured} title={biz.name} />
         </div>
 
         <div id="previews-produto" className="mt-20 scroll-mt-28 md:mt-28">
           <h2 className="font-display text-3xl font-semibold text-text-primary">{labels.gallery}</h2>
           <p className="mt-3 max-w-2xl text-base leading-7 text-text-secondary">{labels.galleryDescription}</p>
           <div className="mt-6 grid grid-cols-1 gap-5 lg:grid-cols-10 lg:gap-6">
-            <BizManagerShowcase slides={bizManagerShowcaseSlides} />
+            <BizManagerShowcase
+              slides={showcaseSlides}
+              labels={{ previous: labels.carouselPrevious, next: labels.carouselNext, show: labels.carouselShow }}
+            />
 
             <Card className="flex flex-col gap-5 lg:col-span-3 lg:self-stretch">
-              <span className="eyebrow w-fit rounded-full border border-border bg-surface px-3 py-1 text-async-green">
-                {content.bizManager.status}
-              </span>
+              <BizManagerStatusBadge content={content} />
 
               <div className="flex items-center gap-4">
-                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-md border border-border bg-surface">
-                  <Image src={bizManagerTransparent} alt="BizManager" className="h-9 w-9 object-contain" />
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-md bg-deep-forest">
+                  <BizManagerMark className="h-9 w-9 text-async-green" />
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-text-primary">BizManager</p>
-                  <p className="mt-1 text-xs leading-relaxed text-text-secondary">
-                    {isPortuguese ? "Produto autoral em desenvolvimento" : "In-development proprietary product"}
-                  </p>
+                  <p className="text-sm font-semibold text-text-primary">{biz.name}</p>
+                  <p className="mt-1 text-xs leading-relaxed text-text-secondary">{biz.tagline}</p>
                 </div>
               </div>
 
@@ -118,46 +70,39 @@ export function Projects({ content }: ProjectsProps) {
               </div>
 
               <div>
-                <p className="text-sm font-semibold text-text-primary">{isPortuguese ? "O que o projeto demonstra" : "What the project demonstrates"}</p>
-                <ul className="mt-3 space-y-2.5">
-                  {bizManagerIdentityHighlights.map((item) => (
-                    <li key={item} className="flex gap-2 text-xs leading-relaxed text-text-secondary">
-                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-async-green" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div>
-                <p className="text-sm font-semibold text-text-primary">{isPortuguese ? "Módulos contemplados" : "Covered modules"}</p>
+                <p className="text-sm font-semibold text-text-primary">{labels.identityModules}</p>
                 <div className="mt-3 flex flex-wrap gap-2">
-                  {bizManagerModuleChips.map((module) => (
-                    <span key={module} className="rounded-full border border-border bg-surface px-2.5 py-1 text-[11px] font-semibold text-text-secondary">
-                      {module}
+                  {biz.modules.map((module) => (
+                    <span key={module.title} className="rounded-full border border-border bg-surface px-2.5 py-1 text-[11px] font-semibold text-text-secondary">
+                      {module.title}
                     </span>
                   ))}
                 </div>
               </div>
 
-              <p className="border-t border-border pt-4 text-xs leading-relaxed text-text-secondary">
-                {isPortuguese
-                  ? "Base autoral para demonstrar estratégia, interface e arquitetura em um produto real em evolução."
-                  : "A proprietary base to demonstrate strategy, interface and architecture in a real evolving product."}
-              </p>
+              <div className="border-t border-border pt-4">
+                <p className="text-xs text-text-secondary">{labels.identityPricing}</p>
+                <p className="mt-1 flex items-baseline gap-1">
+                  <span className="font-display text-2xl font-bold text-text-primary">{startingPrice}</span>
+                  <span className="text-sm text-text-secondary">{biz.pricing.perMonth}</span>
+                </p>
+                <p className="mt-1 text-xs text-text-secondary">
+                  {biz.pricing.plans.start.name} {fillTemplate(biz.pricing.trialLabel, { days: bizManagerConfig.trialDays })}
+                </p>
+              </div>
+
+              <Button variant="secondary" href={paths.bizManager} className="mt-auto w-full">
+                {biz.learnMoreCta}
+              </Button>
             </Card>
           </div>
         </div>
 
         <div className="mt-20 md:mt-28">
-          <h2 className="font-display text-3xl font-semibold text-text-primary">{isPortuguese ? "Outros projetos" : "Other projects"}</h2>
-          <p className="mt-3 max-w-2xl text-base leading-7 text-text-secondary">
-            {isPortuguese
-              ? "Produtos autorais em desenvolvimento, usados como laboratório para testar arquitetura, interface e integração antes de levar essa base para projetos de clientes."
-              : "In-development proprietary products, used as a lab to test architecture, interface and integrations before bringing that base into client projects."}
-          </p>
+          <h2 className="font-display text-3xl font-semibold text-text-primary">{labels.otherProjects}</h2>
+          <p className="mt-3 max-w-2xl text-base leading-7 text-text-secondary">{labels.otherProjectsDescription}</p>
           <div className="mt-6 grid gap-5 sm:grid-cols-2">
-            {otherProjects.map((project) => (
+            {labels.otherProjectsList.map((project) => (
               <Card key={project.slug} className="flex h-full flex-col !p-0 overflow-hidden">
                 <div className="relative aspect-[1440/900] w-full border-b border-border">
                   <Image src={project.src} alt={project.alt} fill className="object-cover object-top" sizes="(min-width: 640px) 50vw, 100vw" />
@@ -178,7 +123,7 @@ export function Projects({ content }: ProjectsProps) {
         eyebrow={labels.similar}
         title={labels.finalCtaTitle}
         description={labels.finalCtaDescription}
-        ctaLabel={content.bizManager.cta}
+        ctaLabel={labels.buildSimilarCta}
         message={content.whatsappMessages.bizManager}
       />
     </>

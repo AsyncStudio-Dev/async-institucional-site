@@ -1,6 +1,93 @@
+import type { BizManagerLaunchStatus, BizManagerPlanId } from "../config/bizmanager";
+
 export type Locale = "pt" | "en";
 
-export type PageKey = "home" | "services" | "projects" | "about" | "contact" | "privacy" | "terms";
+export type PageKey = "home" | "services" | "projects" | "bizManager" | "about" | "contact" | "privacy" | "terms";
+
+export type BizManagerImage = {
+  /** Caminho em /public (ex.: /images/projects/bizmanager/dashboard.webp). */
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+};
+
+/** Textos do BizManager que mudam entre "em breve" e "disponível" (ver src/config/bizmanager.ts). */
+export type BizManagerLaunchCopy = {
+  badge: string;
+  primaryCta: string;
+  /** Linha curta abaixo dos botões (ex.: "30 dias grátis, sem cartão"). */
+  note: string;
+  planCta: string;
+  pricingNote: string;
+  finalCtaTitle: string;
+  finalCtaDescription: string;
+};
+
+export type BizManagerContent = {
+  name: string;
+  tagline: string;
+  headline: string;
+  summary: string;
+  learnMoreCta: string;
+  pricingCta: string;
+  loginCta: string;
+  launch: Record<BizManagerLaunchStatus, BizManagerLaunchCopy>;
+  heroImage: BizManagerImage;
+  heroMobileImage: BizManagerImage;
+  highlights: Array<{ value: string; label: string }>;
+  modules: Array<{ title: string; description: string }>;
+  featuresEyebrow: string;
+  featuresTitle: string;
+  featuresDescription: string;
+  features: Array<{
+    slug: string;
+    eyebrow: string;
+    title: string;
+    description: string;
+    bullets: string[];
+    image: BizManagerImage;
+  }>;
+  mobile: {
+    eyebrow: string;
+    title: string;
+    description: string;
+    images: BizManagerImage[];
+  };
+  audience: {
+    eyebrow: string;
+    title: string;
+    description: string;
+    items: string[];
+  };
+  pricing: {
+    eyebrow: string;
+    title: string;
+    description: string;
+    monthly: string;
+    yearly: string;
+    yearlyBadge: string;
+    perMonth: string;
+    free: string;
+    /** "{amount}" é trocado pelo total anual. */
+    billedYearly: string;
+    /** "{days}" é trocado pela duração do teste. */
+    trialLabel: string;
+    featured: string;
+    plans: Record<BizManagerPlanId, { name: string; tagline: string; features: string[] }>;
+  };
+  faq: {
+    eyebrow: string;
+    title: string;
+    items: Array<{ question: string; answer: string }>;
+  };
+  /** Mensagens de WhatsApp: "{plan}" é trocado pelo nome do plano. */
+  whatsapp: {
+    waitlist: string;
+    waitlistPlan: string;
+    questions: string;
+  };
+};
 
 export type LegalDocument = {
   title: string;
@@ -21,6 +108,10 @@ export type SiteContent = {
     about: string;
     contact: string;
     cta: string;
+    projectsOverview: string;
+    projectsOverviewDescription: string;
+    /** Rótulo acessível do botão que abre o submenu de projetos. */
+    projectsMenuToggle: string;
   };
   seo: Record<PageKey, { title: string; description: string }>;
   hero: {
@@ -68,26 +159,7 @@ export type SiteContent = {
     title: string;
     description: string;
   }>;
-  bizManager: {
-    status: string;
-    audience: string;
-    summary: string;
-    objective: string;
-    proof: string;
-    cta: string;
-    demonstrates: Array<{
-      title: string;
-      description: string;
-    }>;
-    modules: Array<{
-      title: string;
-      description: string;
-    }>;
-    buildOptions: Array<{
-      title: string;
-      description: string;
-    }>;
-  };
+  bizManager: BizManagerContent;
   process: Array<{
     title: string;
     description: string;
@@ -183,7 +255,6 @@ export type SiteContent = {
       whyEyebrow: string;
       whyClosing: string;
       bizEyebrow: string;
-      bizProjectsCta: string;
       processEyebrow: string;
       aboutCta: string;
       contactEyebrow: string;
@@ -198,20 +269,27 @@ export type SiteContent = {
       heroPrimaryCta: string;
       heroSecondaryCta: string;
       featured: string;
-      objective: string;
-      whyExists: string;
-      demonstrates: string;
-      modules: string;
-      modulesDescription: string;
       gallery: string;
       galleryDescription: string;
       identityLabel: string;
       identityDescription: string;
-      dashboardLabel: string;
-      dashboardDescription: string;
+      identityModules: string;
+      identityPricing: string;
+      carouselPrevious: string;
+      carouselNext: string;
+      carouselShow: string;
+      otherProjects: string;
+      otherProjectsDescription: string;
+      otherProjectsList: Array<{
+        slug: string;
+        src: string;
+        alt: string;
+        title: string;
+        status: string;
+        description: string;
+      }>;
       similar: string;
-      buildForCompany: string;
-      buildForCompanyDescription: string;
+      buildSimilarCta: string;
       finalCtaTitle: string;
       finalCtaDescription: string;
     };

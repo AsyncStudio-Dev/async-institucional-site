@@ -13,9 +13,15 @@ export type BizManagerShowcaseSlide = {
 
 type BizManagerShowcaseProps = {
   slides: BizManagerShowcaseSlide[];
+  labels: {
+    previous: string;
+    next: string;
+    /** "{title}" é trocado pelo título da tela. */
+    show: string;
+  };
 };
 
-export function BizManagerShowcase({ slides }: BizManagerShowcaseProps) {
+export function BizManagerShowcase({ slides, labels }: BizManagerShowcaseProps) {
   const [activeIndex, setActiveIndex] = useState(0);
   const activeSlide = slides[activeIndex] ?? slides[0];
 
@@ -28,7 +34,7 @@ export function BizManagerShowcase({ slides }: BizManagerShowcaseProps) {
     <Card className="flex flex-col overflow-hidden !p-0 lg:col-span-7">
       <div className="relative border-b border-border bg-surface p-3 sm:p-5">
         <div className="relative overflow-hidden rounded-sm border border-border">
-          <div className="relative aspect-[2048/1035] w-full">
+          <div className="relative aspect-[16/10] w-full">
             <Image
               key={activeSlide.src}
               src={activeSlide.src}
@@ -45,7 +51,7 @@ export function BizManagerShowcase({ slides }: BizManagerShowcaseProps) {
           type="button"
           onClick={showPrevious}
           className="absolute left-5 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-white text-lg font-semibold text-text-primary shadow-card transition hover:border-async-green focus:outline-none focus-visible:ring-2 focus-visible:ring-async-green"
-          aria-label="Mostrar tela anterior"
+          aria-label={labels.previous}
         >
           {"<"}
         </button>
@@ -53,7 +59,7 @@ export function BizManagerShowcase({ slides }: BizManagerShowcaseProps) {
           type="button"
           onClick={showNext}
           className="absolute right-5 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-white text-lg font-semibold text-text-primary shadow-card transition hover:border-async-green focus:outline-none focus-visible:ring-2 focus-visible:ring-async-green"
-          aria-label="Mostrar proxima tela"
+          aria-label={labels.next}
         >
           {">"}
         </button>
@@ -66,7 +72,7 @@ export function BizManagerShowcase({ slides }: BizManagerShowcaseProps) {
             <p className="mt-2 max-w-2xl text-sm leading-relaxed text-text-secondary md:text-base">{activeSlide.description}</p>
           </div>
 
-          <div className="flex items-center gap-2 md:pb-1" aria-label="Indicadores do carrossel">
+          <div className="flex items-center gap-2 md:pb-1">
             {slides.map((slide, index) => (
               <button
                 key={slide.src}
@@ -75,7 +81,7 @@ export function BizManagerShowcase({ slides }: BizManagerShowcaseProps) {
                 className={`h-2.5 rounded-full transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-async-green ${
                   index === activeIndex ? "w-8 bg-async-green" : "w-2.5 bg-sage-gray/30 hover:bg-sage-gray/50"
                 }`}
-                aria-label={`Mostrar ${slide.title}`}
+                aria-label={labels.show.replace("{title}", slide.title)}
                 aria-current={index === activeIndex}
               />
             ))}

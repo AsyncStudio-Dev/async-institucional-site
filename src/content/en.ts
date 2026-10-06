@@ -1,3 +1,4 @@
+import { bizManagerImages } from "./bizmanagerImages";
 import type { SiteContent } from "./types";
 
 export const en: SiteContent = {
@@ -9,6 +10,9 @@ export const en: SiteContent = {
     about: "About",
     contact: "Contact",
     cta: "Talk to us",
+    projectsOverview: "All projects",
+    projectsOverviewDescription: "Our own products and what we build",
+    projectsMenuToggle: "Open projects submenu",
   },
   seo: {
     home: {
@@ -24,7 +28,12 @@ export const en: SiteContent = {
     projects: {
       title: "Projects - Async Studio",
       description:
-        "Explore Async Studio projects, including BizManager, an in-development product for solopreneurs and small businesses.",
+        "Explore Async Studio projects, including BizManager, a management platform for solopreneurs and small businesses.",
+    },
+    bizManager: {
+      title: "BizManager - Management for solopreneurs and small businesses | Async Studio",
+      description:
+        "Sales, finances, clients, inventory and scheduling in one dashboard. Explore BizManager's features and plans, with a 30-day free trial.",
     },
     about: {
       title: "About - Async Studio",
@@ -66,7 +75,7 @@ export const en: SiteContent = {
       "Because your company needs technology that works, supports growth and is built with clarity from the beginning.",
     bizManager: "BizManager",
     bizManagerDescription:
-      "An in-development proprietary product designed to organize finances, clients, inventory and scheduling in a single platform.",
+      "A management platform to organize sales, finances, clients, inventory and scheduling in one place.",
     process: "How we take your idea from plan to product",
     processDescription:
       "Before building, we understand your business, your goals and the problem that needs to be solved.",
@@ -200,58 +209,233 @@ export const en: SiteContent = {
     },
   ],
   bizManager: {
-    status: "In-development proprietary product",
-    audience: "Solopreneurs, independent professionals and small businesses",
+    name: "BizManager",
+    tagline: "Management for solopreneurs and small businesses",
+    headline: "Sales, finances, clients, inventory and scheduling in one place.",
     summary:
-      "BizManager is an in-development management platform for small businesses to track finances, clients, inventory and scheduling with more clarity.",
-    objective:
-      "Created to help small businesses organize finances, clients, inventory and scheduling in a single platform.",
-    proof:
-      "The project was created to centralize important day-to-day information, reducing dependence on spreadsheets, manual controls and disconnected tools.",
-    cta: "I want to build a similar solution",
-    demonstrates: [
-      {
-        title: "Product planning",
-        description: "We turn a business need into understandable modules, flows and priorities.",
+      "BizManager organizes the routine of anyone running a small business: every sale records the income in your finances and updates inventory on its own, and the dashboard shows what came in, what went out and what was left this month.",
+    learnMoreCta: "Discover BizManager",
+    pricingCta: "See plans and pricing",
+    loginCta: "I already have an account",
+    launch: {
+      "coming-soon": {
+        badge: "Launching soon",
+        primaryCta: "Notify me at launch",
+        note: "Join the waitlist on WhatsApp and be among the first to get access.",
+        planCta: "Notify me",
+        pricingNote: "Planned launch pricing. People on the waitlist hear first.",
+        finalCtaTitle: "Be one of the first to use BizManager",
+        finalCtaDescription:
+          "We are putting on the finishing touches. Message us on WhatsApp to join the waitlist and try it free for 30 days, no strings attached.",
       },
-      {
-        title: "Clear functional interface",
-        description: "We design screens that help users understand data, make decisions and execute tasks with more ease.",
+      available: {
+        badge: "Available now",
+        primaryCta: "Start free trial",
+        note: "30 days free, no credit card required.",
+        planCta: "Get started",
+        pricingNote: "Start with the free trial and pick a plan later. Pay with Pix, bank slip or card.",
+        finalCtaTitle: "Get your business organized today",
+        finalCtaDescription: "Create your account in a few minutes and use every module for 30 days, no credit card required.",
       },
-      {
-        title: "Modular system",
-        description: "We organize features by area so the platform can evolve and be maintained with more control.",
-      },
-      {
-        title: "Business context",
-        description: "We connect design and technology decisions to what the company needs to monitor day to day.",
-      },
+    },
+    heroImage: {
+      ...bizManagerImages.dashboard,
+      alt: "BizManager dashboard with monthly revenue, expenses and result, a cash-flow chart, today's schedule and restock alerts.",
+    },
+    heroMobileImage: {
+      ...bizManagerImages.mobileDashboard,
+      alt: "BizManager dashboard on a phone, showing the month's indicators.",
+    },
+    highlights: [
+      { value: "30 days", label: "free trial, no card needed" },
+      { value: "1 sale", label: "updates finances and inventory together" },
+      { value: "5 modules", label: "connected in a single dashboard" },
+      { value: "100% online", label: "on desktop and mobile" },
     ],
     modules: [
-      { title: "Dashboard", description: "Overview of key business indicators in one place." },
-      { title: "Finances", description: "Control of revenues, expenses and operational cash flow." },
-      { title: "Clients", description: "Client registration and tracking to facilitate relationship building." },
-      { title: "Inventory", description: "Control of products, stock movements and replenishment alerts." },
-      { title: "Schedule", description: "Organization of appointments, services and day-to-day tasks." },
+      { title: "Sales", description: "Sales, custom orders and delivery, with finances and inventory linked." },
+      { title: "Finances", description: "Payables and receivables, cash flow and monthly profit." },
+      { title: "Clients", description: "Contacts, ratings and the purchase history of each client." },
+      { title: "Inventory", description: "Products, costs, margins and restock alerts." },
+      { title: "Schedule", description: "Appointments, deliveries and the week's commitments." },
     ],
-    buildOptions: [
+    featuresEyebrow: "Features",
+    featuresTitle: "Everything your day-to-day needs, without the complexity",
+    featuresDescription: "The modules talk to each other: record something once and it shows up wherever it needs to.",
+    features: [
       {
-        title: "Custom system",
-        description: "Structured development to organize internal workflows, replace spreadsheets, and centralize business management in a single tool.",
+        slug: "sales",
+        eyebrow: "Sales and custom orders",
+        title: "Record a sale once. Everything else updates itself.",
+        description:
+          "Every sale records the income, updates inventory and lands in the client's history. Custom orders with due dates, delivery and the channel the sale came from all live in the same record.",
+        bullets: [
+          "Paid upfront or in installments, by Pix, card, bank slip or cash",
+          "Custom orders with due dates, tracked until delivery",
+          "Sales channel: WhatsApp, Instagram, store or website",
+          "Revenue, average ticket and receivables for the month",
+        ],
+        image: {
+          ...bizManagerImages.sales,
+          alt: "BizManager sales screen with number of sales, revenue, average ticket, receivables and the month's sales list.",
+        },
       },
       {
-        title: "SaaS/MVP",
-        description: "Building a functional first version to validate digital product ideas in the market, focusing on speed and a scalable foundation.",
+        slug: "finances",
+        eyebrow: "Finances",
+        title: "Know how much your business really made this month.",
+        description:
+          "Income and expenses with due dates and categories, payables and receivables, and a clear result: sales, minus the cost of what was sold, minus expenses.",
+        bullets: [
+          "Payables and receivables with due dates",
+          "Monthly profit with gross and net margin",
+          "Expenses by category and 6-month cash flow",
+          "Invoices and receipts attached as photo or PDF",
+        ],
+        image: {
+          ...bizManagerImages.finance,
+          alt: "BizManager finance screen with the month's income, expenses, result and cash, a list of entries and expenses by category.",
+        },
       },
       {
-        title: "Internal web app",
-        description: "Secure and optimized applications to centralize team operations, facilitating data access and daily task execution.",
+        slug: "clients",
+        eyebrow: "Clients",
+        title: "Get to know who buys from you.",
+        description:
+          "Contacts, ratings and notes, a WhatsApp shortcut and each client's history: how much they spent, what they bought and what is still open.",
+        bullets: ["Total spent, average ticket and last purchase", "One-tap WhatsApp shortcut", "Import clients from a spreadsheet"],
+        image: {
+          ...bizManagerImages.clientHistory,
+          alt: "A client's purchase history in BizManager, with total spent, number of purchases, average ticket and products bought.",
+        },
       },
       {
-        title: "Legacy system modernization",
-        description: "Rebuilding or evolving outdated systems, improving speed, interface, and security without disrupting operations.",
+        slug: "inventory",
+        eyebrow: "Inventory",
+        title: "Inventory that keeps itself up to date.",
+        description:
+          "Products and services with cost, price, margin and minimum stock. Sales and purchases update the balance, and the dashboard tells you what to restock.",
+        bullets: [
+          "Low-stock and out-of-stock alerts",
+          "Supplier purchases that add to inventory",
+          "See who bought each product",
+          "Import your catalog from a spreadsheet (.xlsx or .csv)",
+        ],
+        image: {
+          ...bizManagerImages.inventory,
+          alt: "BizManager inventory screen with stock value, low and out-of-stock alerts and units by category.",
+        },
+      },
+      {
+        slug: "schedule",
+        eyebrow: "Schedule",
+        title: "Your week, organized on one screen.",
+        description:
+          "Appointments, deliveries and meetings in a weekly view, linked to clients. Today's commitments show up right on the dashboard.",
+        bullets: ["Weekly view by time slot", "Appointments linked to clients", "Today's schedule on the home dashboard"],
+        image: {
+          ...bizManagerImages.agenda,
+          alt: "BizManager weekly schedule with deliveries, pickups and meetings organized by day and time.",
+        },
       },
     ],
+    mobile: {
+      eyebrow: "On your phone",
+      title: "Use it at the counter, on the go or at home",
+      description:
+        "BizManager runs in your phone's browser, nothing to install. Record a sale on the spot and check your cash from anywhere.",
+      images: [
+        { ...bizManagerImages.mobileDashboard, alt: "BizManager dashboard on a phone with the month's revenue, expenses and result." },
+        { ...bizManagerImages.mobileSales, alt: "BizManager sales screen on a phone with sales, revenue and average ticket." },
+      ],
+    },
+    audience: {
+      eyebrow: "Who it's for",
+      title: "For people running a business who don't want a complicated ERP",
+      description:
+        "Designed for solopreneurs, freelancers and small teams who today juggle notebooks, spreadsheets and WhatsApp chats.",
+      items: ["Shops and retail", "Bakeries and food", "Fashion and accessories", "Beauty and wellness", "Service providers", "Made-to-order sales"],
+    },
+    pricing: {
+      eyebrow: "Plans",
+      title: "Simple pricing, no setup fee",
+      description: "Every account starts with 30 days free. Switch plans or cancel anytime.",
+      monthly: "Monthly",
+      yearly: "Yearly",
+      yearlyBadge: "2 months free",
+      perMonth: "/mo",
+      free: "Free",
+      billedYearly: "billed {amount} per year",
+      trialLabel: "for {days} days",
+      featured: "Most popular",
+      plans: {
+        start: {
+          name: "Free trial",
+          tagline: "Try it for 30 days, no card needed.",
+          features: [
+            "Up to 30 clients, 30 products and 30 sales per month",
+            "Sales linked to inventory and finances",
+            "Payables and receivables",
+            "Schedule, custom orders and delivery",
+            "Spreadsheet import",
+          ],
+        },
+        growth: {
+          name: "Growth",
+          tagline: "Complete management for business owners.",
+          features: [
+            "Unlimited clients, products and sales",
+            "Reports for every month",
+            "Purchase metrics per client",
+            "Merchandise purchases that add to inventory",
+            "Custom categories",
+            "Attached invoices and receipts",
+            "Email support",
+          ],
+        },
+        scale: {
+          name: "Scale",
+          tagline: "For businesses with a team.",
+          features: ["Everything in Growth", "Up to 5 users, with access roles", "CSV (Excel) export", "Priority WhatsApp support"],
+        },
+      },
+    },
+    faq: {
+      eyebrow: "FAQ",
+      title: "Questions about BizManager",
+      items: [
+        {
+          question: "Do I need to install anything?",
+          answer: "No. BizManager runs in your desktop or mobile browser. Just create an account and sign in.",
+        },
+        {
+          question: "How does the free trial work?",
+          answer:
+            "Every account gets 30 days to use the system, no credit card required. If you don't pick a plan when the trial ends, the account becomes read-only: nothing is deleted, and you can edit again as soon as you subscribe.",
+        },
+        {
+          question: "Which payment methods are accepted?",
+          answer: "Pix, bank slip (boleto) or credit card, billed monthly or yearly.",
+        },
+        {
+          question: "Can I switch plans or cancel?",
+          answer: "Yes, anytime, right from your account settings. No lock-in and no fees.",
+        },
+        {
+          question: "I already use spreadsheets. Can I bring my data?",
+          answer: "Yes. Products and clients can be imported from a spreadsheet (.xlsx or .csv) in a few clicks.",
+        },
+        {
+          question: "Is my data safe?",
+          answer: "Each account only accesses its own data, with password-protected sign-in. You can delete your account and all its data whenever you want.",
+        },
+      ],
+    },
+    whatsapp: {
+      waitlist: "Hello! I saw BizManager on the Async Studio website and would like to be notified when it launches.",
+      waitlistPlan: "Hello! I saw BizManager on the Async Studio website and would like to be notified at launch. I'm interested in the {plan} plan.",
+      questions: "Hello! I have a question about BizManager.",
+    },
   },
   process: [
     {
@@ -284,7 +468,7 @@ export const en: SiteContent = {
       "More than just writing code, we deliver clarity and partnership. We are a technology studio built to transform ideas, manual processes, and real business needs into clear, efficient, and user-friendly digital solutions. We combine product strategy, experience design, and software engineering so your business can grow without friction.",
     fullStory: [
       "Our journey began with a strong friendship and constant talks about technology, design, and development. We realized the market needed a technical partner that combined business vision with real delivery, going beyond just writing code.",
-      "The turning point came when developing a thesis (TCC) project with high market potential. We decided to bring it to life and build BizManager, our first proprietary product — a management system under active development that served as a practical laboratory to mature our way of building solutions.",
+      "The turning point came when developing a thesis (TCC) project with high market potential. We decided to bring it to life and build BizManager, our first proprietary product — a management platform for solopreneurs and small businesses that served as a practical laboratory to mature our way of building solutions.",
       "From this hands-on experience, Async Studio was born: a studio prepared to build custom digital solutions, such as business websites, robust systems, and automations that organize and drive small businesses, startups, and growing companies.",
     ],
     founders: [
@@ -456,7 +640,7 @@ export const en: SiteContent = {
   },
   ui: {
     footer: {
-      featured: "Featured project",
+      featured: "Featured product",
       rights: "© 2026 Async Studio. All rights reserved.",
       description: "Websites, systems and digital solutions for companies ready to grow without friction.",
       remote: "Remote projects with clear communication, defined stages and close follow-up.",
@@ -506,7 +690,6 @@ export const en: SiteContent = {
       whyEyebrow: "Differentials",
       whyClosing: "We work with clarity from the first conversation through the project's evolution.",
       bizEyebrow: "Proprietary product",
-      bizProjectsCta: "Explore projects",
       processEyebrow: "Process",
       aboutCta: "Discover our story",
       contactEyebrow: "Contact",
@@ -522,25 +705,39 @@ export const en: SiteContent = {
       heroPrimaryCta: "Talk about your project",
       heroSecondaryCta: "View featured project",
       featured: "Featured project",
-      objective: "Product goal",
-      whyExists: "Why this project exists",
-      demonstrates: "What this project demonstrates",
-      modules: "Main modules",
-      modulesDescription:
-        "BizManager was structured in simple modules to centralize key operational areas and facilitate the platform's evolution.",
-      gallery: "Product previews",
-      galleryDescription:
-        "The previews show how the modules were designed to organize important information without overwhelming the user experience.",
-      identityLabel: "Project identity",
+      gallery: "Inside BizManager",
+      galleryDescription: "Real product screens, with data from a demo store.",
+      identityLabel: "An Async Studio product",
       identityDescription:
-        "BizManager is Async Studio's proprietary product currently under development.",
-      dashboardLabel: "Main dashboard",
-      dashboardDescription:
-        "Overview of key indicators, finances and schedule in a unified interface.",
+        "Our first proprietary product: it started as a thesis project and grew into a complete management platform for small businesses.",
+      identityModules: "Modules",
+      identityPricing: "Plans from",
+      carouselPrevious: "Show previous screen",
+      carouselNext: "Show next screen",
+      carouselShow: "Show {title}",
+      otherProjects: "Other projects",
+      otherProjectsDescription:
+        "In-development proprietary products, used as a lab to test architecture, interface and integrations before bringing that base into client projects.",
+      otherProjectsList: [
+        {
+          slug: "asynchub",
+          src: "/images/projects/asynchub/dashboard.webp",
+          alt: "Async Hub CRM dashboard with Instagram conversation metrics, service funnel and channel status.",
+          title: "Async Hub CRM",
+          status: "In validation",
+          description: "Multi-tenant CRM to centralize Instagram and WhatsApp conversations, with a performance dashboard and real-time sales funnel.",
+        },
+        {
+          slug: "encaixe",
+          src: "/images/projects/encaixe/vitrine-calendario.webp",
+          alt: "Encaixe public booking storefront with calendar, professional preference and available time slots.",
+          title: "Encaixe",
+          status: "In development",
+          description: "Appointment scheduling system with a public booking storefront, flexible time-slot grid and a panel for multiple professionals.",
+        },
+      ],
       similar: "Want to build a solution like this for your company?",
-      buildForCompany: "What we can build for your company",
-      buildForCompanyDescription:
-        "BizManager shows how we think about product, organization, and operations. This same logic can be applied to custom digital solutions for companies that need to organize processes, sell better, serve with more clarity, or operate with more efficiency.",
+      buildSimilarCta: "I want to build a similar solution",
       finalCtaTitle: "Have an idea, manual process or system that needs to evolve?",
       finalCtaDescription:
         "Talk to Async Studio on WhatsApp and we will understand the clearest path to turn your need into a well-built digital solution.",

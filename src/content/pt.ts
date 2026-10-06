@@ -1,3 +1,4 @@
+import { bizManagerImages } from "./bizmanagerImages";
 import type { SiteContent } from "./types";
 
 export const pt: SiteContent = {
@@ -9,6 +10,9 @@ export const pt: SiteContent = {
     about: "Sobre",
     contact: "Contato",
     cta: "Fale conosco",
+    projectsOverview: "Todos os projetos",
+    projectsOverviewDescription: "Produtos autorais e o que construímos",
+    projectsMenuToggle: "Abrir submenu de projetos",
   },
   seo: {
     home: {
@@ -24,7 +28,12 @@ export const pt: SiteContent = {
     projects: {
       title: "Projetos - Async Studio",
       description:
-        "Conheça projetos da Async Studio, incluindo o BizManager, produto autoral em desenvolvimento para MEIs, autônomos e pequenos negócios.",
+        "Conheça projetos da Async Studio, incluindo o BizManager, plataforma de gestão para MEIs, autônomos e pequenos negócios.",
+    },
+    bizManager: {
+      title: "BizManager - Gestão para MEIs e pequenos negócios | Async Studio",
+      description:
+        "Vendas, financeiro, clientes, estoque e agenda em um só painel. Conheça as funcionalidades e os planos do BizManager, com 30 dias de teste grátis.",
     },
     about: {
       title: "Sobre - Async Studio",
@@ -67,7 +76,7 @@ export const pt: SiteContent = {
       "Porque sua empresa precisa de tecnologia que funcione, acompanhe seu crescimento e seja construída com clareza desde o início.",
     bizManager: "BizManager",
     bizManagerDescription:
-      "Produto autoral em desenvolvimento para organizar finanças, clientes, estoque e agenda em uma única plataforma.",
+      "Plataforma de gestão para organizar vendas, finanças, clientes, estoque e agenda em um só lugar.",
     process: "Como tiramos sua ideia do papel",
     processDescription:
       "Antes de desenvolver, entendemos seu negócio, seus objetivos e o problema que precisa ser resolvido.",
@@ -201,58 +210,251 @@ export const pt: SiteContent = {
     },
   ],
   bizManager: {
-    status: "Produto autoral em desenvolvimento",
-    audience: "Pequenos negócios",
+    name: "BizManager",
+    tagline: "Gestão para MEIs e pequenos negócios",
+    headline: "Vendas, financeiro, clientes, estoque e agenda no mesmo lugar.",
     summary:
-      "O BizManager é uma plataforma de gestão em construção para pequenos negócios acompanharem finanças, clientes, estoque e agenda com mais clareza.",
-    objective:
-      "Criado para ajudar pequenos negócios a organizarem finanças, clientes, estoque e agenda em uma única plataforma.",
-    proof:
-      "O projeto nasceu para centralizar informações importantes do dia a dia, reduzindo a dependência de planilhas, controles manuais e ferramentas desconectadas.",
-    cta: "Quero construir uma solução semelhante",
-    demonstrates: [
-      {
-        title: "Planejamento de produto",
-        description: "Transformamos uma necessidade de negócio em módulos, fluxos e prioridades compreensíveis.",
+      "O BizManager organiza a rotina de quem toca um pequeno negócio: cada venda lança a entrada no financeiro e baixa o estoque sozinha, e o painel mostra quanto entrou, quanto saiu e quanto sobrou no mês.",
+    learnMoreCta: "Conhecer o BizManager",
+    pricingCta: "Ver planos e preços",
+    loginCta: "Já tenho conta",
+    launch: {
+      "coming-soon": {
+        badge: "Lançamento em breve",
+        primaryCta: "Quero ser avisado no lançamento",
+        note: "Entre na lista de espera pelo WhatsApp e receba o acesso entre os primeiros.",
+        planCta: "Quero ser avisado",
+        pricingNote: "Preços previstos para o lançamento. Quem está na lista de espera é avisado primeiro.",
+        finalCtaTitle: "Seja um dos primeiros a usar o BizManager",
+        finalCtaDescription:
+          "Estamos nos ajustes finais. Chame a gente no WhatsApp para entrar na lista de espera e testar por 30 dias, sem compromisso.",
       },
-      {
-        title: "Interface clara e funcional",
-        description: "Criamos telas que ajudam o usuário a entender dados, tomar decisões e executar tarefas com mais facilidade.",
+      available: {
+        badge: "Disponível agora",
+        primaryCta: "Começar teste grátis",
+        note: "30 dias grátis, sem cartão de crédito.",
+        planCta: "Começar agora",
+        pricingNote: "Comece pelo teste grátis e escolha o plano depois. Pagamento por Pix, boleto ou cartão.",
+        finalCtaTitle: "Organize seu negócio a partir de hoje",
+        finalCtaDescription: "Crie sua conta em poucos minutos e use todos os módulos por 30 dias, sem cartão de crédito.",
       },
-      {
-        title: "Sistema modular",
-        description: "Organizamos funcionalidades por áreas para permitir evolução, manutenção e novas entregas com mais controle.",
-      },
-      {
-        title: "Visão de negócio",
-        description: "Conectamos decisões de design e tecnologia ao que a empresa precisa acompanhar no dia a dia.",
-      },
+    },
+    heroImage: {
+      ...bizManagerImages.dashboard,
+      alt: "Painel do BizManager com receita, despesas e resultado do mês, gráfico de fluxo de caixa, agenda do dia e alertas de reposição de estoque.",
+    },
+    heroMobileImage: {
+      ...bizManagerImages.mobileDashboard,
+      alt: "Painel do BizManager aberto no celular, com os indicadores do mês.",
+    },
+    highlights: [
+      { value: "30 dias", label: "de teste grátis, sem cartão" },
+      { value: "1 venda", label: "atualiza financeiro e estoque juntos" },
+      { value: "5 módulos", label: "conectados em um só painel" },
+      { value: "100% online", label: "no computador e no celular" },
     ],
     modules: [
-      { title: "Dashboard", description: "Visão geral dos principais indicadores do negócio em um só lugar." },
-      { title: "Finanças", description: "Controle de receitas, despesas e fluxo financeiro da operação." },
-      { title: "Clientes", description: "Cadastro e acompanhamento de clientes para facilitar o relacionamento." },
-      { title: "Estoque", description: "Controle de produtos, movimentações e alertas de reposição." },
-      { title: "Agenda", description: "Organização de compromissos, atendimentos e tarefas do dia a dia." },
+      { title: "Vendas", description: "Vendas, encomendas e tele-entrega com financeiro e estoque ligados." },
+      { title: "Financeiro", description: "Contas a pagar e a receber, fluxo de caixa e lucro do mês." },
+      { title: "Clientes", description: "Cadastro, avaliação e histórico de compras de cada cliente." },
+      { title: "Estoque", description: "Produtos, custos, margens e alertas de reposição." },
+      { title: "Agenda", description: "Atendimentos, entregas e compromissos da semana." },
     ],
-    buildOptions: [
+    featuresEyebrow: "Funcionalidades",
+    featuresTitle: "Tudo o que o dia a dia do negócio pede, sem complicar",
+    featuresDescription:
+      "Os módulos conversam entre si: você registra uma vez e as informações aparecem onde precisam aparecer.",
+    features: [
       {
-        title: "Sistema sob medida",
-        description: "Desenvolvimento estruturado para organizar fluxos internos, substituir planilhas e centralizar a gestão do seu negócio em uma ferramenta única.",
+        slug: "vendas",
+        eyebrow: "Vendas e encomendas",
+        title: "Registre a venda uma vez. O resto se atualiza sozinho.",
+        description:
+          "Cada venda lança a entrada no financeiro, baixa o estoque e entra no histórico do cliente. Encomendas com prazo, tele-entrega e o canal de onde a venda veio ficam no mesmo registro.",
+        bullets: [
+          "À vista ou parcelada, por Pix, cartão, boleto ou dinheiro",
+          "Encomendas com prazo, acompanhadas até a entrega",
+          "Canal da venda: WhatsApp, Instagram, loja ou site",
+          "Faturamento, ticket médio e valores a receber do mês",
+        ],
+        image: {
+          ...bizManagerImages.sales,
+          alt: "Tela de vendas do BizManager com total de vendas, faturamento, ticket médio, valores a receber e a lista de vendas do mês.",
+        },
       },
       {
-        title: "SaaS/MVP",
-        description: "Construção de uma primeira versão funcional para validar ideias de produtos digitais no mercado, com foco em rapidez e base escalável.",
+        slug: "financeiro",
+        eyebrow: "Financeiro",
+        title: "Saiba quanto o negócio realmente lucrou no mês.",
+        description:
+          "Entradas e saídas com vencimento e categoria, contas a pagar e a receber e um resultado claro: vendas, menos o custo do que foi vendido, menos as despesas.",
+        bullets: [
+          "Contas a pagar e a receber com vencimento",
+          "Lucro do mês com margem bruta e líquida",
+          "Despesas por categoria e fluxo de caixa de 6 meses",
+          "Notas e comprovantes anexados em foto ou PDF",
+        ],
+        image: {
+          ...bizManagerImages.finance,
+          alt: "Tela financeira do BizManager com receitas, despesas, resultado e caixa do mês, lista de lançamentos e despesas por categoria.",
+        },
       },
       {
-        title: "Web app interno",
-        description: "Aplicações seguras e otimizadas para centralizar a operação da equipe, facilitando o acesso a dados e a execução de tarefas diárias.",
+        slug: "clientes",
+        eyebrow: "Clientes",
+        title: "Conheça quem compra com você.",
+        description:
+          "Cadastro com contato, avaliação e observações, atalho para o WhatsApp e o histórico de cada cliente: quanto gastou, o que comprou e o que ainda está em aberto.",
+        bullets: [
+          "Total gasto, ticket médio e última compra",
+          "Atalho para conversar pelo WhatsApp",
+          "Importação de clientes por planilha",
+        ],
+        image: {
+          ...bizManagerImages.clientHistory,
+          alt: "Histórico de compras de uma cliente no BizManager, com total gasto, número de compras, ticket médio e produtos comprados.",
+        },
       },
       {
-        title: "Modernização de sistema antigo",
-        description: "Reconstrução ou evolução de sistemas ultrapassados, melhorando a velocidade, o visual e a segurança sem interromper a operação.",
+        slug: "estoque",
+        eyebrow: "Estoque",
+        title: "Estoque que se movimenta sozinho.",
+        description:
+          "Produtos e serviços com custo, preço, margem e estoque mínimo. Vendas e compras de mercadoria atualizam o saldo, e o painel avisa o que precisa repor.",
+        bullets: [
+          "Alertas de estoque baixo e esgotado",
+          "Compra de fornecedor com entrada no estoque",
+          "Veja quem comprou cada produto",
+          "Importação do catálogo por planilha (.xlsx ou .csv)",
+        ],
+        image: {
+          ...bizManagerImages.inventory,
+          alt: "Tela de estoque do BizManager com valor em estoque, alertas de estoque baixo e esgotado e unidades por categoria.",
+        },
+      },
+      {
+        slug: "agenda",
+        eyebrow: "Agenda",
+        title: "A semana organizada em uma tela.",
+        description:
+          "Atendimentos, entregas e reuniões em uma visão semanal, ligados aos clientes. Os compromissos do dia aparecem direto no painel.",
+        bullets: ["Visão semanal por horário", "Compromissos vinculados a clientes", "Agenda do dia no painel inicial"],
+        image: {
+          ...bizManagerImages.agenda,
+          alt: "Agenda semanal do BizManager com entregas, retiradas e reuniões organizadas por dia e horário.",
+        },
       },
     ],
+    mobile: {
+      eyebrow: "No celular",
+      title: "Use no balcão, na rua ou em casa",
+      description:
+        "O BizManager funciona no navegador do celular, sem instalar nada. Registre uma venda na hora e confira o caixa de qualquer lugar.",
+      images: [
+        { ...bizManagerImages.mobileDashboard, alt: "Painel do BizManager no celular com receita, despesas e resultado do mês." },
+        { ...bizManagerImages.mobileSales, alt: "Tela de vendas do BizManager no celular com vendas, faturamento e ticket médio." },
+      ],
+    },
+    audience: {
+      eyebrow: "Para quem é",
+      title: "Para quem toca o negócio e não quer um ERP complicado",
+      description:
+        "Pensado para MEIs, autônomos e pequenas equipes que hoje se dividem entre caderno, planilha e conversas no WhatsApp.",
+      items: [
+        "Lojas e comércios",
+        "Confeitarias e alimentação",
+        "Moda e acessórios",
+        "Beleza e estética",
+        "Prestadores de serviço",
+        "Venda sob encomenda",
+      ],
+    },
+    pricing: {
+      eyebrow: "Planos",
+      title: "Preço simples, sem taxa de adesão",
+      description: "Todo cadastro começa com 30 dias grátis. Troque de plano ou cancele quando quiser.",
+      monthly: "Mensal",
+      yearly: "Anual",
+      yearlyBadge: "2 meses grátis",
+      perMonth: "/mês",
+      free: "Grátis",
+      billedYearly: "cobrado {amount} por ano",
+      trialLabel: "por {days} dias",
+      featured: "Mais escolhido",
+      plans: {
+        start: {
+          name: "Teste grátis",
+          tagline: "Experimente por 30 dias, sem cartão.",
+          features: [
+            "Até 30 clientes, 30 produtos e 30 vendas por mês",
+            "Vendas com estoque e financeiro ligados",
+            "Contas a pagar e a receber",
+            "Agenda, encomendas e tele-entrega",
+            "Importação de planilha",
+          ],
+        },
+        growth: {
+          name: "Growth",
+          tagline: "Gestão completa para quem toca o negócio.",
+          features: [
+            "Clientes, produtos e vendas ilimitados",
+            "Relatórios de todos os meses",
+            "Métricas de compra por cliente",
+            "Compra de mercadoria com entrada no estoque",
+            "Categorias personalizadas",
+            "Notas e comprovantes anexados",
+            "Suporte por e-mail",
+          ],
+        },
+        scale: {
+          name: "Scale",
+          tagline: "Para quem tem equipe.",
+          features: [
+            "Tudo do Growth",
+            "Até 5 usuários, com perfis de acesso",
+            "Exportação em CSV (Excel)",
+            "Suporte por WhatsApp, com prioridade",
+          ],
+        },
+      },
+    },
+    faq: {
+      eyebrow: "Dúvidas frequentes",
+      title: "Perguntas sobre o BizManager",
+      items: [
+        {
+          question: "Preciso instalar alguma coisa?",
+          answer: "Não. O BizManager funciona no navegador do computador e do celular. Basta criar a conta e entrar.",
+        },
+        {
+          question: "Como funciona o teste grátis?",
+          answer:
+            "Todo cadastro ganha 30 dias para usar o sistema, sem cartão de crédito. Se você não escolher um plano ao fim do teste, a conta fica disponível só para consulta: nada é apagado, e você volta a editar assim que assinar.",
+        },
+        {
+          question: "Quais formas de pagamento são aceitas?",
+          answer: "Pix, boleto ou cartão de crédito, com cobrança mensal ou anual.",
+        },
+        {
+          question: "Posso trocar de plano ou cancelar?",
+          answer: "Sim, quando quiser, direto nas configurações da conta. Não há fidelidade nem multa.",
+        },
+        {
+          question: "Já uso planilha. Consigo levar meus dados?",
+          answer: "Sim. Produtos e clientes podem ser importados de uma planilha (.xlsx ou .csv) em poucos cliques.",
+        },
+        {
+          question: "Meus dados ficam seguros?",
+          answer:
+            "Cada conta acessa apenas os próprios dados, com login protegido por senha. Você pode excluir a conta e todos os dados quando quiser.",
+        },
+      ],
+    },
+    whatsapp: {
+      waitlist: "Olá! Vi o BizManager no site da Async Studio e quero ser avisado(a) quando ele for lançado.",
+      waitlistPlan: "Olá! Vi o BizManager no site da Async Studio e quero ser avisado(a) do lançamento. Tenho interesse no plano {plan}.",
+      questions: "Olá! Tenho uma dúvida sobre o BizManager.",
+    },
   },
   process: [
     {
@@ -285,7 +487,7 @@ export const pt: SiteContent = {
       "Mais do que linhas de código, entregamos clareza e parceria. Somos um estúdio de tecnologia criado para transformar ideias, processos manuais e necessidades reais do seu negócio em soluções digitais claras, eficientes e fáceis de usar. Unimos estratégia de produto, design de experiência e engenharia de software para que sua empresa evolua sem travar.",
     fullStory: [
       "Nossa trajetória começou com uma forte amizade e conversas constantes sobre tecnologia, design e desenvolvimento. Identificamos que o mercado precisava de um parceiro técnico que combinasse visão de negócio com entrega real, indo além de apenas escrever código.",
-      "O ponto de virada veio no desenvolvimento de um projeto de TCC com grande potencial de mercado. Decidimos tirá-lo do papel e construir o BizManager, nosso primeiro produto autoral — um sistema de gestão em desenvolvimento ativo que serviu como laboratório prático para amadurecer nossa forma de construir soluções.",
+      "O ponto de virada veio no desenvolvimento de um projeto de TCC com grande potencial de mercado. Decidimos tirá-lo do papel e construir o BizManager, nosso primeiro produto autoral — uma plataforma de gestão para MEIs e pequenos negócios que serviu como laboratório prático para amadurecer nossa forma de construir soluções.",
       "Dessa experiência prática, nasceu a Async Studio: um estúdio preparado para criar soluções digitais sob medida, como sites institucionais, sistemas e automações robustas que organizam e impulsionam pequenos negócios, startups e empresas em crescimento.",
     ],
     founders: [
@@ -459,7 +661,7 @@ export const pt: SiteContent = {
   },
   ui: {
     footer: {
-      featured: "Projeto em destaque",
+      featured: "Produto em destaque",
       rights: "© 2026 Async Studio. Todos os direitos reservados.",
       description: "Sites, sistemas e soluções digitais para empresas que querem crescer sem travar.",
       remote: "Projetos remotos com comunicação clara, etapas definidas e acompanhamento próximo.",
@@ -509,7 +711,6 @@ export const pt: SiteContent = {
       whyEyebrow: "Diferenciais",
       whyClosing: "Trabalhamos com clareza desde a primeira conversa até a evolução do projeto.",
       bizEyebrow: "Produto autoral",
-      bizProjectsCta: "Conhecer projetos",
       processEyebrow: "Processo",
       aboutCta: "Conhecer nossa história",
       contactEyebrow: "Contato",
@@ -525,25 +726,39 @@ export const pt: SiteContent = {
       heroPrimaryCta: "Fale sobre seu projeto",
       heroSecondaryCta: "Ver projeto em destaque",
       featured: "Projeto em destaque",
-      objective: "Objetivo do produto",
-      whyExists: "Por que esse projeto existe",
-      demonstrates: "O que este projeto demonstra",
-      modules: "Módulos principais",
-      modulesDescription:
-        "O BizManager foi estruturado em módulos simples para centralizar áreas importantes da operação e facilitar a evolução da plataforma.",
-      gallery: "Previews do produto",
-      galleryDescription:
-        "Os previews mostram como os módulos foram pensados para organizar informações importantes sem sobrecarregar a experiência do usuário.",
-      identityLabel: "Identidade do projeto",
+      gallery: "Por dentro do BizManager",
+      galleryDescription: "Telas reais do produto, com dados de uma loja de demonstração.",
+      identityLabel: "Produto Async Studio",
       identityDescription:
-        "O BizManager é o produto autoral em desenvolvimento da Async Studio.",
-      dashboardLabel: "Dashboard principal",
-      dashboardDescription:
-        "Visão geral de indicadores, finanças e agenda em uma interface única.",
+        "Nosso primeiro produto autoral: nasceu de um TCC e virou uma plataforma de gestão completa para pequenos negócios.",
+      identityModules: "Módulos",
+      identityPricing: "Planos a partir de",
+      carouselPrevious: "Mostrar tela anterior",
+      carouselNext: "Mostrar próxima tela",
+      carouselShow: "Mostrar {title}",
+      otherProjects: "Outros projetos",
+      otherProjectsDescription:
+        "Produtos autorais em desenvolvimento, usados como laboratório para testar arquitetura, interface e integração antes de levar essa base para projetos de clientes.",
+      otherProjectsList: [
+        {
+          slug: "asynchub",
+          src: "/images/projects/asynchub/dashboard.webp",
+          alt: "Dashboard do Async Hub CRM com métricas de conversas no Instagram, funil de atendimento e status dos canais.",
+          title: "Async Hub CRM",
+          status: "Em validação",
+          description: "CRM multi-tenant para centralizar conversas do Instagram e WhatsApp, com dashboard de desempenho e funil de vendas em tempo real.",
+        },
+        {
+          slug: "encaixe",
+          src: "/images/projects/encaixe/vitrine-calendario.webp",
+          alt: "Vitrine pública de agendamento do Encaixe com calendário, preferência de profissional e horários disponíveis.",
+          title: "Encaixe",
+          status: "Em desenvolvimento",
+          description: "Sistema de agendamentos com vitrine pública de reserva, grade de horários flexível e painel para múltiplos profissionais.",
+        },
+      ],
       similar: "Quer construir uma solução como essa para sua empresa?",
-      buildForCompany: "O que podemos construir para sua empresa",
-      buildForCompanyDescription:
-        "O BizManager mostra como pensamos produto, organização e operação. Essa mesma lógica pode ser aplicada a soluções digitais sob medida para empresas que precisam organizar processos, vender melhor, atender com mais clareza ou operar com mais eficiência.",
+      buildSimilarCta: "Quero construir uma solução semelhante",
       finalCtaTitle: "Tem uma ideia, processo manual ou sistema que precisa evoluir?",
       finalCtaDescription:
         "Converse com a Async Studio pelo WhatsApp e vamos entender o caminho mais claro para transformar sua necessidade em uma solução digital bem construída.",

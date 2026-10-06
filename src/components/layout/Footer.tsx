@@ -4,6 +4,7 @@ import type { SiteContent } from "../../content/types";
 import { localizedPaths } from "../../routes/paths";
 import { createWhatsAppLink } from "../../utils/whatsapp";
 import { Button } from "../ui/Button";
+import { getBizManagerLaunchCopy } from "../../lib/bizmanager";
 import { BrandLogo } from "./BrandLogo";
 
 type FooterProps = {
@@ -60,9 +61,15 @@ export function Footer({ content }: FooterProps) {
 
         <div>
           <p className="eyebrow text-light-mint/80">{labels.featured}</p>
-          <Link href={paths.projects} className="mt-4 block rounded-sm border border-border-dark p-4 transition duration-200 hover:border-light-mint/30">
-            <span className="text-sm font-semibold text-mint-white">BizManager</span>
-            <span className="mt-1 block text-xs text-mint-white/50">{content.bizManager.status}</span>
+          <Link href={paths.bizManager} className="mt-4 block rounded-sm border border-border-dark p-4 transition duration-200 hover:border-light-mint/30">
+            <span className="flex items-center justify-between gap-3">
+              <span className="text-sm font-semibold text-mint-white">{content.bizManager.name}</span>
+              <span className="flex items-center gap-1.5 text-[11px] font-medium text-light-mint/80">
+                <span className="h-1.5 w-1.5 rounded-full bg-async-green" aria-hidden="true" />
+                {getBizManagerLaunchCopy(content).badge}
+              </span>
+            </span>
+            <span className="mt-1 block text-xs text-mint-white/50">{content.bizManager.tagline}</span>
           </Link>
           <p className="eyebrow mt-6 text-light-mint/80">{content.nav.contact}</p>
           <div className="mt-4 flex flex-col gap-2.5 text-sm text-mint-white/60">
@@ -107,7 +114,7 @@ export function Footer({ content }: FooterProps) {
         <nav className="flex flex-wrap gap-x-6 gap-y-2">
           <Link href={paths.privacy} className="transition duration-200 hover:text-mint-white">{labels.privacy}</Link>
           <Link href={paths.terms} className="transition duration-200 hover:text-mint-white">{labels.terms}</Link>
-          <Link href={paths.projects} className="transition duration-200 hover:text-mint-white">BizManager</Link>
+          <Link href={paths.bizManager} className="transition duration-200 hover:text-mint-white">{content.bizManager.name}</Link>
         </nav>
       </div>
     </footer>

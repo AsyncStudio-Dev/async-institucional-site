@@ -13,6 +13,9 @@ import { Section } from "../components/ui/Section";
 import { SectionTitle } from "../components/ui/SectionTitle";
 import { ServiceTeaserCard } from "../components/ui/ServiceTeaserCard";
 import { siteConfig } from "../config/site";
+import { getBizManagerPrimaryAction } from "../lib/bizmanager";
+import { BizManagerActionButton } from "../components/ui/BizManagerActionButton";
+import { BizManagerStatusBadge } from "../components/ui/BizManagerStatusBadge";
 
 type HomeProps = {
   content: SiteContent;
@@ -87,14 +90,11 @@ export function Home({ content }: HomeProps) {
           <p className="eyebrow text-async-green">{labels.bizEyebrow}</p>
           <h2 className="font-display mt-3 text-3xl font-semibold text-mint-white md:text-4xl">{content.sections.bizManager}</h2>
           <p className="mt-5 text-base leading-7 text-mint-white/70">{content.bizManager.summary}</p>
-          <p className="mt-5 inline-flex items-center gap-2 rounded-full border border-border-dark px-4 py-2 text-sm font-medium text-mint-white/85">
-            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-async-green" aria-hidden="true" />
-            {content.bizManager.status}
-          </p>
+          <BizManagerStatusBadge content={content} tone="dark" className="mt-5" />
           <div className="mt-8 flex flex-col flex-wrap gap-3 sm:flex-row">
-            <CTAWhatsApp content={content} label={content.bizManager.cta} message={content.whatsappMessages.bizManager} size="large" />
-            <Button variant="secondary" tone="dark" size="large" href={paths.projects}>
-              {labels.bizProjectsCta}
+            <BizManagerActionButton action={getBizManagerPrimaryAction(content)} size="large" />
+            <Button variant="secondary" tone="dark" size="large" href={paths.bizManager}>
+              {content.bizManager.learnMoreCta}
             </Button>
           </div>
         </Reveal>
