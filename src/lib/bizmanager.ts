@@ -48,7 +48,7 @@ export function formatBizManagerPrice(locale: Locale, amount: number) {
   return new Intl.NumberFormat(priceLocale[locale], { style: "currency", currency: "BRL" }).format(amount);
 }
 
-/** Menor mensalidade paga, para chamadas como "Planos a partir de R$ 39,90/mês". */
+/** Menor mensalidade paga, para chamadas como "Planos a partir de R$ 29,90/mês". */
 export function getBizManagerStartingPrice() {
   return Math.min(...bizManagerConfig.plans.filter((plan) => plan.monthly > 0).map((plan) => plan.monthly));
 }

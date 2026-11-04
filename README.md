@@ -59,15 +59,15 @@ O site mostra o BizManager em dois estados, definidos em `src/config/bizmanager.
 
 | Estado | Selo | Botão principal | Botões dos planos |
 |---|---|---|---|
-| `coming-soon` (padrão) | "Lançamento em breve" | WhatsApp para entrar na lista de espera | WhatsApp com o plano de interesse |
-| `available` | "Disponível agora" | Cadastro no app (`/register`) | Página de planos do app (`/plans`) e link "Já tenho conta" |
+| `coming-soon` | "Lançamento em breve" | WhatsApp para entrar na lista de espera | WhatsApp com o plano de interesse |
+| `available` (padrão, desde o lançamento) | "Disponível agora" | Cadastro no app (`/register`) | Página de planos do app (`/plans`) e link "Já tenho conta" |
 
-**Para lançar**, basta uma das opções e um novo deploy:
+**O BizManager já foi lançado** e o padrão é `available`. Atenção: se a Vercel tiver `NEXT_PUBLIC_BIZMANAGER_STATUS` definida, ela sobrepõe o padrão. Para trocar de estado, basta uma das opções e um novo deploy:
 
 1. Na hospedagem (Vercel), definir `NEXT_PUBLIC_BIZMANAGER_STATUS=available` (e, se mudar o domínio, `NEXT_PUBLIC_BIZMANAGER_APP_URL`); ou
-2. Trocar `defaultStatus` para `"available"` em `src/config/bizmanager.ts`.
+2. Trocar `defaultStatus` em `src/config/bizmanager.ts`.
 
-Para testar localmente: `NEXT_PUBLIC_BIZMANAGER_STATUS=available npm run dev`.
+Para testar o estado antigo localmente: `NEXT_PUBLIC_BIZMANAGER_STATUS=coming-soon npm run dev`.
 
 **Onde editar:**
 

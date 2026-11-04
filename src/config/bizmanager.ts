@@ -21,7 +21,7 @@ export type BizManagerPlanPricing = {
   featured?: boolean;
 };
 
-const defaultStatus: BizManagerLaunchStatus = "coming-soon";
+const defaultStatus: BizManagerLaunchStatus = "available";
 const defaultAppUrl = "https://bizmanager.asyncstudio.com.br";
 
 function parseStatus(value?: string): BizManagerLaunchStatus | null {
@@ -53,9 +53,9 @@ export const bizManagerConfig = {
   trialDays: 30,
   /** Espelha src/constants/plans.js do BizManager — atualize os dois juntos. */
   plans: [
-    { id: "start", monthly: 0, yearly: 0 },
-    { id: "growth", monthly: 39.9, yearly: 399, featured: true },
-    { id: "scale", monthly: 59.9, yearly: 599 },
+    { id: "start", monthly: 29.9, yearly: 299 },
+    { id: "growth", monthly: 49.9, yearly: 499, featured: true },
+    { id: "scale", monthly: 79.9, yearly: 799 },
   ] as BizManagerPlanPricing[],
 };
 

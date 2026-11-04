@@ -232,11 +232,11 @@ export const pt: SiteContent = {
       available: {
         badge: "Disponível agora",
         primaryCta: "Começar teste grátis",
-        note: "30 dias grátis, sem cartão de crédito.",
+        note: "30 dias grátis do Start, sem cartão e sem cobrança automática.",
         planCta: "Começar agora",
-        pricingNote: "Comece pelo teste grátis e escolha o plano depois. Pagamento por Pix, boleto ou cartão.",
+        pricingNote: "Teste o Start por 30 dias e só assine se fizer sentido. A assinatura é paga no cartão de crédito.",
         finalCtaTitle: "Organize seu negócio a partir de hoje",
-        finalCtaDescription: "Crie sua conta em poucos minutos e use todos os módulos por 30 dias, sem cartão de crédito.",
+        finalCtaDescription: "Crie sua conta em poucos minutos e use o Start por 30 dias, sem cartão e sem cobrança automática.",
       },
     },
     heroImage: {
@@ -372,38 +372,41 @@ export const pt: SiteContent = {
     pricing: {
       eyebrow: "Planos",
       title: "Preço simples, sem taxa de adesão",
-      description: "Todo cadastro começa com 30 dias grátis. Troque de plano ou cancele quando quiser.",
+      description: "Todo cadastro começa com 30 dias grátis do Start, sem cartão. Troque de plano ou cancele quando quiser.",
       monthly: "Mensal",
       yearly: "Anual",
       yearlyBadge: "2 meses grátis",
       perMonth: "/mês",
       free: "Grátis",
       billedYearly: "cobrado {amount} por ano",
-      trialLabel: "por {days} dias",
+      trialLabel: "grátis por {days} dias",
       featured: "Mais escolhido",
       plans: {
         start: {
-          name: "Teste grátis",
-          tagline: "Experimente por 30 dias, sem cartão.",
+          name: "Start",
+          tagline: "Para começar com produtos e serviços.",
           features: [
-            "Até 30 clientes, 30 produtos e 30 vendas por mês",
+            "Clientes, produtos e vendas ilimitados",
             "Vendas com estoque e financeiro ligados",
             "Contas a pagar e a receber",
-            "Agenda, encomendas e tele-entrega",
-            "Importação de planilha",
+            "Vitrine, pedidos e agenda online",
+            "Tele-entrega, encomendas e importação de planilha",
+            "2 profissionais na agenda e 1 acesso administrativo",
+            "Relatórios do mês atual",
           ],
         },
         growth: {
           name: "Growth",
           tagline: "Gestão completa para quem toca o negócio.",
           features: [
-            "Clientes, produtos e vendas ilimitados",
+            "Tudo do Start",
+            "4 profissionais com login e 2 acessos administrativos",
+            "Atendimentos paralelos e comissões",
             "Relatórios de todos os meses",
             "Métricas de compra por cliente",
             "Compra de mercadoria com entrada no estoque",
             "Categorias personalizadas",
             "Notas e comprovantes anexados",
-            "Suporte por e-mail",
           ],
         },
         scale: {
@@ -411,7 +414,7 @@ export const pt: SiteContent = {
           tagline: "Para quem tem equipe.",
           features: [
             "Tudo do Growth",
-            "Até 5 usuários, com perfis de acesso",
+            "6 profissionais com login e 5 acessos administrativos, com perfis",
             "Exportação em CSV (Excel)",
             "Suporte por WhatsApp, com prioridade",
           ],
@@ -429,15 +432,15 @@ export const pt: SiteContent = {
         {
           question: "Como funciona o teste grátis?",
           answer:
-            "Todo cadastro ganha 30 dias para usar o sistema, sem cartão de crédito. Se você não escolher um plano ao fim do teste, a conta fica disponível só para consulta: nada é apagado, e você volta a editar assim que assinar.",
+            "Todo cadastro ganha 30 dias grátis do Start, sem cartão e sem cobrança automática. Se você não assinar ao fim do teste, a conta fica disponível só para consulta: nada é apagado, e você volta a editar assim que assinar.",
         },
         {
           question: "Quais formas de pagamento são aceitas?",
-          answer: "Pix, boleto ou cartão de crédito, com cobrança mensal ou anual.",
+          answer: "A assinatura é paga no cartão de crédito, com cobrança mensal ou anual.",
         },
         {
           question: "Posso trocar de plano ou cancelar?",
-          answer: "Sim, quando quiser, direto nas configurações da conta. Não há fidelidade nem multa.",
+          answer: "Sim, quando quiser, em Configurações > Assinatura. Não há fidelidade nem multa, e o plano vale até o fim do período já pago.",
         },
         {
           question: "Já uso planilha. Consigo levar meus dados?",
