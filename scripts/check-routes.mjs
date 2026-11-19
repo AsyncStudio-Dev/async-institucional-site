@@ -7,12 +7,13 @@ const match = source.match(/localizedPaths[^=]*=\s*({[\s\S]*?});/);
 assert.ok(match, "localizedPaths export was not found");
 
 const localizedPaths = Function(`"use strict"; return (${match[1]});`)();
-const pageKeys = ["home", "services", "projects", "bizManager", "about", "contact", "privacy", "terms"];
+const pageKeys = ["home", "offers", "services", "projects", "bizManager", "about", "contact", "privacy", "terms"];
 
 assert.deepEqual(Object.keys(localizedPaths.pt).sort(), [...pageKeys].sort());
 assert.deepEqual(Object.keys(localizedPaths.en).sort(), [...pageKeys].sort());
 assert.deepEqual(localizedPaths.pt, {
   home: "/",
+  offers: "/ofertas",
   services: "/servicos",
   projects: "/projetos",
   bizManager: "/bizmanager",
@@ -23,6 +24,7 @@ assert.deepEqual(localizedPaths.pt, {
 });
 assert.deepEqual(localizedPaths.en, {
   home: "/en",
+  offers: "/en/offers",
   services: "/en/services",
   projects: "/en/projects",
   bizManager: "/en/bizmanager",

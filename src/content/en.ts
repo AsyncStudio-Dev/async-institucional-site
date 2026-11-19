@@ -5,6 +5,7 @@ export const en: SiteContent = {
   locale: "en",
   nav: {
     home: "Home",
+    offers: "Pricing",
     services: "Services",
     projects: "Projects",
     about: "About",
@@ -19,6 +20,11 @@ export const en: SiteContent = {
       title: "Async Studio - Websites, Systems and Digital Solutions",
       description:
         "We build websites, systems, web apps, automations and digital products for companies ready to grow without operational friction.",
+    },
+    offers: {
+      title: "Websites starting at R$ 499 | Small Business Pricing — Async Studio",
+      description:
+        "Launch promotional pricing until Dec 31, 2026: websites from R$ 499 (Pix), Presença from R$ 99 + R$ 79/mo, and Complete Storefront with BizManager. Free preview and 7-business-day delivery.",
     },
     services: {
       title: "Services - Async Studio",
@@ -651,7 +657,7 @@ export const en: SiteContent = {
       terms: "Terms of Service",
       legalName: "Legal Name",
       cnpj: "CNPJ",
-      address: "Address",
+      address: "Service area",
       email: "Email",
     },
     serviceCard: {
@@ -679,7 +685,7 @@ export const en: SiteContent = {
       companyInfo: "Company Information",
       legalName: "Legal Name",
       cnpj: "CNPJ",
-      address: "Registered address",
+      address: "Service area",
     },
     home: {
       problemsEyebrow: "Problems we solve",
@@ -687,6 +693,7 @@ export const en: SiteContent = {
       problemsCtaDescription:
         "Tell us about your company's context and we will assess the clearest path to solve it without overcomplicating.",
       problemsCtaLabel: "Talk to us on WhatsApp",
+      heroOffersCta: "See packages & pricing",
       servicesCta: "View all services",
       servicesMoreIntro: "We also build:",
       servicesMoreItems: ["SaaS/MVPs", "Internal automations", "Legacy system modernization"],

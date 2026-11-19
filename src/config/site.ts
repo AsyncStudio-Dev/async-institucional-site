@@ -1,4 +1,4 @@
-const fallbackDomain = "http://localhost:3000";
+const fallbackDomain = "https://www.asyncstudio.com.br";
 
 function normalizeSiteDomain(value?: string) {
   const domain = value?.trim();
@@ -27,7 +27,7 @@ const contactConfig = {
   },
   instagram: {
     handle: "@asyncstudiodev",
-    url: "https://instagram.com/asyncstudiodev",
+    url: "https://www.instagram.com/asyncstudiodev",
   },
 } as const;
 
@@ -35,20 +35,24 @@ const companyConfig = {
   legalName: "68.009.930 CAETANO APOLLO DA SILVEIRA",
   tradeName: "Async Studio",
   cnpj: "68.009.930/0001-40",
-  address: {
-    street: "Rua Bauru",
-    number: "364",
-    neighborhood: "Canudos",
-    city: "Novo Hamburgo",
+  serviceHours: {
+    schema: "Mo-Su 07:00-19:00",
+    formattedPt: "Todos os dias, das 7h às 19h",
+    formattedEn: "Daily, 7:00 AM to 7:00 PM (BRT)",
+  },
+  serviceArea: {
+    cities: ["Sapucaia do Sul", "Novo Hamburgo", "São Leopoldo", "Esteio"],
     state: "RS",
-    zip: "93540-180",
-    formatted: "Rua Bauru, 364 - Canudos, Novo Hamburgo - RS, CEP 93540-180",
+    country: "BR",
+    formattedPt: "Sapucaia do Sul, Novo Hamburgo, São Leopoldo e Esteio (RS) — atendimento presencial na região e remoto em todo o Brasil",
+    formattedEn: "Sapucaia do Sul, Novo Hamburgo, São Leopoldo and Esteio (RS, Brazil) — local and nationwide remote service",
   },
 } as const;
 
 export const siteConfig = {
   name: "Async Studio",
   domain: normalizeSiteDomain(process.env.NEXT_PUBLIC_SITE_DOMAIN),
+  ogImage: "/images/og-async-studio.png",
   contact: contactConfig,
   company: companyConfig,
   // Backwards compatibility keys

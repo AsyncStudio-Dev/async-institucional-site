@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import type { PropsWithChildren } from "react";
 import localFont from "next/font/local";
 import Script from "next/script";
@@ -35,9 +36,26 @@ type RootDocumentProps = PropsWithChildren<{
   lang: "pt-BR" | "en";
 }>;
 
-export const rootMetadata = {
+export const rootMetadata: Metadata = {
+  metadataBase: new URL(siteConfig.domain),
   applicationName: siteConfig.name,
   manifest: "/manifest.json",
+  openGraph: {
+    siteName: siteConfig.name,
+    type: "website",
+    images: [
+      {
+        url: siteConfig.ogImage,
+        width: 1200,
+        height: 630,
+        alt: "Async Studio — Sites e sistemas sob medida",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: [siteConfig.ogImage],
+  },
 };
 
 const introGateScript = `

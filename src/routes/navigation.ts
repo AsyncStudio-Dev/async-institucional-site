@@ -23,6 +23,7 @@ export function getMainNavItems(content: SiteContent): NavItem[] {
   const paths = localizedPaths[content.locale];
   return [
     { key: "home", label: content.nav.home, href: paths.home },
+    { key: "offers", label: content.nav.offers, href: paths.offers },
     { key: "services", label: content.nav.services, href: paths.services },
     {
       key: "projects",

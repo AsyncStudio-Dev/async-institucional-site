@@ -32,7 +32,7 @@ export function Button({
   };
 
   if (variant === "tertiary") {
-    const tertiaryColor = tone === "dark" ? "text-async-green hover:text-light-mint" : "text-async-green hover:text-async-green/80";
+    const tertiaryColor = tone === "dark" ? "text-async-green hover:text-light-mint" : "text-[#15803d] hover:text-deep-forest";
     return (
       <a className={`${base} rounded-sm ${textSizes[size]} ${tertiaryColor} ${className}`} {...props}>
         {children}

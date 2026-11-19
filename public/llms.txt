@@ -1,0 +1,71 @@
+# Async Studio
+
+> Empresa de software e criação de sites para pequenos negócios em Sapucaia do Sul, Novo Hamburgo, São Leopoldo e Esteio (RS), com atendimento remoto para todo o Brasil. Atualizado em 2026-11-19.
+
+## Sobre a Async Studio
+
+- **Nome comercial:** Async Studio
+- **Razão social:** 68.009.930 CAETANO APOLLO DA SILVEIRA (CNPJ 68.009.930/0001-40)
+- **Atuação principal:** Desenvolvimento de sites, landing pages, sistemas web sob medida, SaaS/MVPs e o produto autoral BizManager.
+- **Área de atendimento:** Sapucaia do Sul, Novo Hamburgo, São Leopoldo e Esteio, no Rio Grande do Sul (empresa de área de atendimento sem endereço físico aberto ao público), além de atendimento remoto para todo o Brasil.
+- **Contato oficial:**
+  - WhatsApp / Telefone: +55 51 99334-0586 (https://wa.me/5551993340586)
+  - E-mail: contato@asyncstudio.com.br
+  - Instagram: https://www.instagram.com/asyncstudiodev
+  - Site oficial: https://www.asyncstudio.com.br
+
+## Ofertas e preços de sites (em BRL)
+
+Preço promocional de lançamento válido até 31/12/2026. A partir de 01/01/2027 vale a tabela normal. Sites a partir de R$ 499. Tabela vigente em 2026-11-19.
+
+| Oferta | Pix | Cartão em até 3x | Mensal | A partir de 01/01/2027 |
+|---|---|---|---|---|
+| Site (uma página, até 6 seções) | R$ 499 | R$ 590 (3x R$ 196,67) | + R$ 39/mês | R$ 990 (até 3x) + R$ 39/mês |
+| Presença (12 meses, sem multa) | R$ 99 de entrada | — | R$ 79/mês | R$ 390 de entrada + R$ 99/mês |
+| Loja completa | R$ 999 | R$ 1.190 (3x R$ 396,67) | + R$ 39/mês | R$ 1.490 + R$ 39/mês |
+| Loja completa + BizManager | R$ 699 | R$ 790 (3x R$ 263,33) | + R$ 39/mês | R$ 990 + R$ 39/mês |
+| Perfil do Google avulso | R$ 149 | — | — | R$ 190 |
+| Ajuste extra (até 30 min) | R$ 49 | — | — | R$ 49 |
+
+- **Site:** site de uma página com até 6 seções, endereço `.com.br` no nome do cliente, Perfil da Empresa no Google revisado e 3 rodadas de ajuste antes de publicar. Os R$ 39/mês cobrem site no ar, domínio e suporte técnico.
+- **Presença:** o mesmo site, mais 2 ajustes por mês de até 30 minutos, em contrato de 12 meses sem multa. Do 13º mês segue a R$ 79/mês com os ajustes ou passa a R$ 39/mês só com o site no ar. A entrada não é devolvida.
+- **Loja completa:** vitrine online com busca, categorias e filtros, pedido em 3 etapas enviado pelo WhatsApp e página de perguntas frequentes. Entrega em até 10 dias úteis.
+- **Loja completa + BizManager:** a mesma loja junto com o BizManager (30 dias grátis, sem cartão; depois a partir de R$ 29,90/mês). BizManager ativo por 6 meses; se cancelar antes, diferença de R$ 300.
+- **Perfil do Google avulso:** configuração e revisão do Perfil da Empresa no Google, com desconto do valor se o cliente fechar um site em até 30 dias.
+
+### Condições comerciais e entregas
+- **Prévia gratuita antes de pagar:** a Async Studio monta uma prévia funcional antes da contratação; cores, fotos, textos e ordem das seções podem ser ajustados antes da publicação no domínio do cliente.
+- **Ajustes:** 3 rodadas de ajuste antes de publicar.
+- **Cancelamento:** sem multa, com aviso de 30 dias. O domínio já é do cliente e ele recebe o site em ZIP; o site sai da hospedagem da Async ao fim da assinatura.
+- **Prazo padrão:** até 7 dias úteis para o site de uma página e até 10 dias úteis para a Loja completa, após aprovação da prévia e envio completo das informações e imagens do negócio.
+- **Formas de pagamento:** Pix, boleto e cartão de crédito (em até 3x sem juros no Site, na Loja completa e na Loja completa + BizManager).
+- **Propriedade:** o domínio `.com.br` e o Perfil da Empresa no Google permanecem em nome do cliente.
+- **Atendimento:** todos os dias, das 7h às 19h.
+
+## Páginas principais
+
+- [Início](https://www.asyncstudio.com.br/): Visão geral da Async Studio, serviços e acesso rápido às ofertas e ao BizManager.
+- [Ofertas e preços](https://www.asyncstudio.com.br/ofertas): Pacotes completos para criação de sites, escopo incluído, orçamento à parte, prazos e FAQ.
+- [Serviços](https://www.asyncstudio.com.br/servicos): Sites institucionais, landing pages, sistemas sob medida, SaaS/MVPs, automações internas e modernização de sistemas.
+- [BizManager](https://www.asyncstudio.com.br/bizmanager): Plataforma de gestão para MEIs e pequenos negócios com vendas, estoque, financeiro, clientes, agenda e vitrine virtual (30 dias grátis, sem cartão).
+- [Projetos](https://www.asyncstudio.com.br/projetos): Vitrine do BizManager, Async Hub CRM e Encaixe.
+- [Sobre](https://www.asyncstudio.com.br/sobre): História, fundadores e processo de desenvolvimento.
+- [Contato](https://www.asyncstudio.com.br/contato): Canais oficiais e área de atendimento.
+- [Versão completa para IAs](https://www.asyncstudio.com.br/llms-full.txt): Detalhes de escopo, perguntas frequentes e especificações do BizManager.
+
+## English summary
+
+Async Studio is a software and website company serving small businesses in Sapucaia do Sul, Novo Hamburgo, São Leopoldo and Esteio (Rio Grande do Sul, Brazil), and remotely across Brazil. It has no public street address. Open every day, 7am to 7pm. WhatsApp +55 51 99334-0586, contato@asyncstudio.com.br.
+
+Launch promotional prices valid until 2026-12-31; regular prices apply from 2027-01-01 (table current as of 2026-11-19). Prices in BRL:
+
+| Offer | Pix | Card, up to 3x | Monthly | From 2027-01-01 |
+|---|---|---|---|---|
+| Website (one page, up to 6 sections) | R$ 499 | R$ 590 (3x R$ 196.67) | + R$ 39/month | R$ 990 (up to 3x) + R$ 39/month |
+| Presença (12 months, no cancellation fee) | R$ 99 setup | — | R$ 79/month | R$ 390 setup + R$ 99/month |
+| Complete Storefront | R$ 999 | R$ 1,190 (3x R$ 396.67) | + R$ 39/month | R$ 1,490 + R$ 39/month |
+| Complete Storefront + BizManager | R$ 699 | R$ 790 (3x R$ 263.33) | + R$ 39/month | R$ 990 + R$ 39/month |
+| Standalone Google Business Profile | R$ 149 | — | — | R$ 190 |
+| Extra adjustment (up to 30 min) | R$ 49 | — | — | R$ 49 |
+
+Cancellation: no fee, 30 days' notice; the domain is already the client's and the site is delivered as a ZIP file. Pricing page in English: https://www.asyncstudio.com.br/en/offers

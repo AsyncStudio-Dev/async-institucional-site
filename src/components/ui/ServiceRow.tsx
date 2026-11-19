@@ -52,7 +52,7 @@ export function ServiceRow({ service, index, labels, className = "" }: ServiceRo
         aria-expanded={open}
         aria-controls={panelId}
       >
-        <span className="font-mono-brand mt-1 text-sm text-async-green">{String(index + 1).padStart(2, "0")}</span>
+        <span className="font-mono-brand mt-1 text-sm text-[#15803d]">{String(index + 1).padStart(2, "0")}</span>
         <span className="flex-1">
           <span className="font-display block text-lg font-semibold text-text-primary">{service.title}</span>
           <span className="mt-1.5 block text-sm leading-6 text-text-secondary">{service.summary}</span>

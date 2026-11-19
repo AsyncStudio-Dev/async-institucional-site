@@ -1,0 +1,137 @@
+# Async Studio — Referência Completa
+
+> Documento factual sobre a Async Studio, suas ofertas de sites para pequenos negócios, serviços de software sob medida, área de atendimento e o sistema BizManager. Atualizado em 2026-11-19.
+
+## Identidade e contato oficial
+
+- **Marca:** Async Studio
+- **Razão social:** 68.009.930 CAETANO APOLLO DA SILVEIRA
+- **CNPJ:** 68.009.930/0001-40
+- **Categorias principais:** Empresa de software e criação de sites (web design e desenvolvimento sob medida)
+- **Atendimento presencial / área de atendimento local:** Sapucaia do Sul, Novo Hamburgo, São Leopoldo e Esteio (Vale do Rio dos Sinos, Rio Grande do Sul, Brasil) — sem endereço físico aberto ao público
+- **Atendimento remoto:** Todo o Brasil e projetos no exterior
+- **Telefone / WhatsApp:** +55 51 99334-0586 (https://wa.me/5551993340586)
+- **E-mail:** contato@asyncstudio.com.br
+- **Instagram:** https://www.instagram.com/asyncstudiodev
+- **Site:** https://www.asyncstudio.com.br
+
+## Ofertas de sites para pequenos negócios (`/ofertas`)
+
+Preço promocional de lançamento válido até 31/12/2026. A partir de 01/01/2027 vale a tabela normal. Tabela vigente em 2026-11-19. Sites a partir de R$ 499.
+
+| Oferta | Pix | Cartão em até 3x | Mensal | A partir de 01/01/2027 |
+|---|---|---|---|---|
+| Site (uma página, até 6 seções) | R$ 499 | R$ 590 (3x R$ 196,67) | + R$ 39/mês | R$ 990 (até 3x) + R$ 39/mês |
+| Presença (12 meses, sem multa) | R$ 99 de entrada | — | R$ 79/mês | R$ 390 de entrada + R$ 99/mês |
+| Loja completa | R$ 999 | R$ 1.190 (3x R$ 396,67) | + R$ 39/mês | R$ 1.490 + R$ 39/mês |
+| Loja completa + BizManager | R$ 699 | R$ 790 (3x R$ 263,33) | + R$ 39/mês | R$ 990 + R$ 39/mês |
+| Perfil do Google avulso | R$ 149 | — | — | R$ 190 |
+| Ajuste extra (até 30 min) | R$ 49 | — | — | R$ 49 |
+
+### 1. Site
+- **Preço:** R$ 499 no Pix ou R$ 590 no cartão (3x R$ 196,67) + R$ 39/mês até 31/12/2026; a partir de 01/01/2027, R$ 990 (até 3x) + R$ 39/mês.
+- **Inclui:** site de uma página com até 6 seções; endereço `.com.br` registrado no nome do cliente; Perfil da Empresa no Google revisado; versão para celular; botões para WhatsApp, Instagram e Google Maps; 3 rodadas de ajuste antes de publicar. Os R$ 39/mês cobrem site no ar, domínio e suporte técnico.
+
+### 2. Presença
+- **Preço:** R$ 99 de entrada + R$ 79/mês (contrato de 12 meses, sem multa) até 31/12/2026; a partir de 01/01/2027, R$ 390 de entrada + R$ 99/mês. A entrada não é devolvida.
+- **Inclui:** o mesmo site de uma página, mais 2 ajustes por mês de até 30 minutos cada.
+- **Do 13º mês:** segue a R$ 79/mês com os ajustes ou passa a R$ 39/mês só com o site no ar.
+- **Cancelamento:** sem multa, com aviso de 30 dias.
+
+### 3. Loja completa
+- **Preço:** R$ 999 no Pix ou R$ 1.190 no cartão (3x R$ 396,67) + R$ 39/mês até 31/12/2026; a partir de 01/01/2027, R$ 1.490 + R$ 39/mês.
+- **Inclui:** vitrine online no endereço `.com.br` com busca, categorias e filtros; pedido em 3 etapas enviado para o WhatsApp da loja; página de perguntas frequentes; 3 rodadas de ajuste antes de publicar. Entrega em até 10 dias úteis.
+
+### 4. Loja completa + BizManager
+- **Preço:** R$ 699 no Pix ou R$ 790 no cartão (3x R$ 263,33) + R$ 39/mês até 31/12/2026; a partir de 01/01/2027, R$ 990 + R$ 39/mês.
+- **BizManager:** 30 dias grátis, sem cartão; depois a partir de R$ 29,90/mês. Fica ativo por 6 meses; se o cliente cancelar antes, há diferença de R$ 300.
+
+### Serviços avulsos
+- **Perfil do Google avulso:** R$ 149 até 31/12/2026 e R$ 190 a partir de 01/01/2027. O valor é descontado se o cliente fechar um site em até 30 dias. Nos pacotes de site a revisão do Perfil já está incluída.
+- **Ajuste extra:** R$ 49 por alteração de até 30 minutos, fora dos ajustes incluídos.
+
+## Escopo incluído no preço fixo vs. orçamento à parte
+
+**Incluído nos pacotes fixos (site de uma página):**
+- 1 página com até 6 seções (apresentação, serviços ou produtos em destaque, fotos, avaliações, horários/atendimento e contato).
+- Botões diretos para WhatsApp, Instagram, Google Maps ou catálogo/vitrine do BizManager.
+- Layout responsivo (celular e desktop) e certificado HTTPS.
+- Domínio `.com.br` registrado em nome do cliente.
+- Revisão do Perfil da Empresa no Google e organização dos textos com aprovação prévia antes da publicação.
+
+**Orçado separadamente conforme escopo:**
+- Sites com múltiplas páginas dedicadas.
+- Loja virtual com checkout completo e pagamento online direto dentro do site.
+- Área de login, painel de clientes ou histórico restrito de pedidos.
+- Sistemas de agendamento próprios ou formulários que gravam dados em banco de dados.
+- Blog estruturado, idiomas extras, integrações com ERPs/sistemas externos, fotos profissionais ou copywriting extenso.
+
+## Regras comerciais e entrega
+
+- **Prévia gratuita antes de pagar:** o cliente recebe uma prévia funcional para avaliar no celular e no computador antes de pagar. Cores, fotos, textos e ordem das seções podem ser alterados conforme a preferência do cliente.
+- **Ajustes:** 3 rodadas de ajuste antes de publicar; no Presença, 2 ajustes por mês de até 30 minutos depois da publicação.
+- **Cancelamento:** sem multa, com aviso de 30 dias. O domínio já é do cliente, que recebe o site em ZIP; o site sai da hospedagem da Async Studio ao fim da assinatura.
+- **Prazo de entrega:** até 7 dias úteis para o site de uma página e até 10 dias úteis para a Loja completa, após a aprovação da prévia e a entrega completa das informações e fotos.
+- **Pagamentos:** Pix, boleto e cartão de crédito (em até 3x sem juros no Site, na Loja completa e na Loja completa + BizManager).
+- **Validade do preço promocional:** contratos fechados até 31/12/2026. A partir de 01/01/2027 vale a tabela normal.
+- **Horário de atendimento:** todos os dias, das 7h às 19h.
+
+## Perguntas frequentes (FAQ)
+
+1. **Quanto custa um site para pequeno negócio em Novo Hamburgo e Sapucaia do Sul?**
+   Os sites da Async Studio começam em R$ 499 no Pix (ou R$ 590 no cartão em até 3x) + R$ 39/mês, em preço promocional de lançamento até 31/12/2026; a partir de 01/01/2027, o Site passa a R$ 990 + R$ 39/mês. O Presença custa R$ 99 de entrada + R$ 79/mês por 12 meses (R$ 390 + R$ 99/mês a partir de 2027). A Loja completa custa R$ 999 no Pix ou R$ 1.190 no cartão + R$ 39/mês (R$ 1.490 a partir de 2027) e, junto com o BizManager, R$ 699 no Pix ou R$ 790 no cartão (R$ 990 a partir de 2027).
+2. **O domínio .com.br fica no meu nome?**
+   Sim. O domínio `.com.br` e o Perfil da Empresa no Google ficam registrados no nome ou CNPJ do cliente.
+3. **E se eu quiser cancelar?**
+   Você pode cancelar sem multa, com aviso de 30 dias. O domínio já é seu e você recebe o site em ZIP; como a hospedagem é da Async Studio, o site sai da nossa hospedagem ao fim da assinatura.
+4. **Preciso pagar antes de ver o site?**
+   Não. Montamos uma prévia gratuita antes do pagamento para aprovação visual e de conteúdo.
+5. **Quantos ajustes eu posso pedir?**
+   São 3 rodadas de ajuste antes de publicar. No Presença, depois da publicação são 2 ajustes por mês de até 30 minutos; o ajuste extra custa R$ 49.
+6. **Qual é o prazo para o site ficar pronto?**
+   Até 7 dias úteis para o site de uma página e até 10 dias úteis para a Loja completa, após aprovação da prévia e recebimento dos materiais finais.
+7. **Quais são as formas de pagamento?**
+   Pix, boleto e cartão de crédito, com parcelamento em até 3x sem juros no Site, na Loja completa e na Loja completa + BizManager.
+8. **Até quando vale o preço promocional de lançamento?**
+   Para contratos fechados até 31/12/2026. A partir de 01/01/2027 vale a tabela normal.
+9. **Quanto custa configurar o Perfil da Empresa no Google?**
+   R$ 149 até 31/12/2026 (R$ 190 a partir de 01/01/2027), com desconto do valor se fechar um site em até 30 dias. Nos pacotes de site, a revisão do Perfil já está incluída.
+10. **Quais cidades a Async Studio atende?**
+    Atendimento regional em Sapucaia do Sul, Novo Hamburgo, São Leopoldo e Esteio (RS) e remoto em todo o Brasil, todos os dias, das 7h às 19h.
+
+## English summary
+
+Async Studio is a software and website company serving small businesses in Sapucaia do Sul, Novo Hamburgo, São Leopoldo and Esteio (Rio Grande do Sul, Brazil), and remotely across Brazil. No public street address. Open every day, 7am to 7pm. WhatsApp +55 51 99334-0586, contato@asyncstudio.com.br.
+
+Launch promotional prices are valid until 2026-12-31; regular prices apply from 2027-01-01 (table current as of 2026-11-19). All prices in BRL, every offer includes a free preview before payment and 3 rounds of adjustments before publishing:
+
+| Offer | Pix | Card, up to 3x | Monthly | From 2027-01-01 |
+|---|---|---|---|---|
+| Website (one page, up to 6 sections) | R$ 499 | R$ 590 (3x R$ 196.67) | + R$ 39/month | R$ 990 (up to 3x) + R$ 39/month |
+| Presença (12 months, no cancellation fee, 2 adjustments/month) | R$ 99 setup | — | R$ 79/month | R$ 390 setup + R$ 99/month |
+| Complete Storefront (filters, 3-step WhatsApp order, FAQ) | R$ 999 | R$ 1,190 (3x R$ 396.67) | + R$ 39/month | R$ 1,490 + R$ 39/month |
+| Complete Storefront + BizManager (active 6 months) | R$ 699 | R$ 790 (3x R$ 263.33) | + R$ 39/month | R$ 990 + R$ 39/month |
+| Standalone Google Business Profile | R$ 149 | — | — | R$ 190 |
+| Extra adjustment (up to 30 min) | R$ 49 | — | — | R$ 49 |
+
+Cancellation: no fee with 30 days' notice; the domain is already the client's and the site is delivered as a ZIP file. Delivery: up to 7 business days (one-page site) or 10 business days (storefront). Pricing page in English: https://www.asyncstudio.com.br/en/offers
+
+## BizManager (produto autoral — https://bizmanager.asyncstudio.com.br)
+
+Plataforma de gestão para MEIs e pequenos negócios com controle de vendas, financeiro, clientes, estoque, serviços, agenda e vitrine virtual com pedido via WhatsApp.
+- **Teste grátis:** 30 dias grátis no cadastro, sem cartão.
+- **Planos públicos vigentes:**
+  - **Start:** R$ 29,90/mês ou R$ 299,00/ano
+  - **Growth:** R$ 49,90/mês ou R$ 499,00/ano
+  - **Scale:** R$ 79,90/mês ou R$ 799,00/ano
+
+## Demais páginas do site
+
+- https://www.asyncstudio.com.br/
+- https://www.asyncstudio.com.br/ofertas
+- https://www.asyncstudio.com.br/servicos
+- https://www.asyncstudio.com.br/projetos
+- https://www.asyncstudio.com.br/bizmanager
+- https://www.asyncstudio.com.br/sobre
+- https://www.asyncstudio.com.br/contato
+- https://www.asyncstudio.com.br/en/offers

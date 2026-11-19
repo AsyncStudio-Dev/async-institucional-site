@@ -2,7 +2,7 @@ import type { BizManagerLaunchStatus, BizManagerPlanId } from "../config/bizmana
 
 export type Locale = "pt" | "en";
 
-export type PageKey = "home" | "services" | "projects" | "bizManager" | "about" | "contact" | "privacy" | "terms";
+export type PageKey = "home" | "offers" | "services" | "projects" | "bizManager" | "about" | "contact" | "privacy" | "terms";
 
 export type BizManagerImage = {
   /** Caminho em /public (ex.: /images/projects/bizmanager/dashboard.webp). */
@@ -103,6 +103,7 @@ export type SiteContent = {
   locale: Locale;
   nav: {
     home: string;
+    offers: string;
     services: string;
     projects: string;
     about: string;
@@ -249,6 +250,7 @@ export type SiteContent = {
       problemsCtaTitle: string;
       problemsCtaDescription: string;
       problemsCtaLabel: string;
+      heroOffersCta: string;
       servicesCta: string;
       servicesMoreIntro: string;
       servicesMoreItems: string[];

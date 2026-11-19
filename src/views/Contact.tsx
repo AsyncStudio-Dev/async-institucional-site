@@ -18,6 +18,7 @@ export function Contact({ content }: ContactProps) {
   const hasWhatsAppNumber = Boolean(whatsapp.number);
   const whatsappHref = createWhatsAppLink(content.whatsappMessages.contactCta);
   const labels = content.ui.contact;
+  const serviceAreaText = content.locale === "en" ? siteConfig.company.serviceArea.formattedEn : siteConfig.company.serviceArea.formattedPt;
 
   return (
     <Section spacing="page-top" containerClassName="grid items-center gap-8 lg:grid-cols-[1.05fr_0.95fr]">
@@ -79,7 +80,7 @@ export function Contact({ content }: ContactProps) {
                 <span className="font-semibold text-text-primary">{labels.cnpj}:</span> {siteConfig.company.cnpj}
               </p>
               <p>
-                <span className="font-semibold text-text-primary">{labels.address}:</span> {siteConfig.company.address.formatted}
+                <span className="font-semibold text-text-primary">{labels.address}:</span> {serviceAreaText}
               </p>
             </div>
           </div>

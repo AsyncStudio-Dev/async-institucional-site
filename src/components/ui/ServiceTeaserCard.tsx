@@ -12,7 +12,7 @@ type ServiceTeaserCardProps = {
 export function ServiceTeaserCard({ index, title, summary, href }: ServiceTeaserCardProps) {
   return (
     <Link href={href} className={`group flex h-full flex-col ${cardClassName({ interactive: true })}`}>
-      <span className="font-mono-brand text-sm text-async-green">{String(index + 1).padStart(2, "0")}</span>
+      <span className="font-mono-brand text-sm text-[#15803d]">{String(index + 1).padStart(2, "0")}</span>
       <h3 className="font-display mt-4 text-lg font-semibold text-text-primary">{title}</h3>
       <p className="mt-3 flex-1 text-sm leading-6 text-text-secondary">{summary}</p>
       <span

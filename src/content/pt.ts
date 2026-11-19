@@ -5,6 +5,7 @@ export const pt: SiteContent = {
   locale: "pt",
   nav: {
     home: "Início",
+    offers: "Ofertas",
     services: "Serviços",
     projects: "Projetos",
     about: "Sobre",
@@ -19,6 +20,11 @@ export const pt: SiteContent = {
       title: "Async Studio - Sites, Sistemas e Soluções Digitais",
       description:
         "Criamos sites, sistemas, web apps, automações e produtos digitais para empresas que querem crescer sem travar.",
+    },
+    offers: {
+      title: "Sites a partir de R$ 499 em Sapucaia do Sul e Novo Hamburgo | Ofertas Async Studio",
+      description:
+        "Preço promocional de lançamento até 31/12/2026: sites a partir de R$ 499 no Pix, Presença por R$ 99 + R$ 79/mês e Loja completa com BizManager. Prévia grátis e entrega em até 7 dias úteis.",
     },
     services: {
       title: "Serviços - Async Studio",
@@ -672,7 +678,7 @@ export const pt: SiteContent = {
       terms: "Termos de Serviço",
       legalName: "Razão Social",
       cnpj: "CNPJ",
-      address: "Endereço",
+      address: "Área de atendimento",
       email: "E-mail",
     },
     serviceCard: {
@@ -700,7 +706,7 @@ export const pt: SiteContent = {
       companyInfo: "Dados da Empresa",
       legalName: "Razão Social",
       cnpj: "CNPJ",
-      address: "Endereço comercial",
+      address: "Área de atendimento",
     },
     home: {
       problemsEyebrow: "Problemas que resolvemos",
@@ -708,6 +714,7 @@ export const pt: SiteContent = {
       problemsCtaDescription:
         "Conte o cenário da sua empresa e vamos avaliar o caminho mais claro para resolver sem complicar.",
       problemsCtaLabel: "Fale conosco pelo WhatsApp",
+      heroOffersCta: "Ver ofertas e preços",
       servicesCta: "Ver todos os serviços",
       servicesMoreIntro: "Também desenvolvemos:",
       servicesMoreItems: ["SaaS/MVPs", "Automações internas", "Modernização de sistemas antigos"],
