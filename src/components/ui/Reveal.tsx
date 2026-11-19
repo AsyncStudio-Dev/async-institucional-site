@@ -26,6 +26,11 @@ export function Reveal({ children, className = "", delayMs = 0, as = "div" }: Re
       return;
     }
 
+    if (node.getBoundingClientRect().top < window.innerHeight) {
+      setVisible(true);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -33,7 +38,7 @@ export function Reveal({ children, className = "", delayMs = 0, as = "div" }: Re
           observer.disconnect();
         }
       },
-      { threshold: 0.15, rootMargin: "0px 0px -40px 0px" },
+      { threshold: 0.01, rootMargin: "0px 0px -16px 0px" },
     );
 
     observer.observe(node);

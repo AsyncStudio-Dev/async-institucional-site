@@ -16,6 +16,7 @@ export function Footer({ content }: FooterProps) {
   const labels = content.ui.footer;
   const contact = siteConfig.contact;
   const whatsappHref = createWhatsAppLink(content.whatsappMessages.footer);
+  const serviceAreaText = content.locale === "en" ? siteConfig.company.serviceArea.formattedEn : siteConfig.company.serviceArea.formattedPt;
 
   return (
     <footer className="border-t border-border-dark bg-deep-forest text-mint-white">
@@ -33,6 +34,7 @@ export function Footer({ content }: FooterProps) {
           <p className="eyebrow text-light-mint/80">{content.nav.home}</p>
           <nav className="mt-4 flex flex-col gap-3 text-sm text-mint-white/60">
             <Link className="transition duration-200 hover:text-mint-white" href={paths.home}>{content.nav.home}</Link>
+            <Link className="transition duration-200 hover:text-mint-white" href={paths.offers}>{content.nav.offers}</Link>
             <Link className="transition duration-200 hover:text-mint-white" href={paths.services}>{content.nav.services}</Link>
             <Link className="transition duration-200 hover:text-mint-white" href={paths.projects}>{content.nav.projects}</Link>
             <Link className="transition duration-200 hover:text-mint-white" href={paths.about}>{content.nav.about}</Link>
@@ -97,7 +99,7 @@ export function Footer({ content }: FooterProps) {
             <p className="text-mint-white/50">
               <span>{labels.cnpj}: {siteConfig.company.cnpj}</span>
               <span className="mx-2 hidden md:inline text-mint-white/30">•</span>
-              <span className="block md:inline">{labels.address}: {siteConfig.company.address.formatted}</span>
+              <span className="block md:inline">{labels.address}: {serviceAreaText}</span>
             </p>
           </div>
           <div className="text-mint-white/50">
@@ -109,7 +111,7 @@ export function Footer({ content }: FooterProps) {
         </div>
       </div>
 
-      <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 border-t border-border-dark px-5 py-5 text-sm text-mint-white/45">
+      <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 border-t border-border-dark px-5 py-5 text-sm text-mint-white/65">
         <p>{labels.rights}</p>
         <nav className="flex flex-wrap gap-x-6 gap-y-2">
           <Link href={paths.privacy} className="transition duration-200 hover:text-mint-white">{labels.privacy}</Link>

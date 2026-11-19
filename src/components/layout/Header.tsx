@@ -18,7 +18,7 @@ export function Header({ content, page }: HeaderProps) {
   const navItems = getMainNavItems(content);
 
   return (
-    <HeaderFrame startsOverDark={page === "home" || page === "bizManager"}>
+    <HeaderFrame startsOverDark={page === "home" || page === "bizManager" || page === "offers"}>
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-4 transition-[padding] duration-300 group-data-[scrolled=true]/header:py-2.5">
         <BrandLogo to={paths.home} adaptive />
         <DesktopNav items={navItems} activeKey={page} submenuToggleLabel={content.nav.projectsMenuToggle} />

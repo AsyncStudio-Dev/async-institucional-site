@@ -48,7 +48,12 @@ export function Home({ content }: HomeProps) {
           </p>
           <div className="hero-enter mt-8 flex flex-col gap-3 sm:flex-row sm:items-center" style={{ animationDelay: "600ms" }}>
             <CTAWhatsApp content={content} message={content.whatsappMessages.hero} size="large" />
-            <Button variant="tertiary" tone="dark" href={paths.services} size="large">
+            <Button variant="secondary" tone="dark" href={paths.offers} size="large">
+              {labels.heroOffersCta}
+            </Button>
+          </div>
+          <div className="hero-enter mt-4" style={{ animationDelay: "700ms" }}>
+            <Button variant="tertiary" tone="dark" href={paths.services}>
               {content.hero.secondaryCta}
             </Button>
           </div>

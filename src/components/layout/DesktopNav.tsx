@@ -141,7 +141,7 @@ export function DesktopNav({ items, activeKey, submenuToggleLabel }: DesktopNavP
               aria-expanded={isOpen}
               aria-controls={submenuId}
               onClick={() => (isOpen ? setOpenKey(null) : openSubmenu(item.key))}
-              className="-ml-2 rounded-sm p-1 text-text-secondary transition-colors duration-200 hover:text-text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-async-green group-data-[on-dark=true]/header:text-mint-white/60 group-data-[on-dark=true]/header:hover:text-mint-white"
+              className="-ml-1 inline-flex min-h-6 min-w-6 items-center justify-center rounded-sm p-1.5 text-text-secondary transition-colors duration-200 hover:text-text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-async-green group-data-[on-dark=true]/header:text-mint-white/70 group-data-[on-dark=true]/header:hover:text-mint-white"
             >
               <ChevronDown className={`h-3.5 w-3.5 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`} />
             </button>

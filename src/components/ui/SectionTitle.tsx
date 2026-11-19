@@ -22,10 +22,11 @@ export function SectionTitle({
   const titleWeight = titleAs === "h1" ? "font-bold" : "font-semibold";
   const titleColor = tone === "dark" ? "text-mint-white" : "text-text-primary";
   const descriptionColor = tone === "dark" ? "text-mint-white/70" : "text-text-secondary";
+  const eyebrowColor = tone === "dark" ? "text-async-green" : "text-[#15803d]";
 
   return (
     <div className={`max-w-3xl ${alignClass} ${className}`}>
-      {eyebrow ? <p className="eyebrow mb-3 text-async-green">{eyebrow}</p> : null}
+      {eyebrow ? <p className={`eyebrow mb-3 ${eyebrowColor}`}>{eyebrow}</p> : null}
       <TitleTag className={`font-display text-3xl leading-[1.15] md:text-4xl ${titleWeight} ${titleColor}`}>
         {title}
       </TitleTag>

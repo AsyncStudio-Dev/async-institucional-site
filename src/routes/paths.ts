@@ -3,6 +3,7 @@ import type { Locale, PageKey } from "../content/types";
 export const localizedPaths: Record<Locale, Record<PageKey, string>> = {
   pt: {
     home: "/",
+    offers: "/ofertas",
     services: "/servicos",
     projects: "/projetos",
     bizManager: "/bizmanager",
@@ -13,6 +14,7 @@ export const localizedPaths: Record<Locale, Record<PageKey, string>> = {
   },
   en: {
     home: "/en",
+    offers: "/en/offers",
     services: "/en/services",
     projects: "/en/projects",
     bizManager: "/en/bizmanager",
